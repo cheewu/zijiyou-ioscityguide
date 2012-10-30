@@ -1,0 +1,28 @@
+//
+// Prefix header for all source files of the 'zijiyoun' target in the 'zijiyoun' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_5_0
+#warning "This project uses features only available in iOS SDK 5.0 and later."
+#endif
+
+#ifdef __OBJC__
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <QuartzCore/QuartzCore.h>
+#import "RMMapView.h"
+#import "RMMapBoxSource.h"
+#import "ViewController.h"
+#import "FMDatabase.h"
+#import "PCTOPUIview.h"
+#import "RXCustomTabBar.h"
+#import "DescriptionViewController.h"
+#import "CustomRightMenuView.h"
+#import "NSDataDES.h"
+#include <math.h>
+
+#endif
+//#define NSLog //NSLog
+#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:(a)]
