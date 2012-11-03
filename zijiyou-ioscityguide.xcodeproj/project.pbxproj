@@ -215,7 +215,7 @@
 		93FFA5F815E50F1A00EC6E62 /* navetionbag.png in Resources */ = {isa = PBXBuildFile; fileRef = 93FFA5F715E50F1A00EC6E62 /* navetionbag.png */; };
 		93FFA5FA15E5106F00EC6E62 /* indexnationbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 93FFA5F915E5106F00EC6E62 /* indexnationbg.png */; };
 		93FFA5FD15E51C9300EC6E62 /* homesearch.png in Resources */ = {isa = PBXBuildFile; fileRef = 93FFA5FB15E51C9300EC6E62 /* homesearch.png */; };
-		A91EFE13161AC041002B128C /* 自己游-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A91EFE12161AC041002B128C /* 自己游-Info.plist */; };
+		A91EFE13161AC041002B128C /* zijiyou-ioscityguide-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A91EFE12161AC041002B128C /* zijiyou-ioscityguide-Info.plist */; };
 		A91EFE14161AC0A8002B128C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A91EFE16161AC0A8002B128C /* InfoPlist.strings */; };
 		A91F94D4161D46F000B31282 /* NSDataDES.m in Sources */ = {isa = PBXBuildFile; fileRef = A91F94D3161D46F000B31282 /* NSDataDES.m */; };
 		A938135E161096AA00546C6B /* homesubway@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A938135D161096AA00546C6B /* homesubway@2x.png */; };
@@ -473,7 +473,7 @@
 		9373494715DFBF5D00113C91 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9373494915DFBF5D00113C91 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9373495115DFBF5D00113C91 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		9373495315DFBF5D00113C91 /* 自己游-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "自己游-Prefix.pch"; sourceTree = "<group>"; };
+		9373495315DFBF5D00113C91 /* zijiyou-ioscityguide-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "zijiyou-ioscityguide-Prefix.pch"; sourceTree = "<group>"; };
 		9373495415DFBF5D00113C91 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		9373495515DFBF5D00113C91 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9373495A15DFBF5D00113C91 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = zijiyoun/ViewController.h; sourceTree = "<group>"; };
@@ -598,7 +598,7 @@
 		93FFA5F715E50F1A00EC6E62 /* navetionbag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navetionbag.png; sourceTree = "<group>"; };
 		93FFA5F915E5106F00EC6E62 /* indexnationbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = indexnationbg.png; sourceTree = "<group>"; };
 		93FFA5FB15E51C9300EC6E62 /* homesearch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homesearch.png; sourceTree = "<group>"; };
-		A91EFE12161AC041002B128C /* 自己游-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "自己游-Info.plist"; sourceTree = "<group>"; };
+		A91EFE12161AC041002B128C /* zijiyou-ioscityguide-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "zijiyou-ioscityguide-Info.plist"; sourceTree = "<group>"; };
 		A91EFE15161AC0A8002B128C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		A91F94D2161D46F000B31282 /* NSDataDES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataDES.h; sourceTree = "<group>"; };
 		A91F94D3161D46F000B31282 /* NSDataDES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataDES.m; sourceTree = "<group>"; };
@@ -1105,7 +1105,7 @@
 		9373494B15DFBF5D00113C91 /* zijiyoun */ = {
 			isa = PBXGroup;
 			children = (
-				A91EFE12161AC041002B128C /* 自己游-Info.plist */,
+				A91EFE12161AC041002B128C /* zijiyou-ioscityguide-Info.plist */,
 				A9AC770E161AE255002E06C6 /* MainStoryboard.storyboard */,
 				9373495415DFBF5D00113C91 /* AppDelegate.h */,
 				9373495515DFBF5D00113C91 /* AppDelegate.m */,
@@ -1118,7 +1118,7 @@
 			isa = PBXGroup;
 			children = (
 				9373495115DFBF5D00113C91 /* main.m */,
-				9373495315DFBF5D00113C91 /* 自己游-Prefix.pch */,
+				9373495315DFBF5D00113C91 /* zijiyou-ioscityguide-Prefix.pch */,
 				A91EFE16161AC0A8002B128C /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -1404,9 +1404,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9373494015DFBF5D00113C91 /* 自己游 */ = {
+		9373494015DFBF5D00113C91 /* zijiyou-ioscityguide */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9373495F15DFBF5D00113C91 /* Build configuration list for PBXNativeTarget "自己游" */;
+			buildConfigurationList = 9373495F15DFBF5D00113C91 /* Build configuration list for PBXNativeTarget "zijiyou-ioscityguide" */;
 			buildPhases = (
 				9373493D15DFBF5D00113C91 /* Sources */,
 				9373493E15DFBF5D00113C91 /* Frameworks */,
@@ -1417,7 +1417,7 @@
 			dependencies = (
 				9382633915E2451800C5D45D /* PBXTargetDependency */,
 			);
-			name = "自己游";
+			name = "zijiyou-ioscityguide";
 			productName = zijiyoun;
 			productReference = 9373494115DFBF5D00113C91 /* 香港.app */;
 			productType = "com.apple.product-type.application";
@@ -1431,7 +1431,7 @@
 				LastUpgradeCheck = 0440;
 				ORGANIZATIONNAME = "piao chunzhi";
 			};
-			buildConfigurationList = 9373493B15DFBF5D00113C91 /* Build configuration list for PBXProject "自己游" */;
+			buildConfigurationList = 9373493B15DFBF5D00113C91 /* Build configuration list for PBXProject "zijiyou-ioscityguide" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -1455,7 +1455,7 @@
 			);
 			projectRoot = "";
 			targets = (
-				9373494015DFBF5D00113C91 /* 自己游 */,
+				9373494015DFBF5D00113C91 /* zijiyou-ioscityguide */,
 			);
 		};
 /* End PBXProject section */
@@ -1653,7 +1653,7 @@
 				A9B0716416181272001F3007 /* arrows@2x.png in Resources */,
 				A9AD2FEF16197E880067B7F6 /* user.db in Resources */,
 				A91EFE14161AC0A8002B128C /* InfoPlist.strings in Resources */,
-				A91EFE13161AC041002B128C /* 自己游-Info.plist in Resources */,
+				A91EFE13161AC041002B128C /* zijiyou-ioscityguide-Info.plist in Resources */,
 				A9AC770F161AE255002E06C6 /* MainStoryboard.storyboard in Resources */,
 				A9A7A81D161B368000302C76 /* ChangeLogUnzip in Resources */,
 				A9A9BF36161EB7D900576A22 /* homebuttonclick@2x.png in Resources */,
@@ -1857,9 +1857,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Qi Wu (589G6K3CS9)";
 				COPY_PHASE_STRIP = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "zijiyoun/自己游-Prefix.pch";
+				GCC_PREFIX_HEADER = "zijiyoun/zijiyou-ioscityguide-Prefix.pch";
 				HEADER_SEARCH_PATHS = "/devsoft/mapbox-ios-sdk/**";
-				INFOPLIST_FILE = "$(SRCROOT)/zijiyoun/自己游-Info.plist";
+				INFOPLIST_FILE = "zijiyoun/zijiyou-ioscityguide-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1881,9 +1881,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Qi Wu";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "zijiyoun/自己游-Prefix.pch";
+				GCC_PREFIX_HEADER = "zijiyoun/zijiyou-ioscityguide-Prefix.pch";
 				HEADER_SEARCH_PATHS = "/devsoft/mapbox-ios-sdk/**";
-				INFOPLIST_FILE = "$(SRCROOT)/zijiyoun/自己游-Info.plist";
+				INFOPLIST_FILE = "zijiyoun/zijiyou-ioscityguide-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1901,7 +1901,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9373493B15DFBF5D00113C91 /* Build configuration list for PBXProject "自己游" */ = {
+		9373493B15DFBF5D00113C91 /* Build configuration list for PBXProject "zijiyou-ioscityguide" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9373495D15DFBF5D00113C91 /* Debug */,
@@ -1910,7 +1910,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9373495F15DFBF5D00113C91 /* Build configuration list for PBXNativeTarget "自己游" */ = {
+		9373495F15DFBF5D00113C91 /* Build configuration list for PBXNativeTarget "zijiyou-ioscityguide" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9373496015DFBF5D00113C91 /* Debug */,

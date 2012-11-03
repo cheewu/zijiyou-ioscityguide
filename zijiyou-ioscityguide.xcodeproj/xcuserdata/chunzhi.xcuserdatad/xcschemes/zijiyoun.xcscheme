@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9373494015DFBF5D00113C91"
                BuildableName = "&#39321;&#28207;.app"
-               BlueprintName = "&#33258;&#24049;&#28216;"
-               ReferencedContainer = "container:&#33258;&#24049;&#28216;.xcodeproj">
+               BlueprintName = "zijiyou-ioscityguide"
+               ReferencedContainer = "container:zijiyou-ioscityguide.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9373494015DFBF5D00113C91"
             BuildableName = "&#39321;&#28207;.app"
-            BlueprintName = "&#33258;&#24049;&#28216;"
-            ReferencedContainer = "container:&#33258;&#24049;&#28216;.xcodeproj">
+            BlueprintName = "zijiyou-ioscityguide"
+            ReferencedContainer = "container:zijiyou-ioscityguide.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -53,8 +53,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9373494015DFBF5D00113C91"
             BuildableName = "&#39321;&#28207;.app"
-            BlueprintName = "&#33258;&#24049;&#28216;"
-            ReferencedContainer = "container:&#33258;&#24049;&#28216;.xcodeproj">
+            BlueprintName = "zijiyou-ioscityguide"
+            ReferencedContainer = "container:zijiyou-ioscityguide.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -71,8 +71,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9373494015DFBF5D00113C91"
             BuildableName = "&#39321;&#28207;.app"
-            BlueprintName = "&#33258;&#24049;&#28216;"
-            ReferencedContainer = "container:&#33258;&#24049;&#28216;.xcodeproj">
+            BlueprintName = "zijiyou-ioscityguide"
+            ReferencedContainer = "container:zijiyou-ioscityguide.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
