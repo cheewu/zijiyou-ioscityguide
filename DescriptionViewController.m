@@ -184,7 +184,7 @@
         opentimeLabel.lineBreakMode = UILineBreakModeWordWrap;
         opentimeLabel.numberOfLines = 0;
         
-        CGSize size = CGSizeMake(320,2000);  
+        CGSize size = CGSizeMake(220,2000);
         CGSize labelsize = [opentime sizeWithFont:opentimeLabel.font constrainedToSize:size lineBreakMode:UILineBreakModeWordWrap];
         [opentimeLabel setFrame:CGRectMake(100, offy,labelsize.width, labelsize.height)];
         
@@ -369,21 +369,25 @@
         youText=@"关于此景点的";
     }
 
-    UILabel *contentLabel=[[UILabel alloc]initWithFrame:CGRectMake(90, 0, 205, 70)];
-    [contentLabel setBackgroundColor:[UIColor clearColor]];
-    contentLabel.text = [[NSString alloc]initWithFormat: @"在线阅读%@游记",youText];
-    [contentLabel setFont:[UIFont fontWithName:@"STHeitiSC-Medium" size:16]];
-    contentLabel.textColor=textColor;
+    if([category isEqualToString:@"attraction"]){
+        UILabel *contentLabel=[[UILabel alloc]initWithFrame:CGRectMake(90, 0, 205, 70)];
+        [contentLabel setBackgroundColor:[UIColor clearColor]];
+        contentLabel.text = [[NSString alloc]initWithFormat: @"在线阅读%@游记",youText];
+        [contentLabel setFont:[UIFont fontWithName:@"STHeitiSC-Medium" size:16]];
+        contentLabel.textColor=textColor;
+        [youjiView addSubview:contentLabel];
+         offy+=90;
+    }
    
     UIButton *youjiButton=[UIButton buttonWithType:UIButtonTypeCustom];
     [youjiButton setFrame:CGRectMake(0, 0, youjiView.frame.size.width, youjiView.frame.size.height)];
     [youjiButton addTarget:self action:@selector(youjiShow) forControlEvents:UIControlEventTouchUpInside];
-    [youjiView addSubview:contentLabel];
+   
     
     [youjiView addSubview:youjiButton];
     [scrollView addSubview:youjiView];
     
-    offy+=90;
+   
     [scrollView addSubview:[self getSeparatorUIImageView:CGRectMake(-5,offy, 350, 8)]];
     
     
