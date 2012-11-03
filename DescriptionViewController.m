@@ -604,7 +604,7 @@
 //    }
     
     BOOL isPurchased=[[NSUserDefaults standardUserDefaults] objectForKey:@"isProUpgradePurchased"];//是否已经购买
-    if(!isPurchased){//如果没有购买
+    if(!isPurchased&&false){//如果没有购买
         [self showPayMap];
     }else{//购买了
         UIStoryboard *sb = [ViewController getStoryboard];

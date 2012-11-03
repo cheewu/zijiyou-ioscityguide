@@ -212,6 +212,14 @@
 }
 -(void)myThreadMainMethod
 {
+    for (id obj in crm.buttonDirects.keyEnumerator) {
+        //  NSLog([obj debugDescription]);
+        if(![obj isEqualToString:@"listall"] && ![obj isEqualToString:@"listwikipedia"] && ![obj isEqualToString:@"listop"] ){
+            UIButton *butt=[crm.buttonDirects objectForKey:obj];
+            [crm selectMenu:butt];
+        }
+    }
+
     [entries removeAllObjects];
     NSString *sql =@"SELECT name,poiid,poimongoid,category,longitude,latitude FROM poi";
     FMDatabase *db= [ViewController getDataBase];
@@ -286,14 +294,30 @@
 //            //[mapView setCenterCoordinate:[anotationPOI coordinate]];
 //        }
 //    }
-    
-    UIButton *butt=[crm.buttonDirects objectForKey:@"listattraction"];
+//    for (id obj in crm.buttonDirects.keyEnumerator) {
+//        //  NSLog([obj debugDescription]);
+//        if(![obj isEqualToString:@"listall"] && ![obj isEqualToString:@"listwikipedia"] && ![obj isEqualToString:@"listop"] ){
+//             UIButton *butt=[crm.buttonDirects objectForKey:obj];
+//            [crm selectMenu:butt];
+//        }
+//    }
+   // UIButton *butt=[crm.buttonDirects objectForKey:@"listattraction"];
  //   [butt setSelected:NO];
-    [crm selectMenu:butt];//设置景点为默认查找项目
+    //[crm selectMenu:butt];//设置景点为默认查找项目
   //  [self callbackClick:butt];
     
 //    [self performSelector:@selector(openTipPOI) withObject:nil afterDelay:1.5];
-
+    [self performSelectorInBackground:@selector(addMarks) withObject:self];
+}
+-(void)addMarks{
+    NSArray *annotains =[anotations copy];//[mapView annotations];
+    for (RMAnnotation *anotation in annotains) {
+        NSString *category =[anotation.userInfo objectForKey:@"category"];
+       
+        if( ![category isEqualToString:@"wikipedia"]){
+             [mapView addAnnotation:anotation];
+        }
+    }
 }
 
 - (RMMapLayer *)mapView:(RMMapView *)mapView layerForAnnotation:(RMAnnotation *)annotation{
@@ -435,7 +459,7 @@
     
     int indeBut =[sender tag];
     
-    NSArray *annotains =anotations;//[mapView annotations];
+    NSArray *annotains =[anotations copy];//[mapView annotations];
    // BOOL isHidden=![sender isSelected];//没被选中
  //   NSMutableDictionary *resultDirs=[entries objectAtIndex:indeBut-1];
    

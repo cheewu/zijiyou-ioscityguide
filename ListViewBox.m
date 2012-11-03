@@ -80,8 +80,9 @@
             //[_stationTextLabel setContentMode:UIViewContentModeCenter];
             [_stationTextLabel setTextColor:RGBACOLOR(64,64,64,1)];
             [_stationTextLabel setBackgroundColor:[UIColor clearColor]];
+            [_stationTextLabel setFont:[UIFont fontWithName:@"Helvetica" size:16]];
             [_stationTextLabel setText:stationText];
-            [_stationTextLabel setFrame:CGRectMake(110, 0, 200,self.frame.size.height)];
+            [_stationTextLabel setFrame:CGRectMake(100, 0, 200,self.frame.size.height)];
             [self addSubview:_stationTextLabel];
         }
         if(sandetName!=nil){
@@ -90,7 +91,7 @@
             [_sandetNameTextLabel setFont:[UIFont fontWithName:@"Helvetica" size:14]];
             [_sandetNameTextLabel setBackgroundColor:[UIColor clearColor]];
             [_sandetNameTextLabel setText:sandetName];
-            [_sandetNameTextLabel setFrame:CGRectMake(110, 0, 200,self.frame.size.height)];
+            [_sandetNameTextLabel setFrame:CGRectMake(100, 0, 200,self.frame.size.height)];
             [self addSubview:_sandetNameTextLabel];
         }
     }

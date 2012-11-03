@@ -131,6 +131,9 @@
         NSString *destName=[despoi objectForKey:@"name"];
         NSString *sourceName=[sourpoi objectForKey:@"name"];
         
+        NSNumber *desdistance= [despoi objectForKey:@"distance"];
+        NSNumber *sourdistance=[sourpoi objectForKey:@"distance"];
+        
         NSString *destinationstation=[despoi objectForKey:@"poimongoid"];
         NSString *sourcestation=[sourpoi objectForKey:@"poimongoid"];
         NSMutableString *sqlds =[[NSMutableString alloc] initWithFormat:@"SELECT * FROM transfer "];
@@ -160,7 +163,7 @@
 //            NSLog(@"stationlist===%@",stationlist);
             
             UIView *topTextUIView=[[UIView alloc]initWithFrame:CGRectMake(0, offy, 320, 50)];
-            //UIColor *textColor=[[UIColor alloc]initWithRed:95/255.0f green:87/255.0f blue:73/255.0f alpha:1.0f];
+            //UIColor *textColor=[[UIColor alloc]initWithRed:95/255.0f green:87/255.0f blue:73/255.0f alpha:1.0f];（离你现在的位置300m)  到 地铁湾仔站 （距离目的地 400m） （离你%@m) （距离目的地 %@m）
             UILabel *jiaotongLabel=[[UILabel alloc]initWithFrame:CGRectMake(20, 3, 320, 25)];
             [topTextUIView setBackgroundColor:[UIColor whiteColor]];
             jiaotongLabel.text = [[NSString alloc]initWithFormat:@"从 %@ 到 %@",sourceName,destName];
@@ -188,17 +191,23 @@
             
             
             offy=8;
+            int i=0;
+            int allc = [json count]-1;
             for (NSMutableDictionary *line in json) {
                 NSString *l =[[NSString alloc]initWithFormat:@"%@" ,[line objectForKey:@"l"] ];
                 NSMutableDictionary *lineDic = [idSubDirs objectForKey:l];
                 NSString *linename = [lineDic objectForKey:@"linename"];
+                if(linename==nil){
+                    // i++;
+                   // continue;
+                }
                 NSString *color = [lineDic objectForKey:@"color"];
                 NSString *p =[line objectForKey:@"p"];
                // NSLog(@"TransferSubWayViewController p===%@",p);
                // NSString *sqlpoi = [[NSString alloc]initWithFormat:@"SELECT * FROM poi where poimongoid='%@'",[NSDataDES getContentByHexAndDes:p key:deskey]];
                 NSString *sqlpoi = [[NSString alloc]initWithFormat:@"SELECT * FROM poi where poimongoid='%@'",p];
                 
-                NSLog(@"TransferSubWayViewController sqlpoi===%@",sqlpoi);
+               // NSLog(@"TransferSubWayViewController sqlpoi===%@",sqlpoi);
                 FMResultSet *poiresultSet  =[ViewController getDataBase:sqlpoi db:db];
                 NSMutableArray *entries=[[NSMutableArray alloc]init];
                 [ViewController setPoiArray:poiresultSet isNeedDist:NO coord:center setEntries:entries setAllData:nil];
@@ -211,14 +220,25 @@
                 if([l isEqualToString:@"0"]){//换乘站
                     leftImage = @"subwaytransfer";
                 }
+               //  NSLog(@"linenametemp===%@",linenametemp);
+                NSMutableString *poiNameTemp = [_poiData objectForKey:@"name"];
                 
-                ListViewBox * list = [[ListViewBox alloc] initWithFrame:CGRectMake(15, offy, 285, 45) imgURL:@"arrows" textColor:color text:linename stationText:[_poiData objectForKey:@"name"] leftImage:leftImage];
+                NSMutableString *poiName = [[NSMutableString alloc] initWithString:poiNameTemp];
+                
+                if(i==0){
+                    [poiName appendFormat:@"(离你%@m)",[sourdistance stringValue]];
+                }else if(i==allc){
+                     [poiName appendFormat:@"(离目的地%@m)",[desdistance stringValue]];
+                }
+                
+                ListViewBox * list = [[ListViewBox alloc] initWithFrame:CGRectMake(15, offy, 285, 45) imgURL:@"arrows" textColor:color text:linename stationText:poiName leftImage:leftImage];
                 UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapSubWay:)];
                 [list addGestureRecognizer:gestureRecognizer];
                 [list setPoiData:_poiData];
                 [list setLineId:l];
                 [scrollView addSubview:list];
                 offy+=50;
+                i++;
             }
             offy+=10;
             [scrollView setContentSize:CGSizeMake(320, offy)];
@@ -263,7 +283,7 @@
     [sql appendFormat:@" AND longitude > %f  AND longitude < %f",bounds.southWest.longitude,bounds.northEast.longitude];
     FMResultSet *resultSet  =[ViewController getDataBase:sql db:db];
     //读取数据
-    [ViewController setPoiArray:resultSet isNeedDist:YES coord:center setEntries:entries setAllData:nil];
+    [ViewController setPoiArray:resultSet isNeedDist:YES coord:centerLoc setEntries:entries setAllData:nil];
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"distance" ascending:YES];
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
     [entries sortUsingDescriptors:sortDescriptors];

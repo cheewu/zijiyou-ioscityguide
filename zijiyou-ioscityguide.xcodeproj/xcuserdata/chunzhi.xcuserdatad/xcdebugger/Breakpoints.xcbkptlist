@@ -502,11 +502,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MapBoxViewController.m"
-         timestampString = "372100035.087761"
+         timestampString = "373644275.815552"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "360"
-         endingLineNumber = "360"
+         startingLineNumber = "384"
+         endingLineNumber = "384"
          landmarkName = "-openTip:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -528,11 +528,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MapBoxViewController.m"
-         timestampString = "372100035.087761"
+         timestampString = "373644275.815552"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "358"
-         endingLineNumber = "358"
+         startingLineNumber = "382"
+         endingLineNumber = "382"
          landmarkName = "-openTip:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -554,11 +554,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MapBoxViewController.m"
-         timestampString = "372100035.087761"
+         timestampString = "373644275.815552"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "415"
-         endingLineNumber = "415"
+         startingLineNumber = "439"
+         endingLineNumber = "439"
          landmarkName = "-disclosureTapped"
          landmarkType = "5">
       </FileBreakpoint>
@@ -593,11 +593,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MapBoxViewController.m"
-         timestampString = "372100035.087761"
+         timestampString = "373644004.310055"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "293"
-         endingLineNumber = "293"
+         startingLineNumber = "307"
+         endingLineNumber = "307"
          landmarkName = "-myThreadMainMethod"
          landmarkType = "5">
       </FileBreakpoint>
@@ -619,11 +619,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MapBoxViewController.m"
-         timestampString = "372100035.087761"
+         timestampString = "373644275.815552"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "443"
-         endingLineNumber = "443"
+         startingLineNumber = "467"
+         endingLineNumber = "467"
          landmarkName = "-backgroundClick:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -632,11 +632,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MapBoxViewController.m"
-         timestampString = "372100035.087761"
+         timestampString = "373644004.310055"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "292"
-         endingLineNumber = "292"
+         startingLineNumber = "306"
+         endingLineNumber = "306"
          landmarkName = "-myThreadMainMethod"
          landmarkType = "5">
       </FileBreakpoint>
@@ -645,11 +645,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MapBoxViewController.m"
-         timestampString = "372100035.087761"
+         timestampString = "373644275.815552"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "452"
-         endingLineNumber = "452"
+         startingLineNumber = "476"
+         endingLineNumber = "476"
          landmarkName = "-backgroundClick:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -658,11 +658,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MapBoxViewController.m"
-         timestampString = "372100035.087761"
+         timestampString = "373644275.815552"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "461"
-         endingLineNumber = "461"
+         startingLineNumber = "485"
+         endingLineNumber = "485"
          landmarkName = "-backgroundClick:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -671,11 +671,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MapBoxViewController.m"
-         timestampString = "372100035.087761"
+         timestampString = "373644275.815552"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "465"
-         endingLineNumber = "465"
+         startingLineNumber = "489"
+         endingLineNumber = "489"
          landmarkName = "-backgroundClick:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -684,11 +684,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MapBoxViewController.m"
-         timestampString = "372100035.087761"
+         timestampString = "373644275.815552"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "470"
-         endingLineNumber = "470"
+         startingLineNumber = "494"
+         endingLineNumber = "494"
          landmarkName = "-backgroundClick:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -697,11 +697,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MapBoxViewController.m"
-         timestampString = "372100035.087761"
+         timestampString = "373644275.815552"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "439"
-         endingLineNumber = "439"
+         startingLineNumber = "463"
+         endingLineNumber = "463"
          landmarkName = "-backgroundClick:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -957,11 +957,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TransferSubWayViewController.m"
-         timestampString = "370941155.703038"
+         timestampString = "373648049.585359"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "143"
-         endingLineNumber = "143"
+         startingLineNumber = "146"
+         endingLineNumber = "146"
          landmarkName = "-locationManager:didUpdateToLocation:fromLocation:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -983,11 +983,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TransferSubWayViewController.m"
-         timestampString = "370941155.703038"
+         timestampString = "373650430.917054"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "194"
-         endingLineNumber = "194"
+         startingLineNumber = "199"
+         endingLineNumber = "199"
          landmarkName = "-locationManager:didUpdateToLocation:fromLocation:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -996,11 +996,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TransferSubWayViewController.m"
-         timestampString = "371102186.837157"
+         timestampString = "373650430.917054"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "207"
-         endingLineNumber = "207"
+         startingLineNumber = "216"
+         endingLineNumber = "216"
          landmarkName = "-locationManager:didUpdateToLocation:fromLocation:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1009,11 +1009,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TransferSubWayViewController.m"
-         timestampString = "371102186.837157"
+         timestampString = "373650430.917054"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "205"
-         endingLineNumber = "205"
+         startingLineNumber = "214"
+         endingLineNumber = "214"
          landmarkName = "-locationManager:didUpdateToLocation:fromLocation:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1737,11 +1737,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TransferSubWayViewController.m"
-         timestampString = "371051344.301053"
+         timestampString = "373648049.585359"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "141"
-         endingLineNumber = "141"
+         startingLineNumber = "144"
+         endingLineNumber = "144"
          landmarkName = "-locationManager:didUpdateToLocation:fromLocation:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1750,37 +1750,37 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TransferSubWayViewController.m"
-         timestampString = "371051358.092115"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "142"
-         endingLineNumber = "142"
-         landmarkName = "-locationManager:didUpdateToLocation:fromLocation:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "TransferSubWayViewController.m"
-         timestampString = "371051362.118966"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "146"
-         endingLineNumber = "146"
-         landmarkName = "-locationManager:didUpdateToLocation:fromLocation:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "TransferSubWayViewController.m"
-         timestampString = "371051371.855504"
+         timestampString = "373648049.585359"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
          startingLineNumber = "145"
          endingLineNumber = "145"
+         landmarkName = "-locationManager:didUpdateToLocation:fromLocation:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TransferSubWayViewController.m"
+         timestampString = "373648049.585359"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "149"
+         endingLineNumber = "149"
+         landmarkName = "-locationManager:didUpdateToLocation:fromLocation:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TransferSubWayViewController.m"
+         timestampString = "373648049.585359"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "148"
+         endingLineNumber = "148"
          landmarkName = "-locationManager:didUpdateToLocation:fromLocation:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -1893,11 +1893,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "TransferSubWayViewController.m"
-         timestampString = "371102303.822376"
+         timestampString = "373650430.917054"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "216"
-         endingLineNumber = "216"
+         startingLineNumber = "235"
+         endingLineNumber = "235"
          landmarkName = "-locationManager:didUpdateToLocation:fromLocation:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -2075,11 +2075,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MapBoxViewController.m"
-         timestampString = "372100035.087761"
+         timestampString = "373644275.815552"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "387"
-         endingLineNumber = "387"
+         startingLineNumber = "411"
+         endingLineNumber = "411"
          landmarkName = "-openTip:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -2088,11 +2088,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "MapBoxViewController.m"
-         timestampString = "372100035.087761"
+         timestampString = "373644275.815552"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "365"
-         endingLineNumber = "365"
+         startingLineNumber = "389"
+         endingLineNumber = "389"
          landmarkName = "-openTip:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -2292,7 +2292,7 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DescriptionViewController.m"
@@ -2406,6 +2406,19 @@
          startingLineNumber = "78"
          endingLineNumber = "78"
          landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "TransferSubWayViewController.m"
+         timestampString = "373650430.917054"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "234"
+         endingLineNumber = "234"
+         landmarkName = "-locationManager:didUpdateToLocation:fromLocation:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
