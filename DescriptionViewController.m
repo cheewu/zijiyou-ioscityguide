@@ -205,7 +205,7 @@
     //    [scrollView addSubview:[self getUIImageView:CGRectMake(15, offy,290, 2)]];
         UILabel *telephoneLabel=[[UILabel alloc]initWithFrame:CGRectMake(25, offy, 280,30)];
         [telephoneLabel setBackgroundColor:[UIColor clearColor]];
-        telephoneLabel.text =   [[NSString alloc]initWithFormat:@"电话：%@",telephone];
+        telephoneLabel.text =   [[NSString alloc]initWithFormat:@"电        话：  %@",telephone];
         [telephoneLabel setFont:font];
         telephoneLabel.textColor=textColor;
         [scrollView addSubview:telephoneLabel];
@@ -337,55 +337,63 @@
      offy+=5;
     [scrollView addSubview:[self getSeparatorUIImageView:CGRectMake(-5,offy, 350, 8)]];
 //游记
-    UILabel *youjiLabel=[[UILabel alloc]initWithFrame:CGRectMake(25, offy, 280, 50)];
-    [youjiLabel setBackgroundColor:[UIColor clearColor]];
-    youjiLabel.text =   @"游记";
-    [youjiLabel setFont:[UIFont fontWithName:@"STHeitiSC-Medium" size:18]];
-    youjiLabel.textColor=textColor;
-    [scrollView addSubview:youjiLabel];
-    offy+=40;
-    UIView *youjiView = [[UIView alloc]initWithFrame:CGRectMake(10, offy, 300, 70)];
-    [youjiView setBackgroundColor:[UIColor whiteColor]];
-    youjiView.layer.borderWidth  = 1;
-    youjiView.layer.borderColor= [[[UIColor alloc]initWithRed:191/255.0f green:191/255.0f blue:191/255.0f alpha:255] CGColor];
-    if(![category isEqualToString:@"wikipedia"]){
-        NSData *image = [poiData objectForKey:@"image"];
-        if(image!=nil){
-            UIImageView *youjiImageView = [[UIImageView alloc] initWithImage:[[UIImage alloc] initWithData:image]];
-            [youjiImageView setFrame:CGRectMake(10, 10, 65, 50)];
-            youjiImageView.layer.borderWidth  = 1;
-            youjiImageView.layer.borderColor= [[[UIColor alloc]initWithRed:191/255.0f green:191/255.0f blue:191/255.0f alpha:255] CGColor];
-            youjiImageView.layer.shadowColor = [UIColor blackColor].CGColor;
-            youjiImageView.layer.shadowOffset = CGSizeMake(2,2);
-            youjiImageView.layer.shadowOpacity = 0.2;
-            youjiImageView.layer.shadowRadius = 3.0;
-            [youjiView addSubview:youjiImageView];
-        }
-    }
-    NSString *youText;
-    if(title.length<=6){
-        youText=title;
-    }else{
-        youText=@"关于此景点的";
-    }
+    
+
+
+    
+    
 
     if([category isEqualToString:@"attraction"]){
+        UILabel *youjiLabel=[[UILabel alloc]initWithFrame:CGRectMake(25, offy, 280, 50)];
+        [youjiLabel setBackgroundColor:[UIColor clearColor]];
+        youjiLabel.text =   @"游记";
+        [youjiLabel setFont:[UIFont fontWithName:@"STHeitiSC-Medium" size:18]];
+        youjiLabel.textColor=textColor;
+        [scrollView addSubview:youjiLabel];
+        offy+=40;
+        UIView *youjiView = [[UIView alloc]initWithFrame:CGRectMake(10, offy, 300, 70)];
+        [youjiView setBackgroundColor:[UIColor whiteColor]];
+        youjiView.layer.borderWidth  = 1;
+        youjiView.layer.borderColor= [[[UIColor alloc]initWithRed:191/255.0f green:191/255.0f blue:191/255.0f alpha:255] CGColor];
+        if(![category isEqualToString:@"wikipedia"]){
+            NSData *image = [poiData objectForKey:@"image"];
+            if(image!=nil){
+                UIImageView *youjiImageView = [[UIImageView alloc] initWithImage:[[UIImage alloc] initWithData:image]];
+                [youjiImageView setFrame:CGRectMake(10, 10, 65, 50)];
+                youjiImageView.layer.borderWidth  = 1;
+                youjiImageView.layer.borderColor= [[[UIColor alloc]initWithRed:191/255.0f green:191/255.0f blue:191/255.0f alpha:255] CGColor];
+                youjiImageView.layer.shadowColor = [UIColor blackColor].CGColor;
+                youjiImageView.layer.shadowOffset = CGSizeMake(2,2);
+                youjiImageView.layer.shadowOpacity = 0.2;
+                youjiImageView.layer.shadowRadius = 3.0;
+                [youjiView addSubview:youjiImageView];
+            }
+        }
+        
+        NSString *youText;
+        if(title.length<=6){
+            youText=title;
+        }else{
+            youText=@"关于此景点的";
+        }
         UILabel *contentLabel=[[UILabel alloc]initWithFrame:CGRectMake(90, 0, 205, 70)];
         [contentLabel setBackgroundColor:[UIColor clearColor]];
         contentLabel.text = [[NSString alloc]initWithFormat: @"在线阅读%@游记",youText];
         [contentLabel setFont:[UIFont fontWithName:@"STHeitiSC-Medium" size:16]];
         contentLabel.textColor=textColor;
         [youjiView addSubview:contentLabel];
-         offy+=90;
+        offy+=90;
+        
+        UIButton *youjiButton=[UIButton buttonWithType:UIButtonTypeCustom];
+        [youjiButton setFrame:CGRectMake(0, 0, youjiView.frame.size.width, youjiView.frame.size.height)];
+        [youjiButton addTarget:self action:@selector(youjiShow) forControlEvents:UIControlEventTouchUpInside];
+        
+        
+        [youjiView addSubview:youjiButton];
+        [scrollView addSubview:youjiView];
     }
    
-    UIButton *youjiButton=[UIButton buttonWithType:UIButtonTypeCustom];
-    [youjiButton setFrame:CGRectMake(0, 0, youjiView.frame.size.width, youjiView.frame.size.height)];
-    [youjiButton addTarget:self action:@selector(youjiShow) forControlEvents:UIControlEventTouchUpInside];
-   
     
-    [youjiView addSubview:youjiButton];
-    [scrollView addSubview:youjiView];
     
    
     [scrollView addSubview:[self getSeparatorUIImageView:CGRectMake(-5,offy, 350, 8)]];
