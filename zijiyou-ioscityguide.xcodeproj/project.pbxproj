@@ -244,6 +244,7 @@
 		A9A9491B1608C15100C239AA /* sline.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A9491A1608C15100C239AA /* sline.png */; };
 		A9A9491E1608C5CF00C239AA /* PCustAButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A9491D1608C5CF00C239AA /* PCustAButtonView.m */; };
 		A9A9BF36161EB7D900576A22 /* homebuttonclick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9A9BF35161EB7D900576A22 /* homebuttonclick@2x.png */; };
+		A9AB01D81647C3430071543F /* TempImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AB01D71647C3430071543F /* TempImage.png */; };
 		A9AC04FA1614675500A7DFEF /* downprocfill@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AC04F91614675500A7DFEF /* downprocfill@2x.png */; };
 		A9AC770F161AE255002E06C6 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9AC770E161AE255002E06C6 /* MainStoryboard.storyboard */; };
 		A9ACA5E1162A85FE0028FC84 /* homebuttonclick.png in Resources */ = {isa = PBXBuildFile; fileRef = A9ACA5DF162A85FE0028FC84 /* homebuttonclick.png */; };
@@ -636,6 +637,7 @@
 		A9A9491C1608C5CF00C239AA /* PCustAButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PCustAButtonView.h; sourceTree = "<group>"; };
 		A9A9491D1608C5CF00C239AA /* PCustAButtonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PCustAButtonView.m; sourceTree = "<group>"; };
 		A9A9BF35161EB7D900576A22 /* homebuttonclick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homebuttonclick@2x.png"; sourceTree = "<group>"; };
+		A9AB01D71647C3430071543F /* TempImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TempImage.png; sourceTree = "<group>"; };
 		A9AC04F91614675500A7DFEF /* downprocfill@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "downprocfill@2x.png"; sourceTree = "<group>"; };
 		A9AC770E161AE255002E06C6 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		A9ACA5DF162A85FE0028FC84 /* homebuttonclick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homebuttonclick.png; sourceTree = "<group>"; };
@@ -1136,6 +1138,7 @@
 				934AFEC315F10E5100CEAFE1 /* RightMenu */,
 				93CAECC5160440F000A6AAC0 /* xuxian@2x.png */,
 				A938135D161096AA00546C6B /* homesubway@2x.png */,
+				A9AB01D71647C3430071543F /* TempImage.png */,
 				A9AD2FEE16197E880067B7F6 /* user.db */,
 				A9B8AAA8162D9A0E006DD4FA /* mapicon.png */,
 				A9B3D53C163BAADC00024AC6 /* poi.db */,
@@ -1680,6 +1683,7 @@
 				A9B3D53D163BAADC00024AC6 /* poi.db in Resources */,
 				A9B0EE82163BF63500FF3F72 /* icon.png in Resources */,
 				A9B0EE83163BF63500FF3F72 /* icon@2x.png in Resources */,
+				A9AB01D81647C3430071543F /* TempImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
