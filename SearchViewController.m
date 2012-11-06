@@ -289,7 +289,7 @@
     NSData *data = [poiData objectForKey:@"image"];
     
     if(data==nil||data.length==0){
-        jdtemp= [UIImage imageNamed:@"JingDianTemp.png"];
+        jdtemp= [UIImage imageNamed:@"TempImage"];
     }else{
         jdtemp=[UIImage imageWithData: data];
     }
