@@ -78,12 +78,11 @@
     
     UIImage *mapDesImage1=[UIImage imageNamed:@"buymapimage1"];
     UIImageView *mapDesImageView1=[[UIImageView alloc] initWithImage:mapDesImage1];
-    [mapDesImageView1 setFrame:CGRectMake(20, 230, mapDesImage1.size.width, mapDesImage1.size.height)];
+    [mapDesImageView1 setFrame:CGRectMake(8, 230, mapDesImage1.size.width, mapDesImage1.size.height)];
 
     UIImage *mapDesImage2=[UIImage imageNamed:@"buymapimage2"];
     UIImageView *mapDesImageView2=[[UIImageView alloc] initWithImage:mapDesImage2];
-    [mapDesImageView2 setFrame:CGRectMake(140, 230, mapDesImage2.size.width, mapDesImage2.size.height)];
-    
+    [mapDesImageView2 setFrame:CGRectMake(mapDesImage1.size.width+15, 230, mapDesImage2.size.width, mapDesImage2.size.height)];
     mapDesImageView1.layer.borderWidth  = 3;
     mapDesImageView1.layer.borderColor= [[UIColor whiteColor] CGColor];
     mapDesImageView2.layer.borderWidth  = 3;
