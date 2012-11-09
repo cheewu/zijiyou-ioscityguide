@@ -59,7 +59,7 @@
     [despOffMap setEditable:NO];
     [despOffMap setFont:[UIFont fontWithName:@"Helvetica" size:14]];
     [despOffMap setBackgroundColor:[UIColor clearColor]];
-    [despOffMap setText:@"离线地图和地铁换乘查询功能需要付费购买，价格25元。付费完成以后会自动下载离线数据包共22.5M，根据不同的网络状况下载需要3到5分钟。"];
+    [despOffMap setText:@"离线地图和地铁换乘查询功能需要付费购买。付费完成以后会自动下载离线数据包，大小22.5M，根据不同的网络状况下载需要3到5分钟。"];
     [despOffMap setTextColor:RGBACOLOR(90, 86, 67, 1)];
     [buyButton addTarget:self action:@selector(buyMapData) forControlEvents:UIControlEventTouchUpInside];
     
