@@ -30,7 +30,9 @@
 - (void)viewDidLoad
 {
   //  PCTOPUIview * pctop = [[PCTOPUIview alloc]initWithFrame:CGRectMake(0, 0, 320, 48) title:@"我的账户" isShowBack:YES isShowRight:YES];
-     PCTOPUIview *pctop = [[PCTOPUIview alloc]initWithFrame:CGRectMake(0, 0, 320, 48) title:@"我的账户" backTitle:@"" righTitle:nil];
+    //NSString *city_name=NSLocalizedStringFromTable(@"city_name", @"InfoPlist",nil);
+    NSString *my_wiki=NSLocalizedStringFromTable(@"my_wiki", @"InfoPlist",nil);
+    PCTOPUIview *pctop = [[PCTOPUIview alloc]initWithFrame:CGRectMake(0, 0, 320, 48) title:my_wiki backTitle:@"" righTitle:nil];
     
     [pctop.button addTarget:self action:@selector(clickBack:) forControlEvents:UIControlEventTouchUpInside];
 
@@ -63,10 +65,11 @@
 //    leftUIView.layer.masksToBounds = YES;
 //    [leftUIView setBackgroundColor:[[UIColor alloc]initWithRed:233/255.0f green:231/255.0f blue:202/255.0f alpha:1.0f]];
 //    UIButton *button
-
+    NSString *my_checkin=NSLocalizedStringFromTable(@"my_checkin", @"InfoPlist",nil);
+     NSString *my_favourite=NSLocalizedStringFromTable(@"my_favourite", @"InfoPlist",nil);
     
-    leftb=[[PCustAButtonView alloc]initWithFrame:CGRectMake(30, 7, 110, 31) imageName:@"checkin" text:@"我的签到"];
-    rightb=[[PCustAButtonView alloc]initWithFrame:CGRectMake(190, 7, 110, 31) imageName:@"favourite" text:@"我的收藏"];
+    leftb=[[PCustAButtonView alloc]initWithFrame:CGRectMake(30, 7, 110, 31) imageName:@"checkin" text:my_checkin ];
+    rightb=[[PCustAButtonView alloc]initWithFrame:CGRectMake(190, 7, 110, 31) imageName:@"favourite" text:my_favourite];
     
     [[leftb button] addTarget:self action:@selector(selectButtonCheckIn) forControlEvents:UIControlEventTouchUpInside];
      [[rightb button] addTarget:self action:@selector(selectButtonFav) forControlEvents:UIControlEventTouchUpInside];

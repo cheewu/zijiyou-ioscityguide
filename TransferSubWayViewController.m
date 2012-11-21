@@ -166,14 +166,23 @@
             //UIColor *textColor=[[UIColor alloc]initWithRed:95/255.0f green:87/255.0f blue:73/255.0f alpha:1.0f];（离你现在的位置300m)  到 地铁湾仔站 （距离目的地 400m） （离你%@m) （距离目的地 %@m）
             UILabel *jiaotongLabel=[[UILabel alloc]initWithFrame:CGRectMake(20, 3, 320, 25)];
             [topTextUIView setBackgroundColor:[UIColor whiteColor]];
-            jiaotongLabel.text = [[NSString alloc]initWithFormat:@"从 %@ 到 %@",sourceName,destName];
+            
+            NSString *route_from=NSLocalizedStringFromTable(@"route_from", @"InfoPlist",nil);
+            NSString *route_arrive=NSLocalizedStringFromTable(@"route_arrive", @"InfoPlist",nil);
+            NSString *route_all=NSLocalizedStringFromTable(@"route_all", @"InfoPlist",nil);
+            NSString *route_station=NSLocalizedStringFromTable(@"route_station", @"InfoPlist",nil);
+            NSString *route_nearyou=NSLocalizedStringFromTable(@"route_nearyou", @"InfoPlist",nil);
+            NSString *route_nearobj=NSLocalizedStringFromTable(@"route_nearobj", @"InfoPlist",nil);
+            
+            
+            jiaotongLabel.text = [[NSString alloc]initWithFormat:@"%@ %@ %@ %@",route_from,sourceName,route_arrive,destName];
             [jiaotongLabel setFont:[UIFont fontWithName:@"STHeitiSC" size:18]];
             jiaotongLabel.textColor=[UIColor blackColor];
             [jiaotongLabel setBackgroundColor:[UIColor clearColor]];
             [topTextUIView addSubview:jiaotongLabel];
             
             UILabel *desLabel=[[UILabel alloc]initWithFrame:CGRectMake(20, 28, 320, 15)];
-            desLabel.text = [[NSString alloc]initWithFormat:@"总共：%@站",stationcount];
+            desLabel.text = [[NSString alloc]initWithFormat:@"%@：%@%@",route_all,stationcount,route_station];
             [desLabel setFont:[UIFont fontWithName:@"STHeitiSC" size:10]];
             desLabel.textColor= [[UIColor alloc]initWithRed:125/255.0f green:125/255.0f blue:125/255.0f alpha:1.0f];;
             [desLabel setBackgroundColor:[UIColor clearColor]];
@@ -226,9 +235,9 @@
                 NSMutableString *poiName = [[NSMutableString alloc] initWithString:poiNameTemp];
                 
                 if(i==0){
-                    [poiName appendFormat:@"(离你%@m)",[sourdistance stringValue]];
+                    [poiName appendFormat:@"(%@%@m)",route_nearyou,[sourdistance stringValue]];
                 }else if(i==allc){
-                     [poiName appendFormat:@"(离目的地%@m)",[desdistance stringValue]];
+                     [poiName appendFormat:@"(%@%@m)",route_nearobj,[desdistance stringValue]];
                 }
                 
                 ListViewBox * list = [[ListViewBox alloc] initWithFrame:CGRectMake(15, offy, 285, 45) imgURL:@"arrows" textColor:color text:linename stationText:poiName leftImage:leftImage];

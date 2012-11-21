@@ -56,8 +56,8 @@
     [resultSet close];
     [db close];
      typeImages = [[NSMutableDictionary alloc] initWithObjects:timages forKeys:objValue ];
-    
-     PCTOPUIview *pctop = [[PCTOPUIview alloc]initWithFrame:CGRectMake(0, 0, 320, 48) title:@"城市攻略" backTitle:@"" righTitle:nil];
+    NSString *city_wiki=NSLocalizedStringFromTable(@"city_wiki", @"InfoPlist",nil);
+     PCTOPUIview *pctop = [[PCTOPUIview alloc]initWithFrame:CGRectMake(0, 0, 320, 48) title:city_wiki backTitle:@"" righTitle:nil];
     
     [pctop.button addTarget:self action:@selector(clickBack:) forControlEvents:UIControlEventTouchUpInside];
     //HomeIndex

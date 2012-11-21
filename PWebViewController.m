@@ -27,10 +27,10 @@
 - (void)viewDidLoad
 {
     [ViewController showWaiting:self.view];
-  //  pctop = [[PCTOPUIview alloc]initWithFrame:CGRectMake(0, 0, 320, 48) title:@"游记攻略" isShowBack:YES isShowRight:NO ];
+
+    NSString *poi_article=NSLocalizedStringFromTable(@"poi_article", @"InfoPlist",nil);
     
-    
-    pctop = [[PCTOPUIview alloc]initWithFrame:CGRectMake(0, 0, 320, 48) title:@"游记攻略" backTitle:@"" righTitle:nil];
+    pctop = [[PCTOPUIview alloc]initWithFrame:CGRectMake(0, 0, 320, 48) title:[[NSString alloc]initWithFormat:@"%@攻略",poi_article]   backTitle:@"" righTitle:nil];
     
     
     [self.view addSubview: pctop];

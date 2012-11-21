@@ -15,14 +15,22 @@ static NSMutableDictionary *allTypes;
 
 +(NSMutableDictionary*) getAllTypes{//所有类型
     if(allTypes==nil){
+        NSString *category_attraction=NSLocalizedStringFromTable(@"category_attraction", @"InfoPlist",nil);
+        NSString *category_resturant=NSLocalizedStringFromTable(@"category_resturant", @"InfoPlist",nil);
+        NSString *category_shopping=NSLocalizedStringFromTable(@"category_shopping", @"InfoPlist",nil);
+        NSString *category_subway=NSLocalizedStringFromTable(@"category_subway", @"InfoPlist",nil);
+        NSString *category_train=NSLocalizedStringFromTable(@"category_train", @"InfoPlist",nil);
+        NSString *category_airport=NSLocalizedStringFromTable(@"category_airport", @"InfoPlist",nil);
+        NSString *category_wiki=NSLocalizedStringFromTable(@"category_wiki", @"InfoPlist",nil);
+
         allTypes=[[NSMutableDictionary alloc]init];//所有类型
-        [allTypes setObject:@"景点" forKey:@"attraction"];
-        [allTypes setObject:@"餐厅" forKey:@"restaurant"];
-        [allTypes setObject:@"购物" forKey:@"shoppingcenter"];
-        [allTypes setObject:@"地铁" forKey:@"subway"];
-        [allTypes setObject:@"火车" forKey:@"railway"];
-        [allTypes setObject:@"机场" forKey:@"airport"];
-        [allTypes setObject:@"维基" forKey:@"wikipedia"];
+        [allTypes setObject:category_attraction forKey:@"attraction"];
+        [allTypes setObject:category_resturant forKey:@"restaurant"];
+        [allTypes setObject:category_shopping forKey:@"shoppingcenter"];
+        [allTypes setObject:category_subway forKey:@"subway"];
+        [allTypes setObject:category_train forKey:@"railway"];
+        [allTypes setObject:category_airport forKey:@"airport"];
+        [allTypes setObject:category_wiki forKey:@"wikipedia"];
     }
     return allTypes;
 }
@@ -31,13 +39,14 @@ static NSMutableDictionary *allTypes;
 //@synthesize listImageArray;
 - (id)initWithFrame:(CGRect)frame{
     NSMutableDictionary *allTypes=[CustomRightMenuView getAllTypes];
+    NSString *select_title=NSLocalizedStringFromTable(@"select_title", @"InfoPlist",nil);
     
     
     NSString *sql =@"SELECT category  FROM poi GROUP BY category order by count(category) desc";// 获得数据库里的类型
     
     NSMutableArray *listArray=[[NSMutableArray alloc]init];//中文类型
     categoryArrayArray=[[NSMutableArray alloc]init];//英文类型
-    [listArray addObject:@"筛选地点"];
+    [listArray addObject:select_title];
     [listArray addObject:@"全部"];
     [categoryArrayArray addObject:@"op"];
     [categoryArrayArray addObject:@"all"];
@@ -68,12 +77,7 @@ static NSMutableDictionary *allTypes;
     
     [resultSet close];
     [db close];
-    
-    
-  //  NSArray *listArray=[[NSArray alloc]initWithObjects:@"筛选地点",@"全部",@"景点",@"地铁",@"餐厅",@"购物", nil];
-   // NSArray *listImageArray=[[NSArray alloc]initWithObjects:@"listop",@"listall",@"listjingdian",@"listsubway",@"listiconcanting",@"listgouwu", nil];
-  //  categoryArrayArray=[[NSArray alloc]initWithObjects:@"筛选地点",@"全部",@"attraction",@"subway",@"restaurant",@"shoppingcenter", nil];
-    
+
     
     return [self initWithFrame:frame nameArray:listArray imageArray:nil categoryArray:categoryArrayArray];
 }

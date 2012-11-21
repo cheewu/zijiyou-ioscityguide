@@ -34,9 +34,11 @@
 - (void)viewDidLoad
 {
     
-   // pctop = [[PCTOPUIview alloc]initWithFrame:CGRectMake(0, 0, 320, 48) title:@"地图下载" isShowBack:YES isShowRight:NO ];
-   // [self.downfillImage setFrame:[self.downImageView frame]];
-    pctop = [[PCTOPUIview alloc]initWithFrame:CGRectMake(0, 0, 320, 48) title:@"离线数据下载" backTitle:@"" righTitle:nil];
+   NSString *offline_download=NSLocalizedStringFromTable(@"offline_download", @"InfoPlist",nil);
+    NSString *offline_download_name=NSLocalizedStringFromTable(@"offline_download_name", @"InfoPlist",nil);
+    self.downTitle.text = offline_download_name;
+    
+    pctop = [[PCTOPUIview alloc]initWithFrame:CGRectMake(0, 0, 320, 48) title:offline_download backTitle:@"" righTitle:nil];
     
     [self.view addSubview: pctop];
     
@@ -48,9 +50,13 @@
     //平铺
     [self.view setBackgroundColor:[UIColor colorWithPatternImage:tabelbg]];
     [super viewDidLoad];
-   
-        
-    
+    TDNetworkQueue *tdNetworkQueue = [TDNetworkQueue sharedTDNetworkQueue];
+    double newProgress=[[NSUserDefaults standardUserDefaults] doubleForKey:@"newProgress"];
+    NSString *prc= [[NSString alloc] initWithFormat:@"%.1f%%",newProgress*100];
+    downpre.text=prc;
+    [tdNetworkQueue setShowView:self];
+    [tdNetworkQueue setProgress:newProgress];
+    [self.currentSize setText:@""];
  //   TDNetworkQueue *tdNetworkQuese = [TDNetworkQueue sharedTDNetworkQueue];
     //[tdNetworkQuese pauseDownload:test1URL];
             
@@ -61,8 +67,9 @@
 
 -(void)clickBack:(id)sender{
     @try {
+        NSString *offline_url=NSLocalizedStringFromTable(@"offline_url", @"InfoPlist",nil);
         TDNetworkQueue *tdNetworkQueue = [TDNetworkQueue sharedTDNetworkQueue];
-        [tdNetworkQueue pauseDownload:downURL];
+        [tdNetworkQueue pauseDownload:offline_url];
      NSLog(@"backIdentifier=%@",backIdentifier);
     NSLog(@"backpoimongoid=%@",backpoimongoid);
     if(([backIdentifier isEqualToString:@"PayMapViewController"])){
@@ -115,6 +122,7 @@
     [self setDownfillImage:nil];
     [self setStartButton:nil];
     [self setDownImageView:nil];
+    [self setDownTitle:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
@@ -126,7 +134,7 @@
 
 - (IBAction)downButton:(id)sender {
     TDNetworkQueue *tdNetworkQueue = [TDNetworkQueue sharedTDNetworkQueue];
-
+    NSString *offline_url=NSLocalizedStringFromTable(@"offline_url", @"InfoPlist",nil);
     if([sender tag]!=1)
     {
         NSLog(@"创建请求2");
@@ -134,7 +142,7 @@
         NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
         NSString *downloadPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/iap.zip"];
         NSString *tempPath = [path stringByAppendingPathComponent:@"osm_hkmbtiles.temp"];
-        NSURL *url = [NSURL URLWithString:downURL];
+        NSURL *url = [NSURL URLWithString:offline_url];
         
         [tdNetworkQueue addDownloadRequestInQueue:url withTempPath:tempPath withDownloadPath:downloadPath withView:self];
         
@@ -146,7 +154,7 @@
         UIImage * downstart= [UIImage imageNamed:@"downstart"];
         [startButton setImage:downstart forState:UIControlStateNormal];
         [sender setTag:0];
-        [tdNetworkQueue pauseDownload:downURL];
+        [tdNetworkQueue pauseDownload:offline_url];
     }
 }
 -(void)finished{

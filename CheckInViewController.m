@@ -66,8 +66,9 @@
     poiDetail.layer.masksToBounds = YES;
     [labelText setTextColor:label.textColor];
     [labelText setAlpha:0.5];
-    
-    PCTOPUIview *pctop = [[PCTOPUIview alloc]initWithFrame:CGRectMake(0, 0, 320, 48) title:@"签到" backTitle:@"" righTitle:@"发送"];
+    NSString *poi_checkin=NSLocalizedStringFromTable(@"poi_checkin", @"InfoPlist",nil);
+    NSString *checkin_send=NSLocalizedStringFromTable(@"checkin_send", @"InfoPlist",nil);
+    PCTOPUIview *pctop = [[PCTOPUIview alloc]initWithFrame:CGRectMake(0, 0, 320, 48) title:poi_checkin backTitle:@"" righTitle:checkin_send];
     
     [pctop.button addTarget:self action:@selector(clickBack) forControlEvents:UIControlEventTouchUpInside];
     
@@ -161,11 +162,11 @@
       //  long long int date = (long long int)time;
         NSLog(@"time==%d", time);
         [db executeUpdate:sql,poiid, [NSString stringWithFormat:@"%d", time],description,UIImagePNGRepresentation(selectImage)];
-            
+        NSString *poi_checkin=NSLocalizedStringFromTable(@"poi_checkin", @"InfoPlist",nil);
         if ([db hadError])
         {
             UIAlertView* alertView = [[UIAlertView alloc]initWithTitle:nil
-                                                              message:@"签到失败！"
+                                                              message:[[NSString alloc]initWithFormat:@"%@失败",poi_checkin]  
                                                              delegate:nil
                                                     cancelButtonTitle:@"确定"
                                                     otherButtonTitles:nil];
@@ -174,9 +175,11 @@
             NSString *qiandao;
             NSString *downloadPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/userimage.png"];
             if ([[NSFileManager defaultManager] fileExistsAtPath:downloadPath]) {
-                qiandao=@"签到成功";
+                NSString *poi_faourite_success=NSLocalizedStringFromTable(@"poi_faourite_success", @"InfoPlist",nil);
+                
+                qiandao=poi_faourite_success;
             }else{
-                qiandao=@"签到成功，登陆以后可以同步到微博";
+                qiandao=[[NSString alloc]initWithFormat:@"%@成功，登陆以后可以同步到微博",poi_checkin];
             }
             
             UIAlertView* alertView = [[UIAlertView alloc]initWithTitle:nil

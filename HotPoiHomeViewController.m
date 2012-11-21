@@ -133,11 +133,12 @@
 
     
     
+    NSString *button_select=NSLocalizedStringFromTable(@"button_select", @"InfoPlist",nil);
     
          
     tableView.rowHeight = kCustomRowHeight;
-  //  pctop = [[PCTOPUIview alloc]initWithFrame:CGRectMake(0, 0, 320, 48) title:@"热门地点" ];
-    pctop = [[PCTOPUIview alloc]initWithFrame:CGRectMake(0, 0, 320, 48) title:@"热门地点" backTitle:@"" righTitle:@"筛选"];
+    NSString *hot_poi=NSLocalizedStringFromTable(@"hot_poi", @"InfoPlist",nil);
+    pctop = [[PCTOPUIview alloc]initWithFrame:CGRectMake(0, 0, 320, 48) title:hot_poi backTitle:@"" righTitle:button_select];
     [pctop.button addTarget:self action:@selector(clickBack:) forControlEvents:UIControlEventTouchUpInside];
     //HomeIndex
     [self.view addSubview: pctop];

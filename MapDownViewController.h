@@ -5,7 +5,7 @@
 //  Created by piao chunzhi on 12-9-5.
 //  Copyright (c) 2012年 piao chunzhi. All rights reserved.
 //
-#define downURL @"http://iapfile.b0.upaiyun.com/iap_hk.zip" //@"http://www.zijiyou.com/maps/osm_hk.mbtiles"
+//#define downURL @"http://iapfile.b0.upaiyun.com/iap_hk.zip" //@"http://www.zijiyou.com/maps/osm_hk.mbtiles"
 #import <UIKit/UIKit.h>
 #import "ASINetworkQueue.h"
 #import "ASIHTTPRequest.h"
@@ -24,5 +24,6 @@
 @property(nonatomic,retain) NSString *backIdentifier;
 @property(nonatomic,retain) NSString *backpoimongoid;
 @property (weak, nonatomic) IBOutlet UIImageView *downImageView;
+@property (weak, nonatomic) IBOutlet UILabel *downTitle;
 -(void)finished;
 @end

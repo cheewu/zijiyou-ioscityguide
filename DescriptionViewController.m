@@ -133,15 +133,19 @@
     self.view.backgroundColor=[UIColor colorWithPatternImage:tabelbg];
     
     int sx=9;
-    DetailButtonUIView *dbtra = [[DetailButtonUIView alloc]initWithFrame:CGRectMake(sx, offy, 95, 40) imageName:@"gohere" text:@"到这里"];
+    NSString *poi_route=NSLocalizedStringFromTable(@"poi_route", @"InfoPlist",nil);
+    NSString *poi_checkin=NSLocalizedStringFromTable(@"poi_checkin", @"InfoPlist",nil);
+    NSString *poi_favourite=NSLocalizedStringFromTable(@"poi_favourite", @"InfoPlist",nil);
+   
+    DetailButtonUIView *dbtra = [[DetailButtonUIView alloc]initWithFrame:CGRectMake(sx, offy, 95, 40) imageName:@"gohere" text:poi_route];
     [scrollView addSubview:dbtra];
     sx+=103;
     
-    DetailButtonUIView *dbt = [[DetailButtonUIView alloc]initWithFrame:CGRectMake(sx, offy, 95, 40) imageName:@"checkin" text:@"签到"];
+    DetailButtonUIView *dbt = [[DetailButtonUIView alloc]initWithFrame:CGRectMake(sx, offy, 95, 40) imageName:@"checkin" text:poi_checkin];
     [scrollView addSubview:dbt];
     sx+=103;
     
-    DetailButtonUIView *dbsc = [[DetailButtonUIView alloc]initWithFrame:CGRectMake(sx, offy, 95, 40) imageName:@"favourite" text:@"收藏"];
+    DetailButtonUIView *dbsc = [[DetailButtonUIView alloc]initWithFrame:CGRectMake(sx, offy, 95, 40) imageName:@"favourite" text:poi_favourite];
     [scrollView addSubview:dbsc];
     //sx+=103;
     
@@ -161,18 +165,13 @@
     UIFont *font =[UIFont fontWithName:@"STHeitiSC-Medium" size:14];
     
     if(address!=nil&&![address isEqualToString:@""]){
-        DetailButtonUIView *dbdt = [[DetailButtonUIView alloc]initWithFrame:CGRectMake(sx, offy, 300, 40) imageName:@"ditu" text:[[NSString alloc] initWithFormat:@"地址：%@",address]];
+        NSString *poi_address=NSLocalizedStringFromTable(@"poi_address", @"InfoPlist",nil);
+        DetailButtonUIView *dbdt = [[DetailButtonUIView alloc]initWithFrame:CGRectMake(sx, offy, 300, 40) imageName:@"ditu" text:[[NSString alloc] initWithFormat:@"%@：%@",poi_address,address]];
         [[dbdt button]addTarget:self action:@selector(clickMap) forControlEvents:UIControlEventTouchUpInside];
         
         [scrollView addSubview:dbdt];
         offy+=50.0f;
-//        UILabel *addressLabel=[[UILabel alloc]initWithFrame:CGRectMake(25, offy, 280, 50)];
-//        [addressLabel setBackgroundColor:[UIColor clearColor]];
-//        addressLabel.text = [[NSString alloc]initWithFormat:@"地址：%@",address];
-//        [addressLabel setFont:font];
-//        addressLabel.textColor=textColor;
-//        [scrollView addSubview:addressLabel];
-//        offy+=40;
+
     }
     if(opentime!=nil&&![opentime isEqualToString:@""]){
        // [scrollView addSubview:[self getUIImageView:CGRectMake(15, offy,290, 2)]];
@@ -216,10 +215,10 @@
         offy+=5;
         [scrollView addSubview:[self getSeparatorUIImageView:CGRectMake(-5,offy, 350, 8)]];
         offy+=2;
-        
+        NSString *poi_traffic=NSLocalizedStringFromTable(@"poi_traffic", @"InfoPlist",nil);
         UILabel *jiaotongLabel=[[UILabel alloc]initWithFrame:CGRectMake(25, offy, 280, 40)];
         [jiaotongLabel setBackgroundColor:[UIColor clearColor]];
-        jiaotongLabel.text =   @"附近交通";
+        jiaotongLabel.text = poi_traffic;
         [jiaotongLabel setFont:[UIFont fontWithName:@"STHeitiSC-Medium" size:18]];
         jiaotongLabel.textColor=textColor;
         [scrollView addSubview:jiaotongLabel];
@@ -337,16 +336,12 @@
      offy+=5;
     [scrollView addSubview:[self getSeparatorUIImageView:CGRectMake(-5,offy, 350, 8)]];
 //游记
-    
-
-
-    
-    
-
+    NSString *poi_article=NSLocalizedStringFromTable(@"poi_article", @"InfoPlist",nil);
     if([category isEqualToString:@"attraction"]){
+        
         UILabel *youjiLabel=[[UILabel alloc]initWithFrame:CGRectMake(25, offy, 280, 50)];
         [youjiLabel setBackgroundColor:[UIColor clearColor]];
-        youjiLabel.text =   @"游记";
+        youjiLabel.text =  poi_article;
         [youjiLabel setFont:[UIFont fontWithName:@"STHeitiSC-Medium" size:18]];
         youjiLabel.textColor=textColor;
         [scrollView addSubview:youjiLabel];
@@ -378,7 +373,8 @@
         }
         UILabel *contentLabel=[[UILabel alloc]initWithFrame:CGRectMake(90, 0, 205, 70)];
         [contentLabel setBackgroundColor:[UIColor clearColor]];
-        contentLabel.text = [[NSString alloc]initWithFormat: @"在线阅读%@游记",youText];
+        NSString *poi_article=NSLocalizedStringFromTable(@"poi_article", @"InfoPlist",nil);
+        contentLabel.text = [[NSString alloc]initWithFormat: @"在线阅读%@%@",youText,poi_article];
         [contentLabel setFont:[UIFont fontWithName:@"STHeitiSC-Medium" size:16]];
         contentLabel.textColor=textColor;
         [youjiView addSubview:contentLabel];
@@ -401,9 +397,10 @@
     
     if(description!=nil&&![description isEqualToString:@""]){//简介
       //  offy+=10;
+        NSString *poi_introduction=NSLocalizedStringFromTable(@"poi_introduction", @"InfoPlist",nil);
         UILabel *jianjieLabel=[[UILabel alloc]initWithFrame:CGRectMake(25, offy, 280, 50)];
         [jianjieLabel setBackgroundColor:[UIColor clearColor]];
-        jianjieLabel.text =   @"简介";
+        jianjieLabel.text = poi_introduction;
         [jianjieLabel setFont:[UIFont fontWithName:@"STHeitiSC-Medium" size:20]];
         jianjieLabel.textColor=textColor;
         [scrollView addSubview:jianjieLabel];
@@ -438,8 +435,9 @@
 }
 -(void)youjiShow{
     UIStoryboard *sb = [ViewController getStoryboard];
+    NSString *poi_article=NSLocalizedStringFromTable(@"poi_article", @"InfoPlist",nil);
     YouJiViewController *rb = [sb instantiateViewControllerWithIdentifier:@"YoujiWeb"];
-    rb.title=[[NSString alloc]initWithFormat:@"%@游记" ,[poiData objectForKey:@"name"]];
+    rb.title=[[NSString alloc]initWithFormat:@"%@%@" ,[poiData objectForKey:@"name"],poi_article];
     rb.url=[[NSString alloc]initWithFormat:@"http://www.zijiyou.com/poi/%@" ,[poiData objectForKey:@"poimongoid"]];
     rb.modalTransitionStyle =UIModalTransitionStyleCrossDissolve;
     [self.navigationController pushViewController:rb animated:YES];
@@ -492,23 +490,23 @@
         NSString *sql = [[NSString alloc]initWithFormat:@"SELECT * FROM favourite WHERE poiid='%@'",poiid];
         FMResultSet *rs = [db executeQuery:sql];
         if([rs next]){
+            NSString *poi_favourite_already=NSLocalizedStringFromTable(@"poi_favourite_already", @"InfoPlist",nil);
             UIAlertView* alertView = [[UIAlertView alloc]initWithTitle:nil
-                                                               message:@"已经收藏过了！"
+                                                               message:poi_favourite_already
                                                               delegate:nil
                                                      cancelButtonTitle:@"确定"
                                                      otherButtonTitles:nil];
             [alertView show];
         }else{
-//                poiid    interger,
-//                time integer ,
-//                description text,
-//                imagename   varchar(50)
+
+            NSString *poi_favourite=NSLocalizedStringFromTable(@"poi_favourite", @"InfoPlist",nil);
+
             NSString *sql = @"insert into favourite (poiid,poiname) values (?,?)";
             [db executeUpdate:sql,poiid,[poiData objectForKey:@"name"]];
             if ([db hadError])
             {
                     UIAlertView* alertView = [[UIAlertView alloc]initWithTitle:nil
-                                                                       message:@"收藏失败！"
+                                                                       message:[[NSString alloc]initWithFormat:@"%@失败",poi_favourite]
                                                                       delegate:nil
                                                              cancelButtonTitle:@"确定"
                                                              otherButtonTitles:nil];
@@ -516,7 +514,7 @@
                 }else{
                 
                     UIAlertView* alertView = [[UIAlertView alloc]initWithTitle:nil
-                                                                       message:@"收藏成功！"
+                                                                       message:[[NSString alloc]initWithFormat:@"%@成功",poi_favourite]
                                                                       delegate:nil
                                                              cancelButtonTitle:@"确定"
                                                              otherButtonTitles:nil];

@@ -40,8 +40,9 @@
     
     //平铺
     self.view.backgroundColor=[UIColor colorWithPatternImage:tabelbg];
-    
-    PCTOPUIview *pctop = [[PCTOPUIview alloc]initWithFrame:CGRectMake(0, 0, 320, 48) title:@"香港离线数据购买" backTitle:@"" righTitle:nil];
+    NSString *buy_titile=NSLocalizedStringFromTable(@"buy_titile", @"InfoPlist",nil);
+    NSString *buy_description=NSLocalizedStringFromTable(@"buy_description", @"InfoPlist",nil);
+    PCTOPUIview *pctop = [[PCTOPUIview alloc]initWithFrame:CGRectMake(0, 0, 320, 48) title:buy_titile backTitle:@"" righTitle:nil];
     [pctop.button addTarget:self action:@selector(clickBack) forControlEvents:UIControlEventTouchUpInside];
     //HomeIndex
     [self.view addSubview: pctop];
@@ -59,12 +60,13 @@
     [despOffMap setEditable:NO];
     [despOffMap setFont:[UIFont fontWithName:@"Helvetica" size:14]];
     [despOffMap setBackgroundColor:[UIColor clearColor]];
-    [despOffMap setText:@"离线地图和地铁换乘查询功能需要付费购买。付费完成以后会自动下载离线数据包，大小22.5M，根据不同的网络状况下载需要3到5分钟。"];
+    [despOffMap setText:buy_description];
     [despOffMap setTextColor:RGBACOLOR(90, 86, 67, 1)];
     [buyButton addTarget:self action:@selector(buyMapData) forControlEvents:UIControlEventTouchUpInside];
     
     UILabel *title =[[UILabel alloc] initWithFrame:CGRectMake(90, 55, 200, 40)];
-    [title setText:@"香港离线数据购买"];
+    NSString *city_name=NSLocalizedStringFromTable(@"city_name", @"InfoPlist",nil);
+    [title setText:[[NSString alloc]initWithFormat:@"%@离线数据购买",city_name]];
     UILabel *jiage =[[UILabel alloc] initWithFrame:CGRectMake(90, 88, 100, 25)];
     [jiage setFont:[UIFont fontWithName:@"Helvetica" size:15]];
     [jiage setText:@"价格： "];

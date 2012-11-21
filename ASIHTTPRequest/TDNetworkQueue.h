@@ -44,6 +44,6 @@
 
 // 暂停下载
 - (void)pauseDownload:(NSString *)paramPauseURL;
-
+- (void)setProgress:(float)newProgress;
 
 @end

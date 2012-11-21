@@ -49,7 +49,13 @@ NSArray *navitons;
     pcb3= [PCustButtonController alloc];
     pcb4= [PCustButtonController alloc];
     
-    NSArray *objValue = [NSArray arrayWithObjects:@"热门地点",@"香港地铁",@"城市攻略",@"我的香港" , nil];
+    NSString *city_subway=NSLocalizedStringFromTable(@"city_subway", @"InfoPlist",nil);
+    NSString *city_wiki=NSLocalizedStringFromTable(@"city_wiki", @"InfoPlist",nil);
+    NSString *my_wiki=NSLocalizedStringFromTable(@"my_wiki", @"InfoPlist",nil);
+    NSString *hot_poi=NSLocalizedStringFromTable(@"hot_poi", @"InfoPlist",nil);
+   // [[NSString alloc] initWithFormat:@"",]
+    
+    NSArray *objValue = [NSArray arrayWithObjects:hot_poi,city_subway,city_wiki,my_wiki , nil];
     NSArray *objKey =[NSArray arrayWithObjects:@"homeiconpoi",@"homeiconsubway",@"homeiconcity",@"homeiconmy", nil];
     NSArray *widthValue = [NSArray arrayWithObjects:[NSNumber numberWithInt:180],[NSNumber numberWithInt:160],[NSNumber numberWithInt:200],[NSNumber numberWithInt:190] , nil];
     pcbs=[NSArray arrayWithObjects:pcb1,pcb2,pcb3,pcb4,nil];

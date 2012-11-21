@@ -964,7 +964,6 @@
 				9355D89D15E32C2B00F59D3D /* homeiconcity.png */,
 				9355D89E15E32C2B00F59D3D /* homeiconpoi.png */,
 				9355D89F15E32C2B00F59D3D /* homeiconmy.png */,
-				A938135F161096F400546C6B /* homesubway.png */,
 			);
 			name = home;
 			sourceTree = "<group>";
@@ -1048,6 +1047,7 @@
 		9373493615DFBF5D00113C91 = {
 			isa = PBXGroup;
 			children = (
+				A9ADEE92165A64CA00DAC35B /* CityRes */,
 				A91F94D2161D46F000B31282 /* NSDataDES.h */,
 				A91F94D3161D46F000B31282 /* NSDataDES.m */,
 				A9F992A6161A98E900F7D330 /* InAppPurchaseManager.h */,
@@ -1137,19 +1137,13 @@
 				93E2E66015F798F100CEB9E1 /* Map */,
 				934AFEC315F10E5100CEAFE1 /* RightMenu */,
 				93CAECC5160440F000A6AAC0 /* xuxian@2x.png */,
-				A938135D161096AA00546C6B /* homesubway@2x.png */,
 				A9AB01D71647C3430071543F /* TempImage.png */,
 				A9AD2FEE16197E880067B7F6 /* user.db */,
 				A9B8AAA8162D9A0E006DD4FA /* mapicon.png */,
-				A9B3D53C163BAADC00024AC6 /* poi.db */,
 				A9B8AAA9162D9A0E006DD4FA /* mapicon@2x.png */,
 				A9CC3A75162B0A8E005AC036 /* subwaytransfer.png */,
 				A9CC3A76162B0A8E005AC036 /* subwaytransfer@2x.png */,
 				A9B8AAAC162DA45F006DD4FA /* buymapdown.png */,
-				A9B8AAB8162DAF84006DD4FA /* buymapimage1.png */,
-				A9B8AAB9162DAF85006DD4FA /* buymapimage1@2x.png */,
-				A9B8AABA162DAF85006DD4FA /* buymapimage2.png */,
-				A9B8AABB162DAF85006DD4FA /* buymapimage2@2x.png */,
 				A9B8AAAD162DA45F006DD4FA /* buymapnor.png */,
 				A9B8AAAE162DA45F006DD4FA /* buymapdown@2x.png */,
 				A9B8AAAF162DA45F006DD4FA /* buymapnor@2x.png */,
@@ -1158,12 +1152,8 @@
 				A9ACA5EB162AE71C0028FC84 /* backsept.png */,
 				A9ACA5E9162AE6D70028FC84 /* backsept@2x.png */,
 				939CD2EB15E74F0900ADDC38 /* myIcon.png */,
-				A9B0EE80163BF63500FF3F72 /* icon.png */,
-				A9B0EE81163BF63500FF3F72 /* icon@2x.png */,
 				93AC9FAB15E66DAA0009AD8B /* listtabelbg.png */,
 				93ED54B115E627A500BB171D /* listbg.png */,
-				A9A9490B1608B2FE00C239AA /* Default@2x.png */,
-				A9A9490E1608B37500C239AA /* Default.png */,
 				93ED54A915E5F6A900BB171D /* tabelbag.png */,
 				93FFA5F915E5106F00EC6E62 /* indexnationbg.png */,
 				93FFA5F715E50F1A00EC6E62 /* navetionbag.png */,
@@ -1363,6 +1353,24 @@
 				A9A7A81B161B368000302C76 /* zip.h */,
 			);
 			path = minizip;
+			sourceTree = "<group>";
+		};
+		A9ADEE92165A64CA00DAC35B /* CityRes */ = {
+			isa = PBXGroup;
+			children = (
+				A938135D161096AA00546C6B /* homesubway@2x.png */,
+				A938135F161096F400546C6B /* homesubway.png */,
+				A9B8AAB8162DAF84006DD4FA /* buymapimage1.png */,
+				A9B8AAB9162DAF85006DD4FA /* buymapimage1@2x.png */,
+				A9B0EE80163BF63500FF3F72 /* icon.png */,
+				A9B0EE81163BF63500FF3F72 /* icon@2x.png */,
+				A9A9490B1608B2FE00C239AA /* Default@2x.png */,
+				A9A9490E1608B37500C239AA /* Default.png */,
+				A9B8AABA162DAF85006DD4FA /* buymapimage2.png */,
+				A9B8AABB162DAF85006DD4FA /* buymapimage2@2x.png */,
+				A9B3D53C163BAADC00024AC6 /* poi.db */,
+			);
+			name = CityRes;
 			sourceTree = "<group>";
 		};
 		A9AE5AAE160825CE0057EE7A /* html */ = {

@@ -38,7 +38,8 @@
 
 - (void)viewDidLoad
 {
-    PCTOPUIview *pctop = [[PCTOPUIview alloc]initWithFrame:CGRectMake(0, 0, 320, 48) title:@"香港地铁" backTitle:@"" righTitle:nil];
+    NSString *city_subway=NSLocalizedStringFromTable(@"city_subway", @"InfoPlist",nil);
+    PCTOPUIview *pctop = [[PCTOPUIview alloc]initWithFrame:CGRectMake(0, 0, 320, 48) title:city_subway backTitle:@"" righTitle:nil];
     
     [pctop.button addTarget:self action:@selector(clickBack:) forControlEvents:UIControlEventTouchUpInside];
     //HomeIndex

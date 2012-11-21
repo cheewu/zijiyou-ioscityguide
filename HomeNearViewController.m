@@ -49,7 +49,9 @@
     }else{
         [tableView reloadData];
     }
-    pctop = [[PCTOPUIview alloc]initWithFrame:CGRectMake(0, 0, 320, 48) title:@"附近景点" backTitle:nil righTitle:@"筛选"];
+    NSString *button_select=NSLocalizedStringFromTable(@"button_select", @"InfoPlist",nil);
+    
+    pctop = [[PCTOPUIview alloc]initWithFrame:CGRectMake(0, 0, 320, 48) title:@"附近景点" backTitle:nil righTitle:button_select];
     [self.firstView addSubview: pctop];
     
 

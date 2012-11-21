@@ -122,6 +122,7 @@
             [self.requestArray removeObject:request];
         }
     }
+        [showView.downpre setText:@"暂停"];
     }
     @catch (NSException *exception) {
     
@@ -146,20 +147,26 @@ static double lastProgress=0;
 - (void)setProgress:(float)newProgress{
     @try{
         if(lastProgress==0){
-            lastProgress=newProgress;
-            return ;
+            lastProgress=[[NSUserDefaults standardUserDefaults] doubleForKey:@"newProgress"];
+            if(lastProgress==0){
+                lastProgress=newProgress;
+                return ;
+            }
         }
-        [showView.currentSize setText:[[NSString alloc] initWithFormat:@"%.2fM",newProgress*fullDate]];
+        if(fullDate!=0){
+            [showView.currentSize setText:[[NSString alloc] initWithFormat:@"%.2fM",newProgress*fullDate]];
+        }
         double k =(newProgress-lastProgress)*fullDate*1024;
         if(k<0){
             k=-k;
         }
-        NSLog(@"newProgress=%.2f",newProgress);
-        NSLog(@"lastProgress=%.2f",lastProgress);
-        NSLog(@"fullDate=%.2f",fullDate);
+      //  NSLog(@"newProgress=%.2f",newProgress);
+    //    NSLog(@"lastProgress=%.2f",lastProgress);
+      //  NSLog(@"fullDate=%.2f",fullDate);
         lastProgress=newProgress;
-        [showView.speedText setText:[[NSString alloc] initWithFormat:@"%.2f k/s",k]];
-
+        if(k!=0){
+            [showView.speedText setText:[[NSString alloc] initWithFormat:@"%.2f k/s",k]];
+        }
         double width =fillImage.size.width*newProgress;
         if(width<=18){
             width=18;
@@ -170,16 +177,27 @@ static double lastProgress=0;
             fillheight*=2;
             width*=2;
         }
-        
+      
        tempImage =[self getHalfImage:fillImage rect:CGRectMake(0, 0, width, fillheight)];
-
+        if(tempImage==nil){
+            tempImage =[UIImage imageNamed:@"downprocfill"];
+        }
         [showView.downfillImage setImage:tempImage];
 
         NSString *prc;
         if(newProgress>=1){
             prc= @"下载完成";
         }else{
-            prc= [[NSString alloc] initWithFormat:@"正在下载... %.1f%%",newProgress*100];
+            NSString *showText;
+            
+            if(k==0){
+                showText= @" %.1f%%";
+            }else{
+               showText= @"正在下载... %.1f%%";
+            }
+            prc= [[NSString alloc] initWithFormat:showText,newProgress*100];
+            [[NSUserDefaults standardUserDefaults] setDouble:newProgress forKey:@"newProgress"];
+            [[NSUserDefaults standardUserDefaults] synchronize];
         }
         [showView.downpre setText:prc];
     }@catch (NSException *e) {

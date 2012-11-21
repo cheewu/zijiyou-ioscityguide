@@ -19,9 +19,9 @@
         [button setBackgroundImage:imagedown forState:UIControlStateSelected];
         [button setBackgroundImage:image forState:UIControlStateNormal];
         
-        
+        NSString *button_return=NSLocalizedStringFromTable(@"button_return", @"InfoPlist",nil);
         UILabel *label =[[UILabel alloc] init];
-        label.text=@"返回";
+        label.text=button_return;
         [label setFont:[UIFont fontWithName:@"Heiti SC" size:16]];
         label.textColor=[UIColor whiteColor];
         [button setFrame:CGRectMake(0, 0, image.size.width,image.size.height)];

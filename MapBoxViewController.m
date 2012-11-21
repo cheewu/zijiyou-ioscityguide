@@ -41,15 +41,11 @@
 //    火车: railway
 //    机场：airport
 //    维基： wikipedia
+    NSString *button_select=NSLocalizedStringFromTable(@"button_select", @"InfoPlist",nil);
     
     if(![detail isEqualToString:@"DescriptionViewController"]){
-        pctop = [[PCTOPUIview alloc]initWithFrame:CGRectMake(0, 0, 320, 48) title:@"地图" backTitle:nil righTitle:@"筛选"];
-                
-//        NSArray *listArray=[[NSArray alloc]initWithObjects:@"筛选地点",@"全部",@"景点",@"地铁",@"餐厅",@"购物", nil];
-//        NSArray *listImageArray=[[NSArray alloc]initWithObjects:@"listop",@"listall",@"listjingdian",@"listsubway",@"listiconcanting",@"listgouwu", nil];
-//        categoryArray=[[NSArray alloc]initWithObjects:@"筛选地点",@"全部",@"attraction",@"subway",@"restaurant",@"shoppingcenter", nil];
-//        
-//        crm = [[CustomRightMenuView alloc]initWithFrame:CGRectMake(320, 0, 120, 480) nameArray:listArray imageArray:listImageArray categoryArray:categoryArray];
+        pctop = [[PCTOPUIview alloc]initWithFrame:CGRectMake(0, 0, 320, 48) title:@"地图" backTitle:nil righTitle:button_select];
+ 
         crm = [[CustomRightMenuView alloc]initWithFrame:CGRectMake(320, 0, 120, 480)];
         crm.delegate=self;
         crm.mainView = mainView;
@@ -65,11 +61,11 @@
         zoom =16;
     }
     [mainView addSubview: pctop];
-
-    
     
     NSString *downloadPath = [NSHomeDirectory() stringByAppendingPathComponent:downMapFileName];
-    if ([[NSFileManager defaultManager] fileExistsAtPath:downloadPath]) {//如果有离线文件
+    BOOL isPurchased=[[NSUserDefaults standardUserDefaults] objectForKey:@"isProUpgradePurchased"];//是否已经购买
+    //if(!isPurchased){//如果没有购买
+    if ([[NSFileManager defaultManager] fileExistsAtPath:downloadPath]&&isPurchased) {//如果有离线文件
         
         NSURL *documentsDictoryURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
         storeURL = [documentsDictoryURL URLByAppendingPathComponent:@"osm_hk.mbtiles"];

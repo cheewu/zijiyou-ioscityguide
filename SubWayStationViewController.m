@@ -172,7 +172,8 @@
     if(description!=nil&&![description isEqualToString:@""]){
         UILabel *jianjieLabel=[[UILabel alloc]initWithFrame:CGRectMake(25, offy, 280, 50)];
         [jianjieLabel setBackgroundColor:[UIColor clearColor]];
-        jianjieLabel.text =   @"简介";
+        NSString *poi_introduction=NSLocalizedStringFromTable(@"poi_introduction", @"InfoPlist",nil);
+        jianjieLabel.text = poi_introduction;
         [jianjieLabel setFont:[UIFont fontWithName:@"STHeitiSC-Medium" size:20]];
         jianjieLabel.textColor=textColor;
         [scrollView addSubview:jianjieLabel];
