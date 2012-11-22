@@ -940,8 +940,6 @@
 				93734C5115DFC30F00113C91 /* homemore.png */,
 				A9A949141608C10000C239AA /* hometitle.png */,
 				A9A949151608C10000C239AA /* hometitle@x2.png */,
-				A9A949101608B3D900C239AA /* background.png */,
-				A9A949111608B3D900C239AA /* background@2x.png */,
 				93734C4D15DFC1A000113C91 /* homemap.png */,
 				93F32CA916037D60003DD72D /* homemap@2x.png */,
 				A9ACA5E3162A86350028FC84 /* homebuttonnor.png */,
@@ -1358,6 +1356,8 @@
 		A9ADEE92165A64CA00DAC35B /* CityRes */ = {
 			isa = PBXGroup;
 			children = (
+				A9A949101608B3D900C239AA /* background.png */,
+				A9A949111608B3D900C239AA /* background@2x.png */,
 				A938135D161096AA00546C6B /* homesubway@2x.png */,
 				A938135F161096F400546C6B /* homesubway.png */,
 				A9B8AAB8162DAF84006DD4FA /* buymapimage1.png */,
