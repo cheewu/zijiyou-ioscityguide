@@ -61,3 +61,7 @@ intro_climate="气候";
 //6.我的香港（现在标题是我的账户应该改改成我的账户）
 my_checkin="我的签到";
 my_favourite="我的收藏";
+
+//7 地图页
+map_center=48.8567, 2.3508
+map_level=15
