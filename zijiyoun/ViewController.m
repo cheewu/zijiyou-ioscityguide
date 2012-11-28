@@ -38,7 +38,7 @@ NSArray *navitons;
     [locationManager startUpdatingLocation];
 
     
-    [self performSelectorInBackground:@selector(setDB) withObject:nil];//移动数据库文件
+  //  [self performSelectorInBackground:@selector(setDB) withObject:nil];//移动数据库文件
 
     int starTop=180;
     int bheight=45;
@@ -132,9 +132,9 @@ NSArray *navitons;
 //    }
 //}
 
--(void)setDB{
-    [ViewController initializeDB];
-}
+//-(void)setDB{
+//    [ViewController initializeDB];
+//}
 +(void) initializeDB{
     NSFileManager *fileManager=[NSFileManager defaultManager];
     

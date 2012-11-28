@@ -16,8 +16,16 @@
 //@synthesize offlineButton;
 -(id)initWithFrame:(CGRect)frame url:(NSURL *)path zoom:(short)zoom{
     CLLocationCoordinate2D coord;
-    coord.longitude = 114.15;
-    coord.latitude = 22.28;
+//    coord.longitude = 114.15;
+//    coord.latitude = 22.28;
+    
+    NSString *map_center=NSLocalizedStringFromTable(@"map_center", @"InfoPlist",nil);
+    NSArray *centerArray= [map_center componentsSeparatedByString:@","];
+    
+    coord.longitude =  [(NSString *)[centerArray objectAtIndex:0] doubleValue];
+    coord.latitude =   [(NSString *)[centerArray objectAtIndex:1] doubleValue];
+    
+    
     return [self initWithFrame:frame url:path zoom:zoom coord:coord];
 }
 
@@ -32,9 +40,12 @@
             self = [super initWithFrame:frame andTilesource:offlineSource centerCoordinate:coord zoomLevel:zoom maxZoomLevel:offlineSource.maxZoom minZoomLevel:offlineSource.minZoom backgroundImage:nil];
         }else{
             NSLog(@"online");
+            NSString *map_max_level=NSLocalizedStringFromTable(@"map_max_level", @"InfoPlist",nil);
+            float maxzoom = [map_max_level floatValue];
+            
             RMOpenStreetMapSource *onlineSource = [[RMOpenStreetMapSource alloc] init];
             //                self = [super initWithFrame:frame andTilesource:onlineSource];
-            self = [super initWithFrame:frame andTilesource:onlineSource centerCoordinate:coord zoomLevel:zoom maxZoomLevel:onlineSource.maxZoom minZoomLevel:onlineSource.minZoom backgroundImage:nil];
+            self = [super initWithFrame:frame andTilesource:onlineSource centerCoordinate:coord zoomLevel:zoom maxZoomLevel:maxzoom minZoomLevel:onlineSource.minZoom backgroundImage:nil];
         }
         //self.centerCoordinate= coord;
        // self.backgroundColor = [UIColor darkGrayColor];

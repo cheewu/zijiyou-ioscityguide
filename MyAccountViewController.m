@@ -29,6 +29,8 @@
 }
 - (void)viewDidLoad
 {
+    [ViewController initializeDB];
+     //[self performSelectorInBackground:@selector(setDB) withObject:nil];//移动数据库文件
   //  PCTOPUIview * pctop = [[PCTOPUIview alloc]initWithFrame:CGRectMake(0, 0, 320, 48) title:@"我的账户" isShowBack:YES isShowRight:YES];
     //NSString *city_name=NSLocalizedStringFromTable(@"city_name", @"InfoPlist",nil);
     NSString *my_wiki=NSLocalizedStringFromTable(@"my_wiki", @"InfoPlist",nil);

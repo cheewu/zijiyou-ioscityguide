@@ -64,19 +64,23 @@
     
     NSString *downloadPath = [NSHomeDirectory() stringByAppendingPathComponent:downMapFileName];
     BOOL isPurchased=[[NSUserDefaults standardUserDefaults] objectForKey:@"isProUpgradePurchased"];//是否已经购买
-    //if(!isPurchased){//如果没有购买
+     
+   
+    NSString *map_level=NSLocalizedStringFromTable(@"map_level", @"InfoPlist",nil);
+    int mapzoom = [map_level intValue];
+    
     if ([[NSFileManager defaultManager] fileExistsAtPath:downloadPath]&&isPurchased) {//如果有离线文件
         
         NSURL *documentsDictoryURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
         storeURL = [documentsDictoryURL URLByAppendingPathComponent:@"osm_hk.mbtiles"];
         
-        mapView = [[MyMapBoxView alloc] initWithFrame:CGRectMake(mainView.frame.origin.x, mainView.frame.origin.y+44, mainView.frame.size.width, mainView.frame.size.height) url:storeURL zoom:zoom];
+        mapView = [[MyMapBoxView alloc] initWithFrame:CGRectMake(mainView.frame.origin.x, mainView.frame.origin.y+44, mainView.frame.size.width, mainView.frame.size.height) url:storeURL zoom:mapzoom];
         mapView.delegate =self;
         
         self.mapView.viewControllerPresentingAttribution = self;
         [mainView addSubview:mapView];
     }else{
-        mapView = [[MyMapBoxView alloc] initWithFrame:CGRectMake(mainView.frame.origin.x, mainView.frame.origin.y+44, mainView.frame.size.width, mainView.frame.size.height) url:nil zoom:zoom];
+        mapView = [[MyMapBoxView alloc] initWithFrame:CGRectMake(mainView.frame.origin.x, mainView.frame.origin.y+44, mainView.frame.size.width, mainView.frame.size.height) url:nil zoom:mapzoom];
       
         mapView.delegate =self;
         

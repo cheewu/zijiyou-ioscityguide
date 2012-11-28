@@ -63,5 +63,6 @@ my_checkin="我的签到";
 my_favourite="我的收藏";
 
 //7 地图页
-map_center=48.8567, 2.3508
-map_level=15
+map_center="114.15,22.28";
+map_level="15";
+map_max_level="17";

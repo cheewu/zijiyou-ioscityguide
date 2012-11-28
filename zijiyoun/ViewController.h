@@ -40,4 +40,5 @@
 +(RMMapView *)getMap:(short)zoom center:(CLLocationCoordinate2D)center frame:(CGRect)frame;
 +(FMDatabase *)getTransferDataBase;
 +(void)getPoiBaseData:(NSString*)sql data:(NSMutableArray *)setData;
++(void) initializeDB;
 @end
