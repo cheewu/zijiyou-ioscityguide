@@ -170,7 +170,7 @@
     NSString *downloadPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/iap.zip"];
     NSFileManager *fileManager=[NSFileManager defaultManager];
 
-    if (([fileManager fileExistsAtPath:downloadPath])){//如果不存在 强制拷user.db
+    if (([fileManager fileExistsAtPath:downloadPath])){//如果不存在 强制拷
         ZipArchive* zip = [[ZipArchive alloc] init];
         
         if([zip UnzipOpenFile:downloadPath])
@@ -191,7 +191,7 @@
                 }
                 NSLog(@"zip errrrrr====");
             }
-            
+             [fileManager removeItemAtPath:downloadPath error:nil];
             [zip UnzipCloseFile];
         }
     }

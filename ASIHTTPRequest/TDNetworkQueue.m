@@ -49,6 +49,7 @@
         self.requestArray = [[NSMutableArray alloc] init];
         
     }
+   
     fillImage =[UIImage imageNamed:@"downprocfill"];
     return self;
 }
@@ -114,6 +115,7 @@
 - (void)pauseDownload:(NSString *)paramPauseURL
 {
     @try{
+        [showView.speedText setText:@""];
     for (ASIHTTPRequest *request in self.requestArray) {
         if ([[request.url absoluteString] isEqualToString:paramPauseURL]) {
             NSLog(@"取消：%@",paramPauseURL);
@@ -201,7 +203,7 @@ static double lastProgress=0;
         }
         [showView.downpre setText:prc];
     }@catch (NSException *e) {
-        [self showErro];
+      //  [self showErro];
         [showView finished];
     }
 
@@ -257,9 +259,10 @@ static double lastProgress=0;
             }
         }
         [showView.allSize setText:fullSize];
+        
         [showView.currentSize setText:cuSize];
     }@catch (NSException *e) {
-        [self showErro];
+        //[self showErro];
         [showView finished];
     }
     //NSLog([showView.allSize text]);
@@ -273,7 +276,7 @@ static double lastProgress=0;
         NSLog(@"下载开始！");
         [self.requestArray addObject:request];
     }@catch (NSException *e) {
-       [self showErro];
+       //[self showErro];
         [showView finished];
     }
     
@@ -311,6 +314,8 @@ static double lastProgress=0;
 - (void)requestFailed:(ASIHTTPRequest *)request
 {
     [self showErro];
+
+    [showView.speedText setText:@""];
     NSLog(@"下载失败！");
      @try{
        // NSLog( [[request error] debugDescription]);
