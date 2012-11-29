@@ -169,7 +169,7 @@
 
 - (void)offMapDownLoad
 {
-    UIStoryboard *sb = [ViewController getStoryboard];
+    //UIStoryboard *sb = [ViewController getStoryboard];
     BOOL isPurchased=[[NSUserDefaults standardUserDefaults] objectForKey:@"isProUpgradePurchased"];//是否已经购买
     if(!isPurchased){//如果没有购买
         [self showPayMap];
