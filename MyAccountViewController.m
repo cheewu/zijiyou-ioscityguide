@@ -18,6 +18,7 @@
 @synthesize userName;
 @synthesize weiBoEngine;
 @synthesize poiData;
+@synthesize weiboView;
 
 -(void)clickBack:(id)sender{
     UIStoryboard *sb = [ViewController getStoryboard];
@@ -207,6 +208,10 @@
 
     [super viewDidLoad];
     
+    weiboView=[[UIView alloc]initWithFrame:CGRectMake(0, 40, 440,480)];
+    [self.view addSubview: weiboView];
+    [self.view bringSubviewToFront:weiboView];
+    
 	self.weiBoEngine = [[WBEngine alloc] initWithAppKey:kWBSDKDemoAppKey appSecret:kWBSDKDemoAppSecret];
     [weiBoEngine setRootViewController:self];
     [weiBoEngine setDelegate:self];
@@ -252,6 +257,8 @@
 -(void)checkLogIn{
     if ([weiBoEngine isLoggedIn] && ![weiBoEngine isAuthorizeExpired])
     {
+        
+
         NSString *ids = weiBoEngine.userID;
         NSLog(@"ids=%@",ids);
         NSString *profile_image_url;
@@ -276,6 +283,7 @@
             }else{
                 [NSThread detachNewThreadSelector:@selector(imageResourceRequest:) toTarget:self withObject:profile_image_url];
             }
+            [self.weiboView removeFromSuperview];
         }
         
     }else{
@@ -412,6 +420,7 @@
 
 - (void)engine:(WBEngine *)engine requestDidSucceedWithResult:(id)result
 {
+    [self.weiboView removeFromSuperview];
     for (id subview in listUIView.subviews)
     {
         if ([[subview class] isSubclassOfClass: [PListUITabelView class]])

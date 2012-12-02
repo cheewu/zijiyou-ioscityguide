@@ -17,6 +17,7 @@
 #import "SubWayStationViewController.h"
 #import "SubWayHomeViewController.h"
 #import "PayMapViewController.h"
+#import "DescriptionJianJieViewController.h"
 @interface DescriptionViewController ()
 
 @end
@@ -55,14 +56,15 @@
     }
     
     NSString *title=[poiData objectForKey:@"name"];
+    textTitle= title;
     NSString *address=[poiData objectForKey:@"address"];
     NSString *opentime=[poiData objectForKey:@"opentime"];
     NSString *telephone=[poiData objectForKey:@"telephone"];
-    NSString *description=[poiData objectForKey:@"description"];
+    description=[poiData objectForKey:@"description"];
     NSString *category = [poiData objectForKey:@"category"];
     
     NSString *subway = [poiData objectForKey:@"subway"];
-    float offy=225;
+    float offy=230;
     float poiHeight= poiView.frame.size.height;
     if(![category isEqualToString:@"wikipedia"]){
          NSData *image = [poiData objectForKey:@"image"];
@@ -83,7 +85,7 @@
         
         UIImage *backsimage=[UIImage imageNamed:@"backsept"];
         UIImageView *sper=[[UIImageView alloc] initWithImage:backsimage];
-        [sper setFrame:CGRectMake(poiView.frame.origin.x, poiHeight+10, backsimage.size.width, backsimage.size.height)];
+        [sper setFrame:CGRectMake(poiView.frame.origin.x, poiHeight+15, backsimage.size.width, backsimage.size.height)];
         [scrollView addSubview:sper];
        // offy=225.0f;
     }else{
@@ -124,9 +126,6 @@
     [self.view addSubview: pctop];
 
     
-    
-    
-    
     UIImage * tabelbg= [UIImage imageNamed:@"tabelbag"];
     UIColor *textColor=[[UIColor alloc]initWithRed:99/255.0f green:92/255.0f blue:77/255.0f alpha:1.0f];
     //平铺
@@ -136,16 +135,23 @@
     NSString *poi_route=NSLocalizedStringFromTable(@"poi_route", @"InfoPlist",nil);
     NSString *poi_checkin=NSLocalizedStringFromTable(@"poi_checkin", @"InfoPlist",nil);
     NSString *poi_favourite=NSLocalizedStringFromTable(@"poi_favourite", @"InfoPlist",nil);
-   
-    DetailButtonUIView *dbtra = [[DetailButtonUIView alloc]initWithFrame:CGRectMake(sx, offy, 95, 40) imageName:@"gohere" text:poi_route];
+    NSString *poi_map=NSLocalizedStringFromTable(@"poi_map", @"InfoPlist",nil);
+    int offw=76;
+     int imgw=73;
+     int imgh=35;
+    DetailButtonUIView *ditumap = [[DetailButtonUIView alloc]initWithFrame:CGRectMake(sx, offy, imgw, imgh) imageName:@"ditu" text:poi_map];
+    [scrollView addSubview:ditumap];
+    sx+=offw;
+    
+    DetailButtonUIView *dbtra = [[DetailButtonUIView alloc]initWithFrame:CGRectMake(sx, offy, imgw, imgh) imageName:@"gohere" text:poi_route];
     [scrollView addSubview:dbtra];
-    sx+=103;
+    sx+=offw;
     
-    DetailButtonUIView *dbt = [[DetailButtonUIView alloc]initWithFrame:CGRectMake(sx, offy, 95, 40) imageName:@"checkin" text:poi_checkin];
+    DetailButtonUIView *dbt = [[DetailButtonUIView alloc]initWithFrame:CGRectMake(sx, offy, imgw, imgh) imageName:@"checkin" text:poi_checkin];
     [scrollView addSubview:dbt];
-    sx+=103;
+    sx+=offw;
     
-    DetailButtonUIView *dbsc = [[DetailButtonUIView alloc]initWithFrame:CGRectMake(sx, offy, 95, 40) imageName:@"favourite" text:poi_favourite];
+    DetailButtonUIView *dbsc = [[DetailButtonUIView alloc]initWithFrame:CGRectMake(sx, offy, imgw, imgh) imageName:@"favourite" text:poi_favourite];
     [scrollView addSubview:dbsc];
     //sx+=103;
     
@@ -155,7 +161,7 @@
     
     
     //offy+=30;
-    
+    [[ditumap button]addTarget:self action:@selector(clickMap) forControlEvents:UIControlEventTouchUpInside];
     [[dbtra button]addTarget:self action:@selector(showTransfer) forControlEvents:UIControlEventTouchUpInside];
     [[dbt button]addTarget:self action:@selector(clickCheck) forControlEvents:UIControlEventTouchUpInside];
     [[dbsc button]addTarget:self action:@selector(clickFave) forControlEvents:UIControlEventTouchUpInside];
@@ -165,13 +171,43 @@
     UIFont *font =[UIFont fontWithName:@"STHeitiSC-Medium" size:14];
     
     if(address!=nil&&![address isEqualToString:@""]){
-        NSString *poi_address=NSLocalizedStringFromTable(@"poi_address", @"InfoPlist",nil);
-        DetailButtonUIView *dbdt = [[DetailButtonUIView alloc]initWithFrame:CGRectMake(sx, offy, 300, 40) imageName:@"ditu" text:[[NSString alloc] initWithFormat:@"%@：%@",poi_address,address]];
-        [[dbdt button]addTarget:self action:@selector(clickMap) forControlEvents:UIControlEventTouchUpInside];
-        
-        [scrollView addSubview:dbdt];
-        offy+=50.0f;
+       // NSString *poi_address=NSLocalizedStringFromTable(@"poi_address", @"InfoPlist",nil);
+//        DetailButtonUIView *dbdt = [[DetailButtonUIView alloc]initWithFrame:CGRectMake(sx, offy, 300, 40) imageName:@"ditu" text:[[NSString alloc] initWithFormat:@"%@：%@",poi_address,address]];
+//        [[dbdt button]addTarget:self action:@selector(clickMap) forControlEvents:UIControlEventTouchUpInside];
+//        
+//        [scrollView addSubview:dbdt];
+       offy+=5;
 
+        UILabel *addressLabel=[[UILabel alloc]init];
+        [addressLabel setBackgroundColor:[UIColor clearColor]];
+        [addressLabel setFont:font];
+        addressLabel.textColor=textColor;
+        addressLabel.lineBreakMode = UILineBreakModeWordWrap;
+        addressLabel.numberOfLines = 0;
+        
+        CGSize size = CGSizeMake(220,2000);
+        CGSize labelsize = [address sizeWithFont:addressLabel.font constrainedToSize:size lineBreakMode:UILineBreakModeWordWrap];
+        [addressLabel setFrame:CGRectMake(100, offy,labelsize.width, labelsize.height)];
+        
+        addressLabel.text =  address;
+        //opentime telphone
+        UIImage *opentime= [UIImage imageNamed:@"addressmap"];
+        UIImageView *imaView=[[UIImageView alloc]initWithImage:opentime];
+        [imaView setFrame:CGRectMake(12, offy, opentime.size.width, opentime.size.height)];
+        
+        UILabel *opentimeStarLabel=[[UILabel alloc]initWithFrame:CGRectMake(32, offy, 100,labelsize.height)];
+        [opentimeStarLabel setBackgroundColor:[UIColor clearColor]];
+        opentimeStarLabel.text = @"地        址：  ";
+        [opentimeStarLabel setFont:addressLabel.font];
+        opentimeStarLabel.textColor=addressLabel.textColor;
+        [scrollView addSubview:opentimeStarLabel];
+        
+        [scrollView addSubview:imaView];
+        
+        [scrollView addSubview:addressLabel];
+        offy+=labelsize.height+6;
+        [scrollView addSubview:[self getUIImageView:CGRectMake(10, offy,290, 2)]];
+        offy+=15;
     }
     if(opentime!=nil&&![opentime isEqualToString:@""]){
        // [scrollView addSubview:[self getUIImageView:CGRectMake(15, offy,290, 2)]];
@@ -188,38 +224,55 @@
         [opentimeLabel setFrame:CGRectMake(100, offy,labelsize.width, labelsize.height)];
         
         opentimeLabel.text =  opentime;
-       
-        UILabel *opentimeStarLabel=[[UILabel alloc]initWithFrame:CGRectMake(25, offy, 100,labelsize.height)];
+       //opentime telphone
+        UIImage *opentime= [UIImage imageNamed:@"opentime"];
+        UIImageView *imaView=[[UIImageView alloc]initWithImage:opentime];
+        [imaView setFrame:CGRectMake(12, offy, opentime.size.width, opentime.size.height)];
+        
+        UILabel *opentimeStarLabel=[[UILabel alloc]initWithFrame:CGRectMake(32, offy, 100,labelsize.height)];
         [opentimeStarLabel setBackgroundColor:[UIColor clearColor]];
         opentimeStarLabel.text = @"开放时间：";
         [opentimeStarLabel setFont:opentimeLabel.font];
         opentimeStarLabel.textColor=opentimeLabel.textColor;
         [scrollView addSubview:opentimeStarLabel];
 
+         [scrollView addSubview:imaView];
+        
         [scrollView addSubview:opentimeLabel];
-        offy+=labelsize.height;
        
+        offy+=labelsize.height+5;
+        [scrollView addSubview:[self getUIImageView:CGRectMake(10, offy,290, 2)]];
     }
     if(telephone!=nil&&![telephone isEqualToString:@""]){
+        offy+=10;
     //    [scrollView addSubview:[self getUIImageView:CGRectMake(15, offy,290, 2)]];
-        UILabel *telephoneLabel=[[UILabel alloc]initWithFrame:CGRectMake(25, offy, 280,30)];
+        UILabel *telephoneLabel=[[UILabel alloc]initWithFrame:CGRectMake(32, offy, 280,30)];
         [telephoneLabel setBackgroundColor:[UIColor clearColor]];
         telephoneLabel.text =   [[NSString alloc]initWithFormat:@"电        话：  %@",telephone];
         [telephoneLabel setFont:font];
         telephoneLabel.textColor=textColor;
+        
+        UIImage *telphone= [UIImage imageNamed:@"telphone"];
+        UIImageView *imaView=[[UIImageView alloc]initWithImage:telphone];
+        [imaView setFrame:CGRectMake(12, offy+5, telphone.size.width, telphone.size.height)];
+
+         [scrollView addSubview:imaView];
         [scrollView addSubview:telephoneLabel];
-        offy+=telephoneLabel.frame.size.height+5;
+       
+        offy+=telephoneLabel.frame.size.height;
+         [scrollView addSubview:[self getUIImageView:CGRectMake(10, offy,290, 2)]];
+        offy+=5;
     }
    
     if(subway!=nil&&![subway isEqualToString:@""]){//附近交通
         offy+=5;
-        [scrollView addSubview:[self getSeparatorUIImageView:CGRectMake(-5,offy, 350, 8)]];
+      //  [scrollView addSubview:[self getSeparatorUIImageView:CGRectMake(-5,offy, 350, 8)]];
         offy+=2;
         NSString *poi_traffic=NSLocalizedStringFromTable(@"poi_traffic", @"InfoPlist",nil);
-        UILabel *jiaotongLabel=[[UILabel alloc]initWithFrame:CGRectMake(25, offy, 280, 40)];
+        UILabel *jiaotongLabel=[[UILabel alloc]initWithFrame:CGRectMake(11, offy, 280, 40)];
         [jiaotongLabel setBackgroundColor:[UIColor clearColor]];
         jiaotongLabel.text = poi_traffic;
-        [jiaotongLabel setFont:[UIFont fontWithName:@"STHeitiSC-Medium" size:18]];
+        [jiaotongLabel setFont:[UIFont fontWithName:@"STHeitiSC-Medium" size:15]];
         jiaotongLabel.textColor=textColor;
         [scrollView addSubview:jiaotongLabel];
         offy+=jiaotongLabel.frame.size.height;
@@ -303,7 +356,7 @@
             }
             [poimogoidsDic setObject:trlineArray forKey:poimongoid];///一个poi 对应的多个线路
             
-            StationView *stationV = [[StationView alloc]initWithFrame:CGRectMake(15, offy, 290,50) transferStations: trlineArray poiData:dic];
+            StationView *stationV = [[StationView alloc]initWithFrame:CGRectMake(11, offy, 290,50) transferStations: trlineArray poiData:dic];
             UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(subStationClick:)];
             [stationV addGestureRecognizer:gestureRecognizer];
             [stationV setPoiData:dic];
@@ -330,19 +383,19 @@
 //            [poiSubWayDatas setObject:_poi forKey:[_poi objectForKey:@"poimongoid"]];
 //        }
 
-        offy+=10;
+       // offy+=10;
     }
 
-     offy+=5;
-    [scrollView addSubview:[self getSeparatorUIImageView:CGRectMake(-5,offy, 350, 8)]];
+     //offy+=5;
+  //  [scrollView addSubview:[self getSeparatorUIImageView:CGRectMake(-5,offy, 350, 8)]];
 //游记
     NSString *poi_article=NSLocalizedStringFromTable(@"poi_article", @"InfoPlist",nil);
     if([category isEqualToString:@"attraction"]){
         
-        UILabel *youjiLabel=[[UILabel alloc]initWithFrame:CGRectMake(25, offy, 280, 50)];
+        UILabel *youjiLabel=[[UILabel alloc]initWithFrame:CGRectMake(11, offy, 280, 50)];
         [youjiLabel setBackgroundColor:[UIColor clearColor]];
         youjiLabel.text =  poi_article;
-        [youjiLabel setFont:[UIFont fontWithName:@"STHeitiSC-Medium" size:18]];
+        [youjiLabel setFont:[UIFont fontWithName:@"STHeitiSC-Medium" size:15]];
         youjiLabel.textColor=textColor;
         [scrollView addSubview:youjiLabel];
         offy+=40;
@@ -378,7 +431,7 @@
         [contentLabel setFont:[UIFont fontWithName:@"STHeitiSC-Medium" size:16]];
         contentLabel.textColor=textColor;
         [youjiView addSubview:contentLabel];
-        offy+=90;
+        offy+=75;
         
         UIButton *youjiButton=[UIButton buttonWithType:UIButtonTypeCustom];
         [youjiButton setFrame:CGRectMake(0, 0, youjiView.frame.size.width, youjiView.frame.size.height)];
@@ -392,47 +445,98 @@
     
     
    
-    [scrollView addSubview:[self getSeparatorUIImageView:CGRectMake(-5,offy, 350, 8)]];
+   // [scrollView addSubview:[self getSeparatorUIImageView:CGRectMake(-5,offy, 350, 8)]];
     
     
     if(description!=nil&&![description isEqualToString:@""]){//简介
       //  offy+=10;
         NSString *poi_introduction=NSLocalizedStringFromTable(@"poi_introduction", @"InfoPlist",nil);
-        UILabel *jianjieLabel=[[UILabel alloc]initWithFrame:CGRectMake(25, offy, 280, 50)];
+        UILabel *jianjieLabel=[[UILabel alloc]initWithFrame:CGRectMake(11, offy, 280, 50)];
         [jianjieLabel setBackgroundColor:[UIColor clearColor]];
         jianjieLabel.text = poi_introduction;
-        [jianjieLabel setFont:[UIFont fontWithName:@"STHeitiSC-Medium" size:20]];
+        [jianjieLabel setFont:[UIFont fontWithName:@"STHeitiSC-Medium" size:15]];
         jianjieLabel.textColor=textColor;
         [scrollView addSubview:jianjieLabel];
         offy+=40;
+        NSData* jsonData = [description dataUsingEncoding:NSUTF8StringEncoding];
+        NSMutableDictionary* jsonDescription =[NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:nil];
+        NSMutableString *general= [jsonDescription objectForKey:@"General"];
+        UIView *textView = [[UIView alloc]initWithFrame:CGRectMake(12, offy, 297, 125)];
+        textView.layer.borderWidth  = 1;
+        textView.layer.borderColor= [[[UIColor alloc]initWithRed:191/255.0f green:191/255.0f blue:191/255.0f alpha:255] CGColor];
+        textView.layer.shadowColor = [UIColor blackColor].CGColor;
+        textView.layer.shadowOffset = CGSizeMake(2,2);
+        textView.layer.shadowOpacity = 0.2;
+        textView.layer.shadowRadius = 3.0;
+        textView.backgroundColor = [UIColor whiteColor];
         
-        CGSize size = CGSizeMake(320,2000);
-        CGSize labelsize = [description sizeWithFont:jianjieLabel.font constrainedToSize:size lineBreakMode:UILineBreakModeWordWrap];
+        UILabel *jianjieTextView=[[UILabel alloc] initWithFrame:CGRectMake(8, 0, 285, 100)];
+        // 设置UILabel文字
+        jianjieTextView.text =general;
+        // 设置Text为粗体
+        jianjieTextView.font = [UIFont fontWithName:@"Arial" size:14.0];//设置字体名字和字体大小
+        //        jianjieTextView.textColor = [UIColor redColor];
+        //        // 设置背景色
+        //        jianjieTextView.backgroundColor = [UIColor clearColor];
+        // 文字换行
+        jianjieTextView.numberOfLines = 5;
+        UILabel *moreLabel=[[UILabel alloc] initWithFrame:CGRectMake(200, 100, 80, 20)];
+        UIButton *moreButton=[UIButton buttonWithType:UIButtonTypeCustom];
+        [moreButton setFrame:CGRectMake(200, 100, 80, 20)];
+        moreLabel.text =@"查看更多>>";
+        moreLabel.font = [UIFont fontWithName:@"Arial" size:14.0];//设置字体名字和字体大小
+        [moreButton addTarget:self action:@selector(moreClick) forControlEvents:UIControlEventTouchUpInside];
+        [textView addSubview:moreLabel];
+        [textView addSubview:moreButton];
+        [textView addSubview:jianjieTextView];
+        
+        [scrollView addSubview:textView];
+        offy+=textView.frame.size.height+20;
+        
+      //  CGSize size = CGSizeMake(320,2000);
+      //  CGSize labelsize = [description sizeWithFont:jianjieLabel.font constrainedToSize:size lineBreakMode:UILineBreakModeWordWrap];
 
-        UIWebView *dwebView=[[UIWebView alloc]initWithFrame:CGRectMake(15, offy, 290, labelsize.height+5)];
-        dwebView.backgroundColor = [UIColor whiteColor];  
-        dwebView.opaque = NO;
-        //这行能在模拟器下明下加快 loadHTMLString 后显示的速度，其实在真机上没有下句也感觉不到加载过程
-        dwebView.dataDetectorTypes = UIDataDetectorTypeNone;
-        [dwebView setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
-         [dwebView setScalesPageToFit:NO];  //大小自适应
-        //NSLog(@"text===%@",text);
-        NSString *path=[[NSString alloc]initWithFormat:@"file://%@" ,[[NSBundle mainBundle] bundlePath] ];
-        description = [description stringByReplacingOccurrencesOfString:@"@@URL@@" withString:path];
-        
-        [dwebView loadHTMLString:description baseURL:nil]; //在 WebView 中显示本地的字符串
-//        for (id subview in dwebView.subviews){  //webView是要被禁止滚动和回弹的UIWebView
-//            if ([[subview class] isSubclassOfClass: [UIScrollView class]])
-//                ((UIScrollView *)subview).scrollEnabled = NO;
+//        UIWebView *dwebView=[[UIWebView alloc]initWithFrame:CGRectMake(15, offy, 290, labelsize.height+5)];
+//        dwebView.backgroundColor = [UIColor whiteColor];  
+//        dwebView.opaque = NO;
+//        //这行能在模拟器下明下加快 loadHTMLString 后显示的速度，其实在真机上没有下句也感觉不到加载过程
+//        dwebView.dataDetectorTypes = UIDataDetectorTypeNone;
+//        [dwebView setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
+//         [dwebView setScalesPageToFit:NO];  //大小自适应
+//        //NSLog(@"text===%@",text);
+//        NSString *path=[[NSString alloc]initWithFormat:@"file://%@" ,[[NSBundle mainBundle] bundlePath] ];
+//        description = [description stringByReplacingOccurrencesOfString:@"@@URL@@" withString:path];
+//        
+//        [dwebView loadHTMLString:description baseURL:nil]; //在 WebView 中显示本地的字符串
+////        for (id subview in dwebView.subviews){  //webView是要被禁止滚动和回弹的UIWebView
+////            if ([[subview class] isSubclassOfClass: [UIScrollView class]])
+////                ((UIScrollView *)subview).scrollEnabled = NO;
 //        }
         
-        [scrollView addSubview:dwebView];
+//        [scrollView addSubview:dwebView];
+       
+
+//        UITextView *jianjieTextView=[[UITextView alloc] initWithFrame:CGRectMake(15, offy, 290, 100)];
+//        jianjieTextView.font = [UIFont fontWithName:@"Arial" size:14.0];//设置字体名字和字体大小
+//        jianjieTextView.text=general;
+//        jianjieTextView.scrollEnabled = NO;//是否可以拖动
+//        jianjieTextView.autoresizingMask = UIViewAutoresizingFlexibleHeight;//自适应高度
+//
         
-        offy+=labelsize.height+20;
     }
      [scrollView setContentSize:CGSizeMake(320,offy)];
-     
 }
+
+-(void)moreClick{
+    UIStoryboard *sb = [ViewController getStoryboard];
+    DescriptionJianJieViewController *rb = [sb instantiateViewControllerWithIdentifier:@"DescriptionJianjie"];
+    [rb setTextDate:description];
+    [rb setTextTitle:textTitle];
+     rb.modalTransitionStyle =UIModalTransitionStyleCrossDissolve;
+    [self.navigationController pushViewController:rb animated:YES];
+    [self presentModalViewController:rb animated:YES];
+}
+
 -(void)youjiShow{
     UIStoryboard *sb = [ViewController getStoryboard];
     NSString *poi_article=NSLocalizedStringFromTable(@"poi_article", @"InfoPlist",nil);
@@ -455,10 +559,15 @@
 
 -(UIImageView *) getUIImageView:(CGRect)rect{
     UIImageView *iView =[[UIImageView alloc]initWithFrame:rect];
-    UIImage * xuxianbg= [UIImage imageNamed:@"xuxian"]; 
-    //平铺
-    iView.backgroundColor=[UIColor colorWithPatternImage:xuxianbg];
-    return iView;
+//    UIImage * xuxianbg= [UIImage imageNamed:@"xuxian"]; 
+//    //平铺
+//    iView.backgroundColor=[UIColor colorWithPatternImage:xuxianbg];
+    
+    UIImage *xuxianbg= [[UIImage imageNamed:@"line"] stretchableImageWithLeftCapWidth:1 topCapHeight:0];
+    [iView setImage:xuxianbg];
+
+    
+      return iView;
 }
 -(void)subStationClick:(UITapGestureRecognizer *)sender{
     StationView *stationV =[sender view];

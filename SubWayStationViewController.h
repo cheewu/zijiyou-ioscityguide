@@ -10,6 +10,8 @@
 
 @interface SubWayStationViewController : UIViewController<RMMapViewDelegate>{
     RMMapView *mapView;
+    NSString *description;
+    NSString *textTitle;
 }
 @property (nonatomic,retain)  NSString *poimongoid;//页面跳转过来的参数
 @property (nonatomic ,retain) NSDictionary *poiData;//如果没有数据就查poimongoid

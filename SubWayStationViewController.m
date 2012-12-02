@@ -10,7 +10,7 @@
 #import "ListViewBox.h"
 #import "SubWayDetailViewController.h"
 #import "SubWayHomeViewController.h"
-
+#import "DescriptionJianJieViewController.h"
 @interface SubWayStationViewController ()
 
 @end
@@ -70,8 +70,8 @@
 
     
     NSString *title=[poiData objectForKey:@"name"];
-   
-    NSString *description=[poiData objectForKey:@"description"];
+    textTitle= title;
+    description=[poiData objectForKey:@"description"];
 
     CLLocationCoordinate2D coord;
     coord.latitude =  [[poiData objectForKey:@"latitude"] doubleValue];
@@ -178,25 +178,61 @@
         jianjieLabel.textColor=textColor;
         [scrollView addSubview:jianjieLabel];
         offy+=40;
+//        
+//        CGSize size = CGSizeMake(320,2000);
+//        CGSize labelsize = [description sizeWithFont:jianjieLabel.font constrainedToSize:size lineBreakMode:UILineBreakModeWordWrap];
+//        
+//        UIWebView *dwebView=[[UIWebView alloc]initWithFrame:CGRectMake(15, offy, 290, labelsize.height+5)];
+//        dwebView.backgroundColor = [UIColor whiteColor];
+//        dwebView.opaque = NO;
+//        //这行能在模拟器下明下加快 loadHTMLString 后显示的速度，其实在真机上没有下句也感觉不到加载过程
+//        dwebView.dataDetectorTypes = UIDataDetectorTypeNone;
+//        [dwebView setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
+//        [dwebView setScalesPageToFit:NO];  //大小自适应
+//        //NSLog(@"text===%@",text);
+//        NSString *path=[[NSString alloc]initWithFormat:@"file://%@" ,[[NSBundle mainBundle] bundlePath] ];
+//        description = [description stringByReplacingOccurrencesOfString:@"@@URL@@" withString:path];
+//        
+//        [dwebView loadHTMLString:description baseURL:nil]; //在 WebView 中显示本地的字符
+//        [scrollView addSubview:dwebView];
+//        
+//        offy+=labelsize.height+20;
+//        
         
-        CGSize size = CGSizeMake(320,2000);
-        CGSize labelsize = [description sizeWithFont:jianjieLabel.font constrainedToSize:size lineBreakMode:UILineBreakModeWordWrap];
+        NSData* jsonData = [description dataUsingEncoding:NSUTF8StringEncoding];
+        NSMutableDictionary* jsonDescription =[NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:nil];
+        NSMutableString *general= [jsonDescription objectForKey:@"General"];
+        UIView *textView = [[UIView alloc]initWithFrame:CGRectMake(12, offy, 297, 125)];
+        textView.layer.borderWidth  = 1;
+        textView.layer.borderColor= [[[UIColor alloc]initWithRed:191/255.0f green:191/255.0f blue:191/255.0f alpha:255] CGColor];
+        textView.layer.shadowColor = [UIColor blackColor].CGColor;
+        textView.layer.shadowOffset = CGSizeMake(2,2);
+        textView.layer.shadowOpacity = 0.2;
+        textView.layer.shadowRadius = 3.0;
+        textView.backgroundColor = [UIColor whiteColor];
         
-        UIWebView *dwebView=[[UIWebView alloc]initWithFrame:CGRectMake(15, offy, 290, labelsize.height+5)];
-        dwebView.backgroundColor = [UIColor whiteColor];
-        dwebView.opaque = NO;
-        //这行能在模拟器下明下加快 loadHTMLString 后显示的速度，其实在真机上没有下句也感觉不到加载过程
-        dwebView.dataDetectorTypes = UIDataDetectorTypeNone;
-        [dwebView setAutoresizingMask:UIViewAutoresizingFlexibleHeight];
-        [dwebView setScalesPageToFit:NO];  //大小自适应
-        //NSLog(@"text===%@",text);
-        NSString *path=[[NSString alloc]initWithFormat:@"file://%@" ,[[NSBundle mainBundle] bundlePath] ];
-        description = [description stringByReplacingOccurrencesOfString:@"@@URL@@" withString:path];
+        UILabel *jianjieTextView=[[UILabel alloc] initWithFrame:CGRectMake(8, 0, 285, 100)];
+        // 设置UILabel文字
+        jianjieTextView.text =general;
+        // 设置Text为粗体
+        jianjieTextView.font = [UIFont fontWithName:@"Arial" size:14.0];//设置字体名字和字体大小
+        //        jianjieTextView.textColor = [UIColor redColor];
+        //        // 设置背景色
+        //        jianjieTextView.backgroundColor = [UIColor clearColor];
+        // 文字换行
+        jianjieTextView.numberOfLines = 5;
+        UILabel *moreLabel=[[UILabel alloc] initWithFrame:CGRectMake(200, 100, 80, 20)];
+        UIButton *moreButton=[UIButton buttonWithType:UIButtonTypeCustom];
+        [moreButton setFrame:CGRectMake(200, 100, 80, 20)];
+        moreLabel.text =@"查看更多>>";
+        moreLabel.font = [UIFont fontWithName:@"Arial" size:14.0];//设置字体名字和字体大小
+        [moreButton addTarget:self action:@selector(moreClick) forControlEvents:UIControlEventTouchUpInside];
+        [textView addSubview:moreLabel];
+        [textView addSubview:moreButton];
+        [textView addSubview:jianjieTextView];
         
-        [dwebView loadHTMLString:description baseURL:nil]; //在 WebView 中显示本地的字符
-        [scrollView addSubview:dwebView];
-        
-        offy+=labelsize.height+20;
+        [scrollView addSubview:textView];
+        offy+=textView.frame.size.height+20;
     }
 
     [scrollView addSubview: sulabel];
@@ -206,6 +242,15 @@
     [db close];
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+}
+-(void)moreClick{
+    UIStoryboard *sb = [ViewController getStoryboard];
+    DescriptionJianJieViewController *rb = [sb instantiateViewControllerWithIdentifier:@"DescriptionJianjie"];
+    [rb setTextDate:description];
+    [rb setTextTitle:textTitle];
+    rb.modalTransitionStyle =UIModalTransitionStyleCrossDissolve;
+    [self.navigationController pushViewController:rb animated:YES];
+    [self presentModalViewController:rb animated:YES];
 }
 - (void)viewDidUnload
 {
@@ -227,14 +272,18 @@
     // Dispose of any resources that can be recreated.
 }
 -(void)clickBack{
-    NSLog(@"SubWayStationViewController  dismissModalViewControllerAnimated");
+  //  NSLog(@"SubWayStationViewController  dismissModalViewControllerAnimated");
     [self dismissModalViewControllerAnimated:YES];
     if(backIdentifier!=nil){
+        RXCustomTabBar *rb =(RXCustomTabBar *)[self presentingViewController];
         if([backIdentifier isEqualToString:@"MapBoxViewController"]){
-            RXCustomTabBar *rb =(RXCustomTabBar *)[self presentingViewController];
             [rb setSelectedIndex:1];
             [rb.btn1 setSelected:NO];
             [rb.btn2 setSelected:YES];
+        }else if([backIdentifier isEqualToString:@"SubWayStation"]){
+            [rb setSelectedIndex:3];
+            [rb.btn1 setSelected:NO];
+            [rb.btn4 setSelected:YES];
         }
     }
 }

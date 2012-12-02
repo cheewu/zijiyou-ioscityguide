@@ -141,7 +141,7 @@
         //初始化Documents路径
         NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
         NSString *downloadPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/iap.zip"];
-        NSString *tempPath = [path stringByAppendingPathComponent:@"osm_hkmbtiles.temp"];
+        NSString *tempPath = [path stringByAppendingPathComponent:@"osm_mbtiles.temp"];
         NSURL *url = [NSURL URLWithString:offline_url];
         
         [tdNetworkQueue addDownloadRequestInQueue:url withTempPath:tempPath withDownloadPath:downloadPath withView:self];
@@ -181,8 +181,8 @@
                 if(isReTry){
                     [MapDownViewController unzipDownDB:NO];
                 }else{
-                    NSString *tempPath = [path stringByAppendingPathComponent:@"osm_hkmbtiles.temp"];
-                    NSString *tempPath1 = [path stringByAppendingPathComponent:@"osm_hk.mbtiles"];
+                    NSString *tempPath = [path stringByAppendingPathComponent:@"osm_mbtiles.temp"];
+                    NSString *tempPath1 = [path stringByAppendingPathComponent:@"osm.mbtiles"];
                     NSString *tempPath2 = [path stringByAppendingPathComponent:@"transfer.db"];
                     [fileManager removeItemAtPath:tempPath1 error:nil];
                     [fileManager removeItemAtPath:tempPath2 error:nil];

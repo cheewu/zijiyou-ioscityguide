@@ -27,6 +27,7 @@ category_airport="机场";
 category_wiki="维基";
 //3.POI详情页（热门地点-->中环）
 poi_route="到这里";
+poi_map="地图";
 poi_checkin="签到";
 poi_favourite="收藏";
 poi_faourite_success="签到成功";
@@ -66,3 +67,4 @@ my_favourite="我的收藏";
 map_center="114.15,22.28";
 map_level="15";
 map_max_level="17";
+

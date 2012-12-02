@@ -36,7 +36,7 @@
     
     id<WBAuthorizeWebViewDelegate> delegate;
 }
-
+@property (nonatomic, assign) UIViewController *rootViewController;
 @property (nonatomic, assign) id<WBAuthorizeWebViewDelegate> delegate;
 
 - (void)loadRequestWithURL:(NSURL *)url;

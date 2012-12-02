@@ -44,6 +44,15 @@ NSArray *navitons;
     int bheight=45;
     int offh =5;
     
+    UIImageView *homeTileView=[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"hometitle"]];
+    
+    [homeTileView setFrame:CGRectMake(10, 30, homeTileView.image.size.width, homeTileView.image.size.height)];
+    
+    
+    [self.view addSubview:homeTileView];
+    
+   // hometitle
+    
     pcb1 = [PCustButtonController alloc];
     pcb2= [PCustButtonController alloc];
     pcb3= [PCustButtonController alloc];
@@ -71,14 +80,14 @@ NSArray *navitons;
         starTop+=bheight+offh;
         //
         [homeView addSubview:pcb];
-        [super viewDidLoad];
+        
     }
     
     [pcb1.button addTarget:self action:@selector(pcb1buttonClicked) forControlEvents:UIControlEventTouchUpInside];
     [pcb2.button addTarget:self action:@selector(pcb2buttonClicked) forControlEvents:UIControlEventTouchUpInside];
     [pcb3.button addTarget:self action:@selector(pcb3buttonClicked) forControlEvents:UIControlEventTouchUpInside];
     [pcb4.button addTarget:self action:@selector(pcb4buttonClicked) forControlEvents:UIControlEventTouchUpInside];
-    
+    [super viewDidLoad];
 
 }
 - (void)pcb1buttonClicked{
@@ -414,7 +423,7 @@ NSArray *navitons;
     if ([[NSFileManager defaultManager] fileExistsAtPath:downloadPath]) {//在线地图
         
         NSURL *documentsDictoryURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-        zstoreURL = [documentsDictoryURL URLByAppendingPathComponent:@"osm_hk.mbtiles"];
+        zstoreURL = [documentsDictoryURL URLByAppendingPathComponent:@"osm.mbtiles"];
     }else{//离线地图
     }
     RMMapView *mapView;

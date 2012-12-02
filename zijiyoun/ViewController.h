@@ -6,7 +6,7 @@
 //  Copyright (c) 2012年 piao chunzhi. All rights reserved.
 //
 #define isRetina ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
-#define downMapFileName @"Documents/osm_hk.mbtiles"
+#define downMapFileName @"Documents/osm.mbtiles"
 
 #import <UIKit/UIKit.h>
 #import "PCustButtonController.h"

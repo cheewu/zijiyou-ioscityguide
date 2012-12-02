@@ -45,12 +45,12 @@
     UIColor *textColor=[[UIColor alloc]initWithRed:95/255.0f green:87/255.0f blue:73/255.0f alpha:1.0f];
     [label setTextColor:textColor];
     [self.view setBackgroundColor:backColor];
-    [imageView setFrame:CGRectMake(10, 5, im.size.width-10, im.size.width-10)];
+    [imageView setFrame:CGRectMake(10, im.size.height/2, im.size.width, im.size.height)];
     
     CGSize size = CGSizeMake(320,2000);
     CGSize labelsize = [title sizeWithFont:label.font constrainedToSize:size lineBreakMode:UILineBreakModeWordWrap];
-    [label setFrame:CGRectMake(40, 0, labelsize.width+15, 35)];
-    [poiDetail setFrame:CGRectMake(15, 60, labelsize.width+im.size.width+15, 35)];
+    [label setFrame:CGRectMake(40, 0, labelsize.width+im.size.width+20, 35)];
+    [poiDetail setFrame:CGRectMake(15, 60, labelsize.width+im.size.width+30, 35)];
     
     [poiDetail addSubview:imageView];
     [poiDetail addSubview:label];

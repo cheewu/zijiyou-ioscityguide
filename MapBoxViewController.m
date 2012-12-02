@@ -72,7 +72,7 @@
     if ([[NSFileManager defaultManager] fileExistsAtPath:downloadPath]&&isPurchased) {//如果有离线文件
         
         NSURL *documentsDictoryURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-        storeURL = [documentsDictoryURL URLByAppendingPathComponent:@"osm_hk.mbtiles"];
+        storeURL = [documentsDictoryURL URLByAppendingPathComponent:@"osm.mbtiles"];
         
         mapView = [[MyMapBoxView alloc] initWithFrame:CGRectMake(mainView.frame.origin.x, mainView.frame.origin.y+44, mainView.frame.size.width, mainView.frame.size.height) url:storeURL zoom:mapzoom];
         mapView.delegate =self;

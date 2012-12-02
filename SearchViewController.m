@@ -246,6 +246,7 @@
     NSString *poimongoid = [poiData objectForKey:@"poimongoid"];
     if([category isEqualToString:@"subway"]){//如果是地铁
         rb = [sb instantiateViewControllerWithIdentifier:@"SubWayStation"];
+          ((SubWayStationViewController *)rb).backIdentifier=@"SubWayStation";
         [((SubWayStationViewController *)rb) setPoimongoid:poimongoid];
         //[((SubWayStationViewController *)rb) setPoiData:poiData];
        // [((SubWayStationViewController *)rb) setIdSubDirs:nil];

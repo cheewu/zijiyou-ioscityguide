@@ -38,6 +38,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *userName;
 @property (nonatomic,retain) NSMutableDictionary *poiData;
 @property (nonatomic, retain) WBEngine *weiBoEngine;
+@property (nonatomic, retain) UIView *weiboView;
 -(void)selectButtonCheckIn;
 -(void)selectButtonFav;
 -(void)checkLogIn;

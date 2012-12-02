@@ -12,6 +12,8 @@
 @interface DescriptionViewController : UIViewController<RMMapViewDelegate>{
     InAppPurchaseManager *iap;
      RMMapView *mapView;
+     NSString *description;
+    NSString *textTitle;
 }
 @property (nonatomic,retain)  NSString *poimongoid;//页面跳转过来的参数
 @property (nonatomic,retain)  NSMutableDictionary *poiData;//poi 数据如果没有就根据poimongoid 查询

@@ -22,13 +22,19 @@
         
         NSLog(@"text.length=%d",text.length);
         if(text.length<10){
-            [label setFont:[UIFont fontWithName:@"Helvetica" size:17]];
-        }else{
             [label setFont:[UIFont fontWithName:@"Helvetica" size:14]];
+        }else{
+            [label setFont:[UIFont fontWithName:@"Helvetica" size:12]];
         }
         
-        [image setFrame:CGRectMake(8,  (frame.size.height-25)/2, 25, 25)];
-        [label setFrame:CGRectMake(im.size.width, 0,frame.size.width, frame.size.height)];
+        [image setFrame:CGRectMake(8,  (frame.size.height-im.size.height)/2, im.size.width, im.size.height)];
+        
+        int imtoff=15;
+        if(text.length>2){
+            imtoff=10;
+        }
+        
+        [label setFrame:CGRectMake(im.size.width+imtoff, 0,frame.size.width, frame.size.height)];
         [label setBackgroundColor:[UIColor clearColor]];
        
         label.textColor=[[UIColor alloc]initWithRed:99/255.0f green:92/255.0f blue:77/255.0f alpha:1.0f];

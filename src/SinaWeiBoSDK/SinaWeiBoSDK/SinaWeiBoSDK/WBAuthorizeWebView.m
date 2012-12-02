@@ -16,6 +16,7 @@
 //
 
 #import "WBAuthorizeWebView.h"
+#import "MyAccountViewController.h"
 #import <QuartzCore/QuartzCore.h> 
 
 @interface WBAuthorizeWebView (Private)
@@ -36,7 +37,7 @@
 @end
 
 @implementation WBAuthorizeWebView
-
+@synthesize rootViewController;
 @synthesize delegate;
 
 #pragma mark - WBAuthorizeWebView Life Circle
@@ -71,6 +72,7 @@
         
         [panelView addSubview:containerView];
         
+        //[webView setScalesPageToFit:NO];
 //        UIImageView *del = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"delete@2x.png"]];
 //        [del setFrame:CGRectMake(panelView.frame.size.width-90, panelView.frame.origin.y+8, 20, 20)];
 //        UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hiddeView)];
@@ -115,6 +117,7 @@
 
 - (void)sizeToFitOrientation:(UIInterfaceOrientation)orientation
 {
+    
     [self setTransform:CGAffineTransformIdentity];
     
     if (UIInterfaceOrientationIsLandscape(orientation))
@@ -127,11 +130,13 @@
     }
     else
     {
-        [self setFrame:CGRectMake(0, 0, 320, 480)];
-        [panelView setFrame:CGRectMake(10, 30, 300, 440)];
-        [containerView setFrame:CGRectMake(10, 10, 280, 420)];
-        [webView setFrame:CGRectMake(0, 0, 280, 420)];
-        [indicatorView setCenter:CGPointMake(160, 240)];
+        int h= 420;
+        int w=350;
+        [self setFrame:CGRectMake(0, 0, w, h)];
+        [panelView setFrame:CGRectMake(10, -10, w-20, h-40)];
+        [containerView setFrame:CGRectMake(10, 10, w-40, h-60)];
+        [webView setFrame:CGRectMake(0, 0, w-40, h-60)];
+        [indicatorView setCenter:CGPointMake(160, h/2)];
     }
     
     [self setCenter:CGPointMake(160, 240)];
@@ -250,12 +255,15 @@
 {
     [self sizeToFitOrientation:[self currentOrientation]];
     
-    UIWindow *window = [UIApplication sharedApplication].keyWindow;
-	if (!window)
-    {
-		window = [[UIApplication sharedApplication].windows objectAtIndex:0];
-	}
-  	[window addSubview:self];
+//    UIWindow *window = [UIApplication sharedApplication].keyWindow;
+//	if (!window)
+//    {
+//		window = [[UIApplication sharedApplication].windows objectAtIndex:0];
+//	}
+//    
+    
+    
+  	[((MyAccountViewController *)self.rootViewController).weiboView addSubview:self];
     
     if (animated)
     {

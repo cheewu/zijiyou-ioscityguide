@@ -130,6 +130,7 @@
     
     webView = [[WBAuthorizeWebView alloc] init];
     [webView setDelegate:self];
+    [webView setRootViewController:self.rootViewController];
     [webView loadRequestWithURL:[NSURL URLWithString:urlString]];
     [webView show:YES];
    // [webView release];
