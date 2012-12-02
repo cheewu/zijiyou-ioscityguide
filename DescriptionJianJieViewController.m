@@ -15,6 +15,9 @@
 @implementation DescriptionJianJieViewController
 @synthesize textDate;
 @synthesize textTitle;
+@synthesize tableView = _tableView;
+@synthesize headViewArray;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -32,25 +35,58 @@
     [self.view addSubview: pctop];
     [pctop.button addTarget:self action:@selector(clickBack) forControlEvents:UIControlEventTouchUpInside];
     
+    _tableView = [[UITableView alloc]initWithFrame:CGRectMake(-10, 0,340,460) style:UITableViewStyleGrouped];
+    _tableView.delegate = self;
+    _tableView.dataSource = self;
+    _tableView.separatorColor = [UIColor clearColor];
+    _tableView.backgroundColor = [UIColor clearColor];
+    _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [self.view addSubview:_tableView];
+
+    
+    
+    
+    
     NSData *jsonData = [textDate dataUsingEncoding:NSUTF8StringEncoding];
     NSArray *dataArray =[NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:nil];
-    
+  //  NSLog(textDate);
     int offy=60;
     
     UIScrollView *scrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(0, offy, 320, 500)];
-    for (NSDictionary *dataDictionary in dataArray) {
-        if([dataDictionary isKindOfClass:[NSDictionary class]]){
-            for (NSString *valueKey in [dataDictionary allKeys]) {
-                if(valueKey!=nil && [valueKey isEqualToString:@"General"]){
-                    NSString *valueString = [dataDictionary objectForKey:valueKey];
-                    UILabel *generallabel =[self getUILabel:valueString offy:0];
+    for (id dataValue in dataArray) {//所有种类
+      //  NSLog(dataValue);
+        if([dataValue isKindOfClass:[NSDictionary class]]){//每条数据 字典
+            for (NSString *valueKey in [dataValue allKeys]) {
+                id valuedata = [dataValue objectForKey:valueKey];
+                if([valuedata isKindOfClass:[NSString class]] && [valueKey isEqualToString:@"General"]){//只含一个
+                    UILabel *generallabel =[self getUILabel:valuedata offy:0];
                     [scrollView addSubview:generallabel];
                     offy+=generallabel.frame.size.height;
-                }else{
-                    NSLog(valueKey);
+                }else if([valuedata isKindOfClass:[NSArray class]]){//包含多个
+                    NSLog(@"type---------%@",valueKey);//所有分类的名字
+                    
+                    NSMutableString *descString=[[NSMutableString alloc]init];
+                    for (id descDictionary in valuedata) {
+                        for (NSString *vKey in [descDictionary allKeys]) {
+                            [descString appendFormat:@"%@:%@\n",vKey,descDictionary[vKey]];
+                        }
+                    }
+                    NSLog(descString);
                 }
+//                    for (NSDictionary *descDictionary in valuedata) {
+//                            for (NSString *vKey in [dataValue allKeys]) {
+//                                NSLog(vKey);
+//                                NSLog([dataValue objectForKey:vKey]);
+//                            }
+//                    }
+//                }
             }
         }
+//        else if([dataValue isKindOfClass:[NSArray class]]){
+//            for (id dataValue in dataArray) {
+//                NSLog(dataValue);
+//            }
+//        }
        
         
         
@@ -139,6 +175,124 @@
 }
 -(void)clickBack{
     [self dismissModalViewControllerAnimated:YES];
+}
+
+
+#pragma mark - TableViewdelegate&&TableViewdataSource
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    return nil;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    HeadView* headView = [self.headViewArray objectAtIndex:indexPath.section];
+    
+    return headView.open?45:0;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 45;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
+    return 0.1;
+}
+
+
+- (UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    return [self.headViewArray objectAtIndex:section];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    HeadView* headView = [self.headViewArray objectAtIndex:section];
+    return headView.open?5:0;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return [self.headViewArray count];
+}
+
+
+
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *indentifier = @"cell";
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:indentifier];
+    if (!cell) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:indentifier];
+        UIButton* backBtn=  [[UIButton alloc]initWithFrame:CGRectMake(0, 0, 340, 45)];
+        backBtn.tag = 20000;
+        [backBtn setBackgroundImage:[UIImage imageNamed:@"btn_on"] forState:UIControlStateHighlighted];
+        backBtn.userInteractionEnabled = NO;
+        [cell.contentView addSubview:backBtn];
+        
+        UIImageView* line = [[UIImageView alloc]initWithFrame:CGRectMake(0, 44, 340, 1)];
+        line.backgroundColor = [UIColor grayColor];
+        [cell.contentView addSubview:line];
+        
+    }
+    UIButton* backBtn = (UIButton*)[cell.contentView viewWithTag:20000];
+    HeadView* view = [self.headViewArray objectAtIndex:indexPath.section];
+    [backBtn setBackgroundImage:[UIImage imageNamed:@"btn_2_nomal"] forState:UIControlStateNormal];
+    
+    if (view.open) {
+        if (indexPath.row == _currentRow) {
+            [backBtn setBackgroundImage:[UIImage imageNamed:@"btn_nomal"] forState:UIControlStateNormal];
+        }
+    }
+    
+    
+    
+    cell.textLabel.text = [NSString stringWithFormat:@"%d-%d",indexPath.section,indexPath.row];
+    cell.textLabel.backgroundColor = [UIColor clearColor];
+    cell.textLabel.textColor = [UIColor whiteColor];
+    
+    return cell;
+}
+
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    _currentRow = indexPath.row;
+    [_tableView reloadData];
+}
+
+
+#pragma mark - HeadViewdelegate
+-(void)selectedWith:(HeadView *)view{
+    _currentRow = -1;
+    if (view.open) {
+        for(int i = 0;i<[headViewArray count];i++)
+        {
+            HeadView *head = [headViewArray objectAtIndex:i];
+            head.open = NO;
+            [head.backBtn setBackgroundImage:[UIImage imageNamed:@"btn_momal"] forState:UIControlStateNormal];
+        }
+        [_tableView reloadData];
+        return;
+    }
+    _currentSection = view.section;
+    [self reset];
+    
+}
+
+//界面重置
+- (void)reset
+{
+    for(int i = 0;i<[headViewArray count];i++)
+    {
+        HeadView *head = [headViewArray objectAtIndex:i];
+        
+        if(head.section == _currentSection)
+        {
+            head.open = YES;
+            [head.backBtn setBackgroundImage:[UIImage imageNamed:@"btn_nomal"] forState:UIControlStateNormal];
+            
+        }else {
+            [head.backBtn setBackgroundImage:[UIImage imageNamed:@"btn_momal"] forState:UIControlStateNormal];
+            
+            head.open = NO;
+        }
+        
+    }
+    [_tableView reloadData];
 }
 
 @end

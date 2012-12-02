@@ -246,6 +246,7 @@
 		A9AB01D81647C3430071543F /* TempImage.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AB01D71647C3430071543F /* TempImage.png */; };
 		A9AC04FA1614675500A7DFEF /* downprocfill@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AC04F91614675500A7DFEF /* downprocfill@2x.png */; };
 		A9AC6E50166B04E800AB1A25 /* poi.db in Resources */ = {isa = PBXBuildFile; fileRef = A9AC6E4F166B04E800AB1A25 /* poi.db */; };
+		A9AC6E57166B168A00AB1A25 /* HeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AC6E56166B168A00AB1A25 /* HeadView.m */; };
 		A9AC770F161AE255002E06C6 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9AC770E161AE255002E06C6 /* MainStoryboard.storyboard */; };
 		A9ACA5E1162A85FE0028FC84 /* homebuttonclick.png in Resources */ = {isa = PBXBuildFile; fileRef = A9ACA5DF162A85FE0028FC84 /* homebuttonclick.png */; };
 		A9ACA5E2162A85FE0028FC84 /* homebuttonclick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9ACA5E0162A85FE0028FC84 /* homebuttonclick@2x.png */; };
@@ -652,6 +653,8 @@
 		A9AB01D71647C3430071543F /* TempImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TempImage.png; sourceTree = "<group>"; };
 		A9AC04F91614675500A7DFEF /* downprocfill@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "downprocfill@2x.png"; sourceTree = "<group>"; };
 		A9AC6E4F166B04E800AB1A25 /* poi.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = poi.db; sourceTree = "<group>"; };
+		A9AC6E55166B168A00AB1A25 /* HeadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeadView.h; sourceTree = "<group>"; };
+		A9AC6E56166B168A00AB1A25 /* HeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadView.m; sourceTree = "<group>"; };
 		A9AC770E161AE255002E06C6 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		A9ACA5DF162A85FE0028FC84 /* homebuttonclick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homebuttonclick.png; sourceTree = "<group>"; };
 		A9ACA5E0162A85FE0028FC84 /* homebuttonclick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homebuttonclick@2x.png"; sourceTree = "<group>"; };
@@ -922,6 +925,8 @@
 		930876B815E079C70092905F /* CustonTab */ = {
 			isa = PBXGroup;
 			children = (
+				A9AC6E55166B168A00AB1A25 /* HeadView.h */,
+				A9AC6E56166B168A00AB1A25 /* HeadView.m */,
 				930876BB15E079E00092905F /* RXCustomTabBar.h */,
 				930876BC15E079E00092905F /* RXCustomTabBar.m */,
 				930876BD15E079E00092905F /* RXCustomTabBarAppDelegate.h */,
@@ -1830,6 +1835,7 @@
 				A91F94D4161D46F000B31282 /* NSDataDES.m in Sources */,
 				A9B8AAA7162D97A2006DD4FA /* PayMapViewController.m in Sources */,
 				A9BC9F3A1669C0C5006EBA74 /* DescriptionJianJieViewController.m in Sources */,
+				A9AC6E57166B168A00AB1A25 /* HeadView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -198,41 +198,46 @@
 //        
 //        offy+=labelsize.height+20;
 //        
-        
         NSData* jsonData = [description dataUsingEncoding:NSUTF8StringEncoding];
-        NSMutableDictionary* jsonDescription =[NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:nil];
-        NSMutableString *general= [jsonDescription objectForKey:@"General"];
-        UIView *textView = [[UIView alloc]initWithFrame:CGRectMake(12, offy, 297, 125)];
-        textView.layer.borderWidth  = 1;
-        textView.layer.borderColor= [[[UIColor alloc]initWithRed:191/255.0f green:191/255.0f blue:191/255.0f alpha:255] CGColor];
-        textView.layer.shadowColor = [UIColor blackColor].CGColor;
-        textView.layer.shadowOffset = CGSizeMake(2,2);
-        textView.layer.shadowOpacity = 0.2;
-        textView.layer.shadowRadius = 3.0;
-        textView.backgroundColor = [UIColor whiteColor];
+        NSArray* jsonDescription =[NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:nil];
         
-        UILabel *jianjieTextView=[[UILabel alloc] initWithFrame:CGRectMake(8, 0, 285, 100)];
-        // 设置UILabel文字
-        jianjieTextView.text =general;
-        // 设置Text为粗体
-        jianjieTextView.font = [UIFont fontWithName:@"Arial" size:14.0];//设置字体名字和字体大小
-        //        jianjieTextView.textColor = [UIColor redColor];
-        //        // 设置背景色
-        //        jianjieTextView.backgroundColor = [UIColor clearColor];
-        // 文字换行
-        jianjieTextView.numberOfLines = 5;
-        UILabel *moreLabel=[[UILabel alloc] initWithFrame:CGRectMake(200, 100, 80, 20)];
-        UIButton *moreButton=[UIButton buttonWithType:UIButtonTypeCustom];
-        [moreButton setFrame:CGRectMake(200, 100, 80, 20)];
-        moreLabel.text =@"查看更多>>";
-        moreLabel.font = [UIFont fontWithName:@"Arial" size:14.0];//设置字体名字和字体大小
-        [moreButton addTarget:self action:@selector(moreClick) forControlEvents:UIControlEventTouchUpInside];
-        [textView addSubview:moreLabel];
-        [textView addSubview:moreButton];
-        [textView addSubview:jianjieTextView];
         
-        [scrollView addSubview:textView];
-        offy+=textView.frame.size.height+20;
+        if(jsonDescription!=nil && jsonDescription.count>0){
+            NSMutableString *general= [jsonDescription[0] objectForKey:@"General"];
+            if(general!=nil){
+                UIView *textView = [[UIView alloc]initWithFrame:CGRectMake(12, offy, 297, 125)];
+                textView.layer.borderWidth  = 1;
+                textView.layer.borderColor= [[[UIColor alloc]initWithRed:191/255.0f green:191/255.0f blue:191/255.0f alpha:255] CGColor];
+                textView.layer.shadowColor = [UIColor blackColor].CGColor;
+                textView.layer.shadowOffset = CGSizeMake(2,2);
+                textView.layer.shadowOpacity = 0.2;
+                textView.layer.shadowRadius = 3.0;
+                textView.backgroundColor = [UIColor whiteColor];
+                
+                UILabel *jianjieTextView=[[UILabel alloc] initWithFrame:CGRectMake(8, 0, 285, 100)];
+                // 设置UILabel文字
+                jianjieTextView.text =general;
+                // 设置Text为粗体
+                jianjieTextView.font = [UIFont fontWithName:@"Arial" size:14.0];//设置字体名字和字体大小
+                //        jianjieTextView.textColor = [UIColor redColor];
+                //        // 设置背景色
+                //        jianjieTextView.backgroundColor = [UIColor clearColor];
+                // 文字换行
+                jianjieTextView.numberOfLines = 5;
+                UILabel *moreLabel=[[UILabel alloc] initWithFrame:CGRectMake(200, 100, 80, 20)];
+                UIButton *moreButton=[UIButton buttonWithType:UIButtonTypeCustom];
+                [moreButton setFrame:CGRectMake(200, 100, 80, 20)];
+                moreLabel.text =@"查看更多>>";
+                moreLabel.font = [UIFont fontWithName:@"Arial" size:14.0];//设置字体名字和字体大小
+                [moreButton addTarget:self action:@selector(moreClick) forControlEvents:UIControlEventTouchUpInside];
+                [textView addSubview:moreLabel];
+                [textView addSubview:moreButton];
+                [textView addSubview:jianjieTextView];
+                
+                [scrollView addSubview:textView];
+                offy+=textView.frame.size.height+20;
+            }
+        }
     }
 
     [scrollView addSubview: sulabel];

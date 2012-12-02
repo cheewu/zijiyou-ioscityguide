@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface DescriptionJianJieViewController : UIViewController
+#import "HeadView.h"
+@interface DescriptionJianJieViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,HeadViewDelegate>{
+    NSInteger _currentSection;
+    NSInteger _currentRow;
+}
 @property (nonatomic,retain)  NSString *textDate;
 @property (nonatomic,retain)  NSString *textTitle;
+
+@property(nonatomic, retain) NSMutableArray* headViewArray;
+@property(nonatomic, retain) UITableView* tableView;
 @end
