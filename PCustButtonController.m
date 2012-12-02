@@ -32,8 +32,8 @@
    // UIImage *butImages =[UIImage imageNamed:@"homebuttonnor"];
 
    //  [butImage stretchableImageWithLeftCapWidth:45 topCapHeight:0];
-    UIImage *butImage= [[UIImage imageNamed:@"homebuttonnor"] stretchableImageWithLeftCapWidth:40 topCapHeight:0];
-    UIImage *butImagecl= [[UIImage imageNamed:@"homebuttonclick"] stretchableImageWithLeftCapWidth:40 topCapHeight:0];
+    UIImage *butImage= [[UIImage imageNamed:@"homebuttonnor"] stretchableImageWithLeftCapWidth:25 topCapHeight:0];
+    UIImage *butImagecl= [[UIImage imageNamed:@"homebuttonclick"] stretchableImageWithLeftCapWidth:25 topCapHeight:0];
     [butImagecl stretchableImageWithLeftCapWidth:45 topCapHeight:0];
     
     
