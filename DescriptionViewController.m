@@ -96,7 +96,7 @@
         coord.latitude =  [[poiData objectForKey:@"latitude"] doubleValue];
         coord.longitude = [[poiData objectForKey:@"longitude"] doubleValue];
         
-        mapView= [ViewController getMap:15 center:coord frame:CGRectMake(5, 5, 290, 180)];
+        mapView= [ViewController getMap:15 center:coord frame:CGRectMake(5, 5, 290, 160)];
         @try {
             [mapView setDelegate:self];
             RMAnnotation *anotation = [[RMAnnotation alloc]initWithMapView:mapView coordinate:coord andTitle:title];

@@ -143,7 +143,7 @@
    
     
     
-    offy+=i*65;//_tableView.frame.size.height;
+    offy+=i*65+100;//_tableView.frame.size.height;
      [scrollView setContentSize:CGSizeMake(320,offy)];
 	// Do any additional setup after loading the view.
 }
