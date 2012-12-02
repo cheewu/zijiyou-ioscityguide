@@ -28,7 +28,7 @@
 @synthesize backIdentifier;
 //@synthesize poiImage;
 @synthesize scrollView;
-@synthesize poiName;
+//@synthesize poiName;
 @synthesize poimongoid;
 @synthesize idSubDirs;
 //@synthesize poiSubWayDatas;
@@ -64,7 +64,7 @@
     NSString *category = [poiData objectForKey:@"category"];
     
     NSString *subway = [poiData objectForKey:@"subway"];
-    float offy=230;
+    float offy=205;
     float poiHeight= poiView.frame.size.height;
     if(![category isEqualToString:@"wikipedia"]){
          NSData *image = [poiData objectForKey:@"image"];
@@ -73,7 +73,7 @@
             [poiView addSubview:imView];
             [imView setImage:[[UIImage alloc] initWithData:image]];
         }
-         [poiName setText:title];
+        // [poiName setText:title];
         
         poiView.layer.borderWidth  = 1;
         poiView.layer.borderColor= [[[UIColor alloc]initWithRed:191/255.0f green:191/255.0f blue:191/255.0f alpha:255] CGColor];
@@ -89,8 +89,8 @@
         [scrollView addSubview:sper];
        // offy=225.0f;
     }else{
-        poiHeight=50;
-        [poiName setHidden:YES];
+        //poiHeight=50;
+      //  [poiName setHidden:YES];
      //   [poiView setHidden:YES];
         CLLocationCoordinate2D coord;
         coord.latitude =  [[poiData objectForKey:@"latitude"] doubleValue];
@@ -686,7 +686,7 @@
     [self setIdSubDirs:nil];
     [self setPoiData:nil];
     [self setBackIdentifier:nil];
-    [self setPoiName:nil];
+   // [self setPoiName:nil];
  //   [self setPoiImage:nil];
     [self setPoiView:nil];
     [self setScrollView:nil];

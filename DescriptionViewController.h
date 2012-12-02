@@ -22,7 +22,7 @@
 @property(nonatomic,retain) NSString *backIdentifier;//返回页面参数
 //@property (strong, nonatomic) IBOutlet UIImageView *poiImage;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (strong, nonatomic) IBOutlet UILabel *poiName;
+//@property (strong, nonatomic) IBOutlet UILabel *poiName;
 @property (strong, nonatomic) IBOutlet UIView *poiView;
 
 @end

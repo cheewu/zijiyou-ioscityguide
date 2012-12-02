@@ -32,25 +32,40 @@
     [self.view addSubview: pctop];
     [pctop.button addTarget:self action:@selector(clickBack) forControlEvents:UIControlEventTouchUpInside];
     
-    NSData* jsonData = [textDate dataUsingEncoding:NSUTF8StringEncoding];
-    id jsonDescription =[NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:nil];
+    NSData *jsonData = [textDate dataUsingEncoding:NSUTF8StringEncoding];
+    NSArray *dataArray =[NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:nil];
     
     int offy=60;
     
     UIScrollView *scrollView=[[UIScrollView alloc]initWithFrame:CGRectMake(0, offy, 320, 500)];
-    for (id jkey in jsonDescription) {
-          id valueString = [jsonDescription objectForKey:jkey];
-            if([valueString isKindOfClass:[NSString class]]){
-                if(jkey!=nil && [jkey isEqualToString:@"General"]){
+    for (NSDictionary *dataDictionary in dataArray) {
+        if([dataDictionary isKindOfClass:[NSDictionary class]]){
+            for (NSString *valueKey in [dataDictionary allKeys]) {
+                if(valueKey!=nil && [valueKey isEqualToString:@"General"]){
+                    NSString *valueString = [dataDictionary objectForKey:valueKey];
                     UILabel *generallabel =[self getUILabel:valueString offy:0];
                     [scrollView addSubview:generallabel];
                     offy+=generallabel.frame.size.height;
+                }else{
+                    NSLog(valueKey);
                 }
-            }else{
-                UIView *titleView= [self getTitleUILabel:jkey rect:CGRectMake(0, offy, 320, 60)];
-                [scrollView addSubview:titleView];
-                offy+=titleView.frame.size.height;
-                
+            }
+        }
+       
+        
+        
+//          id valueString = [dataDictionary objectForKey:jkey];
+//            if([valueString isKindOfClass:[NSString class]]){
+//                if(jkey!=nil && [jkey isEqualToString:@"General"]){
+//                    UILabel *generallabel =[self getUILabel:valueString offy:0];
+//                    [scrollView addSubview:generallabel];
+//                    offy+=generallabel.frame.size.height;
+//                }
+//            }else{
+//                UIView *titleView= [self getTitleUILabel:jkey rect:CGRectMake(0, offy, 320, 60)];
+//                [scrollView addSubview:titleView];
+//                offy+=titleView.frame.size.height;
+        
 //                for (id jkey in valueString){
 //                        offy+=10;
 //                        UIView *titleView= [self getTitleUILabel:jkey rect:CGRectMake(0, offy, 320, 60)];
@@ -58,7 +73,7 @@
 //                        offy+=titleView.frame.size.height;
 //                        
 //                    }
-                }
+//                }
     }
     
     

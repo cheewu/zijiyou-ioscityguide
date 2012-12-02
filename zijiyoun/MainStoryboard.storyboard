@@ -204,17 +204,8 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" id="VBI-TO-Qc8">
-                                        <rect key="frame" x="8" y="15" width="304" height="201"/>
+                                        <rect key="frame" x="8" y="15" width="304" height="170"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                        <subviews>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" id="3Ah-NS-Bgh">
-                                                <rect key="frame" x="20" y="162" width="256" height="40"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" name="STHeitiSC-Medium" family="Heiti SC" pointSize="20"/>
-                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
@@ -223,7 +214,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="poiName" destination="3Ah-NS-Bgh" id="Ed8-kE-7Ip"/>
                         <outlet property="poiView" destination="VBI-TO-Qc8" id="xRk-Ry-PKr"/>
                         <outlet property="scrollView" destination="2p6-pg-EKv" id="vcV-gh-qkw"/>
                     </connections>
@@ -861,7 +851,6 @@
         <class className="DescriptionViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DescriptionViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="poiName" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="poiView" candidateClass="UIView"/>
                 <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
             </relationships>
