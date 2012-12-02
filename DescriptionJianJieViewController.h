@@ -11,6 +11,10 @@
 @interface DescriptionJianJieViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,HeadViewDelegate>{
     NSInteger _currentSection;
     NSInteger _currentRow;
+    NSInteger _contHight;//内容高度
+    UIScrollView *scrollView;
+    NSInteger offy;
+    float generallabelHeight;
 }
 @property (nonatomic,retain)  NSString *textDate;
 @property (nonatomic,retain)  NSString *textTitle;

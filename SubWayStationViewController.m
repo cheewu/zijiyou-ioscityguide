@@ -160,7 +160,7 @@
         }
 
         
-            ListViewBox * list = [[ListViewBox alloc] initWithFrame:CGRectMake(15, offy, 285, 45) imgURL:@"arrows" textColor:color text:linename stationText:nil leftImage:nil sandetName:stetName];
+            ListViewBox * list = [[ListViewBox alloc] initWithFrame:CGRectMake(12, offy, 296, 45) imgURL:@"arrows" textColor:color text:linename stationText:nil leftImage:nil sandetName:stetName];
             UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapSubWay:)];
             [list addGestureRecognizer:gestureRecognizer];
             [list setLineId:lineid];

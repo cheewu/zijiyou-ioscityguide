@@ -356,7 +356,7 @@
             }
             [poimogoidsDic setObject:trlineArray forKey:poimongoid];///一个poi 对应的多个线路
             
-            StationView *stationV = [[StationView alloc]initWithFrame:CGRectMake(11, offy, 290,50) transferStations: trlineArray poiData:dic];
+            StationView *stationV = [[StationView alloc]initWithFrame:CGRectMake(11, offy, 300,50) transferStations: trlineArray poiData:dic];
             UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(subStationClick:)];
             [stationV addGestureRecognizer:gestureRecognizer];
             [stationV setPoiData:dic];
@@ -567,11 +567,8 @@
 //    UIImage * xuxianbg= [UIImage imageNamed:@"xuxian"]; 
 //    //平铺
 //    iView.backgroundColor=[UIColor colorWithPatternImage:xuxianbg];
-    
     UIImage *xuxianbg= [[UIImage imageNamed:@"line"] stretchableImageWithLeftCapWidth:1 topCapHeight:0];
     [iView setImage:xuxianbg];
-
-    
       return iView;
 }
 -(void)subStationClick:(UITapGestureRecognizer *)sender{

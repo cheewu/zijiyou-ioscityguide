@@ -10,6 +10,7 @@
 #import "RMTileSource.h"
 #import <CommonCrypto/CommonCryptor.h>
 #import "GTMBase64.h"
+#import "DescriptionJianJieViewController.h"
 @interface ViewController ()
 
 @end
@@ -106,9 +107,17 @@ NSArray *navitons;
 
 }
 - (void)pcb3buttonClicked{
+//    UIStoryboard *sb = [ViewController getStoryboard];
+//    ViewController *rb = [sb instantiateViewControllerWithIdentifier:@"CityInt"];
+//    rb.modalTransitionStyle =UIModalTransitionStyleFlipHorizontal;
+//    [self.navigationController pushViewController:rb animated:YES];
+//    [self presentModalViewController:rb animated:YES];
+//    
+//    
     UIStoryboard *sb = [ViewController getStoryboard];
-    ViewController *rb = [sb instantiateViewControllerWithIdentifier:@"CityInt"];
-    rb.modalTransitionStyle =UIModalTransitionStyleFlipHorizontal;
+    DescriptionJianJieViewController *rb = [sb instantiateViewControllerWithIdentifier:@"DescriptionJianjie"];
+
+    rb.modalTransitionStyle =UIModalTransitionStyleCrossDissolve;
     [self.navigationController pushViewController:rb animated:YES];
     [self presentModalViewController:rb animated:YES];
 
