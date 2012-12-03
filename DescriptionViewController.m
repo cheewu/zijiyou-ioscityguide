@@ -77,16 +77,16 @@
         
         poiView.layer.borderWidth  = 1;
         poiView.layer.borderColor= [[[UIColor alloc]initWithRed:191/255.0f green:191/255.0f blue:191/255.0f alpha:255] CGColor];
-        poiView.layer.shadowColor = [UIColor blackColor].CGColor;
-        poiView.layer.shadowOffset = CGSizeMake(1,1);
-        poiView.layer.shadowOpacity = 0.2;
-        poiView.layer.shadowRadius = 3.0;
+//        poiView.layer.shadowColor = [UIColor blackColor].CGColor;
+//        poiView.layer.shadowOffset = CGSizeMake(1,1);
+//        poiView.layer.shadowOpacity = 0.2;
+//        poiView.layer.shadowRadius = 3.0;
         [poiView setFrame:CGRectMake(poiView.frame.origin.x, poiView.frame.origin.y, poiView.frame.size.width, poiHeight)];
         
-        UIImage *backsimage=[UIImage imageNamed:@"backsept"];
-        UIImageView *sper=[[UIImageView alloc] initWithImage:backsimage];
-        [sper setFrame:CGRectMake(poiView.frame.origin.x, poiHeight+15, backsimage.size.width, backsimage.size.height)];
-        [scrollView addSubview:sper];
+       // UIImage *backsimage=[UIImage imageNamed:@"backsept"];
+        //UIImageView *sper=[[UIImageView alloc] initWithImage:backsimage];
+       // [sper setFrame:CGRectMake(poiView.frame.origin.x, poiHeight+15, backsimage.size.width, backsimage.size.height)];
+      //  [scrollView addSubview:sper];
        // offy=225.0f;
     }else{
         //poiHeight=50;
@@ -410,10 +410,10 @@
                 [youjiImageView setFrame:CGRectMake(10, 10, 65, 50)];
                 youjiImageView.layer.borderWidth  = 1;
                 youjiImageView.layer.borderColor= [[[UIColor alloc]initWithRed:191/255.0f green:191/255.0f blue:191/255.0f alpha:255] CGColor];
-                youjiImageView.layer.shadowColor = [UIColor blackColor].CGColor;
-                youjiImageView.layer.shadowOffset = CGSizeMake(2,2);
-                youjiImageView.layer.shadowOpacity = 0.2;
-                youjiImageView.layer.shadowRadius = 3.0;
+//                youjiImageView.layer.shadowColor = [UIColor blackColor].CGColor;
+//                youjiImageView.layer.shadowOffset = CGSizeMake(2,2);
+//                youjiImageView.layer.shadowOpacity = 0.2;
+//                youjiImageView.layer.shadowRadius = 3.0;
                 [youjiView addSubview:youjiImageView];
             }
         }
@@ -468,10 +468,10 @@
                 UIView *textView = [[UIView alloc]initWithFrame:CGRectMake(12, offy, 297, 125)];
                 textView.layer.borderWidth  = 1;
                 textView.layer.borderColor= [[[UIColor alloc]initWithRed:191/255.0f green:191/255.0f blue:191/255.0f alpha:255] CGColor];
-                textView.layer.shadowColor = [UIColor blackColor].CGColor;
-                textView.layer.shadowOffset = CGSizeMake(2,2);
-                textView.layer.shadowOpacity = 0.2;
-                textView.layer.shadowRadius = 3.0;
+//                textView.layer.shadowColor = [UIColor blackColor].CGColor;
+//                textView.layer.shadowOffset = CGSizeMake(2,2);
+//                textView.layer.shadowOpacity = 0.2;
+//                textView.layer.shadowRadius = 3.0;
                 textView.backgroundColor = [UIColor whiteColor];
         
                 UILabel *jianjieTextView=[[UILabel alloc] initWithFrame:CGRectMake(8, 0, 285, 100)];

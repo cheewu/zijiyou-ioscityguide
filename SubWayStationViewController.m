@@ -86,12 +86,12 @@
     [self.view addSubview: pctop];
 
     UIView *poiView=[[UIView alloc]initWithFrame:CGRectMake(10, 10, 300, 200)];
-    poiView.layer.borderWidth  = 1;
-    poiView.layer.borderColor= [[[UIColor alloc]initWithRed:191/255.0f green:191/255.0f blue:191/255.0f alpha:255] CGColor];
-    poiView.layer.shadowColor = [UIColor blackColor].CGColor;
-    poiView.layer.shadowOffset = CGSizeMake(5,5);
-    poiView.layer.shadowOpacity = 0.2;
-    poiView.layer.shadowRadius = 3.0;
+//    poiView.layer.borderWidth  = 1;
+//    poiView.layer.borderColor= [[[UIColor alloc]initWithRed:191/255.0f green:191/255.0f blue:191/255.0f alpha:255] CGColor];
+//    poiView.layer.shadowColor = [UIColor blackColor].CGColor;
+//    poiView.layer.shadowOffset = CGSizeMake(5,5);
+//    poiView.layer.shadowOpacity = 0.2;
+//    poiView.layer.shadowRadius = 3.0;
     
     mapView= [ViewController getMap:15 center:coord frame:CGRectMake(5, 5, 290, 180)];
     @try {
@@ -208,10 +208,10 @@
                 UIView *textView = [[UIView alloc]initWithFrame:CGRectMake(12, offy, 297, 125)];
                 textView.layer.borderWidth  = 1;
                 textView.layer.borderColor= [[[UIColor alloc]initWithRed:191/255.0f green:191/255.0f blue:191/255.0f alpha:255] CGColor];
-                textView.layer.shadowColor = [UIColor blackColor].CGColor;
-                textView.layer.shadowOffset = CGSizeMake(2,2);
-                textView.layer.shadowOpacity = 0.2;
-                textView.layer.shadowRadius = 3.0;
+//                textView.layer.shadowColor = [UIColor blackColor].CGColor;
+//                textView.layer.shadowOffset = CGSizeMake(2,2);
+//                textView.layer.shadowOpacity = 0.2;
+//                textView.layer.shadowRadius = 3.0;
                 textView.backgroundColor = [UIColor whiteColor];
                 
                 UILabel *jianjieTextView=[[UILabel alloc] initWithFrame:CGRectMake(8, 0, 285, 100)];

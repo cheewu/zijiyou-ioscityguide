@@ -249,13 +249,13 @@ CLLocationCoordinate2D center;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     
-    cell.imageView.layer.borderWidth  = 5;
+    cell.imageView.layer.borderWidth  = 1;
     cell.imageView.layer.borderColor= [[UIColor whiteColor] CGColor];
     
-    cell.imageView.layer.shadowColor = [UIColor blackColor].CGColor;
-    cell.imageView.layer.shadowOffset = CGSizeMake(3, 3);
-    cell.imageView.layer.shadowOpacity = 0.25;
-    cell.imageView.layer.shadowRadius = 3.0;
+//    cell.imageView.layer.shadowColor = [UIColor blackColor].CGColor;
+//    cell.imageView.layer.shadowOffset = CGSizeMake(3, 3);
+//    cell.imageView.layer.shadowOpacity = 0.25;
+//    cell.imageView.layer.shadowRadius = 3.0;
     
   //  [cell setBackgroundView:uibgView];
     return cell;

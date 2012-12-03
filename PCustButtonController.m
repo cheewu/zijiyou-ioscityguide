@@ -54,7 +54,7 @@
     
    
     
-    UIImageView *imagViewType = [[UIImageView alloc] initWithFrame:CGRectMake(left, (self.frame.size.height-18)/2 , 18, 18)];
+    UIImageView *imagViewType = [[UIImageView alloc] initWithFrame:CGRectMake(left, (self.frame.size.height-type.size.height)/2 , type.size.width, type.size.height)];
     imagViewType.image = type;
     imagViewType.contentMode=UIViewContentModeScaleAspectFit;
     
