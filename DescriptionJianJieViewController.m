@@ -64,7 +64,7 @@
     }
     NSData *jsonData = [textDate dataUsingEncoding:NSUTF8StringEncoding];
     NSArray *dataArray =[NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:nil];
-  //  NSLog(textDate);
+   // NSLog(textDate);
        
     
     
@@ -72,16 +72,19 @@
     _tableView.delegate = self;
     _tableView.dataSource = self;
     _tableView.separatorColor = [UIColor clearColor];
-    _tableView.backgroundColor = [UIColor clearColor];
+ //   _tableView.backgroundColor = [UIColor clearColor];
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.scrollEnabled=NO;
+    _tableView.backgroundView = nil;
+    _tableView.backgroundColor = [UIColor clearColor];
     
     _currentRow = -1;
     headViewArray = [[NSMutableArray alloc]init ];
 
     int i=0;
+   
     for (id dataValue in dataArray) {//所有种类
-      //  NSLog(dataValue);
+       // NSLog(dataValue);
         if([dataValue isKindOfClass:[NSDictionary class]]){//每条数据 字典
             for (NSString *valueKey in [dataValue allKeys]) {
                 id valuedata = [dataValue objectForKey:valueKey];
@@ -92,9 +95,9 @@
                     offy =generallabel.frame.size.height+10;
                     
                     
-                }else if([valuedata isKindOfClass:[NSArray class]]){//包含多个
-                   // NSLog(@"type---------%@",valueKey);//所有分类的名字
-                    
+                }else if([valuedata isKindOfClass:[NSArray class]]||[valuedata isKindOfClass:[NSString class]]){//包含多个
+                NSLog(@"type---------");//所有分类的名字
+                     NSInteger uioffy=0;
                     HeadView* headview = [[HeadView alloc] init];
                     headview.delegate = self;
                     headview.section = i;
@@ -103,11 +106,28 @@
                     i++;
                     
                     UIView *uView=[[UIView alloc]init];
-                    NSInteger uioffy=0;
+                    
+                    if([valuedata isKindOfClass:[NSString class]]){
+//                        UIView *uView=[[UIView alloc]init];
+//                        UILabel *keylabel= [self getUILabel:[[NSString alloc]initWithFormat:@"%@\n\n",valueKey] offx:0 offy:uioffy font:[UIFont fontWithName:@"STHeitiSC-Medium" size:16]];//副标题
+//                        [keylabel setTextColor:[UIColor blackColor]];
+//                        uioffy+=keylabel.frame.size.height;
+//                         NSLog(@"valuedata=====%@",valuedata);
+//                        [uView addSubview:keylabel];
+                        
+                        UILabel *vlabel= [self getUILabel:[[NSString alloc]initWithFormat:@"%@\n",valuedata] offx:0 offy:uioffy font:[UIFont fontWithName:@"STHeitiSC-Light" size:14]];
+                        // [descString appendFormat:@"%@\n\n%@\n",vKey,descDictionary[vKey]];
+                        //                            }else{
+                        //                                 [descString appendFormat:@"%@\n",descDictionary[vKey]];
+                        //                            }
+                        [uView addSubview:vlabel];
+                        uioffy+=vlabel.frame.size.height;
+                    }else{
                 //    NSMutableString *descString=[[NSMutableString alloc]init];
                     for (id descDictionary in valuedata) {
                         for (NSString *vKey in [descDictionary allKeys]) {
                             if(![vKey isEqualToString:@""]){
+                                NSLog(@"vkey=====%@",vKey);
                                 UILabel *keylabel= [self getUILabel:[[NSString alloc]initWithFormat:@"%@\n\n",vKey] offx:0 offy:uioffy font:[UIFont fontWithName:@"STHeitiSC-Medium" size:16]];//副标题
                                 [keylabel setTextColor:[UIColor blackColor]];
                                 uioffy+=keylabel.frame.size.height;
@@ -115,7 +135,7 @@
                                 [uView addSubview:keylabel];
                             }
                            // [descString appendFormat:@"%@\n",descDictionary[vKey]];
-      
+      NSLog(@"descDictionary[vKey]=====%@",descDictionary[vKey]);
                             UILabel *vlabel= [self getUILabel:[[NSString alloc]initWithFormat:@"%@\n",descDictionary[vKey]] offx:0 offy:uioffy font:[UIFont fontWithName:@"STHeitiSC-Light" size:14]];
                                // [descString appendFormat:@"%@\n\n%@\n",vKey,descDictionary[vKey]];
 //                            }else{
@@ -125,17 +145,19 @@
                             uioffy+=vlabel.frame.size.height;
                         }
                     }
+                   
+                    //NSLog(descString);
+                    }
                     [headview setContentUIView:uView];
                     [headview setContentUIViewHeight:uioffy];
-                 //   headview.contentString = descString;
+                    //   headview.contentString = descString;
                     [self.headViewArray addObject:headview];
-                    //NSLog(descString);
                 }
             }
         }
     }
     [_tableView setFrame:CGRectMake(0, offy, 320, 600)];
-    
+
     [scrollView addSubview:_tableView];
     
   //  [self loadModel];

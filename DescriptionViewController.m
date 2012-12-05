@@ -101,7 +101,7 @@
             [mapView setDelegate:self];
             RMAnnotation *anotation = [[RMAnnotation alloc]initWithMapView:mapView coordinate:coord andTitle:title];
             [anotation setAnchorPoint:CGPointMake(0.5, 1)];
-            [anotation setAnnotationIcon:[UIImage imageNamed:@"checkin"]];
+            [anotation setAnnotationIcon:[UIImage imageNamed:@"addressmap"]];
             anotation.userInfo = poiData;
             [mapView addAnnotation:anotation];
             [mapView setCenterCoordinate:[anotation coordinate]];
