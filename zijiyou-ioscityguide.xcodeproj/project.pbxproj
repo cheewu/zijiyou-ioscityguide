@@ -308,6 +308,13 @@
 		A9F36B4F160F1C24005E1BCD /* YouJiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F36B4E160F1C24005E1BCD /* YouJiViewController.m */; };
 		A9F992A5161A94FA00F7D330 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F992A4161A94FA00F7D330 /* StoreKit.framework */; };
 		A9F992A8161A98EA00F7D330 /* InAppPurchaseManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F992A7161A98E900F7D330 /* InAppPurchaseManager.m */; };
+		B987EBAA16703C15005DE717 /* hometitle@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B987EBA916703C15005DE717 /* hometitle@2x.png */; };
+		B987EBAF16703C83005DE717 /* homeiconcity@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B987EBAB16703C83005DE717 /* homeiconcity@2x.png */; };
+		B987EBB016703C83005DE717 /* homeiconmy@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B987EBAC16703C83005DE717 /* homeiconmy@2x.png */; };
+		B987EBB116703C83005DE717 /* homeiconpoi@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B987EBAD16703C83005DE717 /* homeiconpoi@2x.png */; };
+		B987EBB216703C83005DE717 /* homeiconsubway@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B987EBAE16703C83005DE717 /* homeiconsubway@2x.png */; };
+		B987EBB416703DA8005DE717 /* gohere@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B987EBB316703DA8005DE717 /* gohere@2x.png */; };
+		B987EBB616703DC5005DE717 /* favourite@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B987EBB516703DC5005DE717 /* favourite@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -724,6 +731,13 @@
 		A9F992A4161A94FA00F7D330 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A9F992A6161A98E900F7D330 /* InAppPurchaseManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InAppPurchaseManager.h; sourceTree = "<group>"; };
 		A9F992A7161A98E900F7D330 /* InAppPurchaseManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InAppPurchaseManager.m; sourceTree = "<group>"; };
+		B987EBA916703C15005DE717 /* hometitle@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hometitle@2x.png"; sourceTree = "<group>"; };
+		B987EBAB16703C83005DE717 /* homeiconcity@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homeiconcity@2x.png"; sourceTree = "<group>"; };
+		B987EBAC16703C83005DE717 /* homeiconmy@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homeiconmy@2x.png"; sourceTree = "<group>"; };
+		B987EBAD16703C83005DE717 /* homeiconpoi@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homeiconpoi@2x.png"; sourceTree = "<group>"; };
+		B987EBAE16703C83005DE717 /* homeiconsubway@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homeiconsubway@2x.png"; sourceTree = "<group>"; };
+		B987EBB316703DA8005DE717 /* gohere@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gohere@2x.png"; sourceTree = "<group>"; };
+		B987EBB516703DC5005DE717 /* favourite@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "favourite@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -959,39 +973,43 @@
 		930CBAC915FC50FF00659F63 /* home */ = {
 			isa = PBXGroup;
 			children = (
-				93FFA5FB15E51C9300EC6E62 /* homesearch.png */,
-				A9ACA5DF162A85FE0028FC84 /* homebuttonclick.png */,
-				A9ACA5E0162A85FE0028FC84 /* homebuttonclick@2x.png */,
-				93734CB915DFCEC300113C91 /* homenearnor.png */,
-				93734C5315DFC34400113C91 /* homenear.png */,
-				A9ACA5E7162ADF020028FC84 /* searchleft.png */,
-				93734C5D15DFC6DD00113C91 /* homemapnor.png */,
-				93734C5F15DFC6DD00113C91 /* homemorenor.png */,
 				93F32CC016037EEA003DD72D /* home.png */,
-				93734C6015DFC6DD00113C91 /* homenor.png */,
-				93734C5115DFC30F00113C91 /* homemore.png */,
-				93734C4D15DFC1A000113C91 /* homemap.png */,
-				93F32CA916037D60003DD72D /* homemap@2x.png */,
+				93F32CBE16037D90003DD72D /* home@2x.png */,
+				A9ACA5DF162A85FE0028FC84 /* homebuttonclick.png */,
+				A9A9BF35161EB7D900576A22 /* homebuttonclick@2x.png */,
 				A9ACA5E3162A86350028FC84 /* homebuttonnor.png */,
 				A9ACA5E4162A86350028FC84 /* homebuttonnor@2x.png */,
-				93F32CAA16037D60003DD72D /* homemore@2x.png */,
-				93F32CBE16037D90003DD72D /* home@2x.png */,
-				93F32CAB16037D60003DD72D /* homenear@2x.png */,
+				9355D89D15E32C2B00F59D3D /* homeiconcity.png */,
+				B987EBAB16703C83005DE717 /* homeiconcity@2x.png */,
+				9355D89F15E32C2B00F59D3D /* homeiconmy.png */,
+				B987EBAC16703C83005DE717 /* homeiconmy@2x.png */,
+				9355D89E15E32C2B00F59D3D /* homeiconpoi.png */,
+				B987EBAD16703C83005DE717 /* homeiconpoi@2x.png */,
+				9355D89C15E32C2B00F59D3D /* homeiconsubway.png */,
+				B987EBAE16703C83005DE717 /* homeiconsubway@2x.png */,
+				93734C4D15DFC1A000113C91 /* homemap.png */,
+				93F32CA916037D60003DD72D /* homemap@2x.png */,
+				93734C5D15DFC6DD00113C91 /* homemapnor.png */,
 				93F32CC216037F2C003DD72D /* homemapnor@2x.png */,
+				93734C5115DFC30F00113C91 /* homemore.png */,
+				93F32CAA16037D60003DD72D /* homemore@2x.png */,
+				93734C5F15DFC6DD00113C91 /* homemorenor.png */,
 				93F32CC316037F2C003DD72D /* homemorenor@2x.png */,
+				93734C5315DFC34400113C91 /* homenear.png */,
+				93F32CAB16037D60003DD72D /* homenear@2x.png */,
+				93734CB915DFCEC300113C91 /* homenearnor.png */,
 				93F32CC416037F2C003DD72D /* homenearnor@2x.png */,
+				93734C6015DFC6DD00113C91 /* homenor.png */,
 				93F32CC516037F2C003DD72D /* homenor@2x.png */,
-				93F32CC616037F2C003DD72D /* homesearchnor@2x.png */,
+				93FFA5FB15E51C9300EC6E62 /* homesearch.png */,
 				93F32CAC16037D60003DD72D /* homesearch@2x.png */,
-				930CBACA15FC510900659F63 /* separator@2x.png */,
+				932FD70315F639BB007F5B3D /* homesearchnor.png */,
+				93F32CC616037F2C003DD72D /* homesearchnor@2x.png */,
+				A9ACA5E7162ADF020028FC84 /* searchleft.png */,
 				930CBACB15FC510900659F63 /* separator.png */,
+				930CBACA15FC510900659F63 /* separator@2x.png */,
 				93FC312415E9108A002273F7 /* homebuttonclick.png */,
 				A9A9BF35161EB7D900576A22 /* homebuttonclick@2x.png */,
-				932FD70315F639BB007F5B3D /* homesearchnor.png */,
-				9355D89C15E32C2B00F59D3D /* homeiconsubway.png */,
-				9355D89D15E32C2B00F59D3D /* homeiconcity.png */,
-				9355D89E15E32C2B00F59D3D /* homeiconpoi.png */,
-				9355D89F15E32C2B00F59D3D /* homeiconmy.png */,
 			);
 			name = home;
 			sourceTree = "<group>";
@@ -999,19 +1017,19 @@
 		9313362B15FF0FAB0034785A /* citygonglue */ = {
 			isa = PBXGroup;
 			children = (
-				9313362C15FF0FD70034785A /* jianjie@2x.png */,
-				9313362D15FF0FD70034785A /* jiaotong@2x.png */,
-				9313362E15FF0FD70034785A /* jingdian@2x.png */,
-				9313362F15FF0FD70034785A /* lishi@2x.png */,
-				9313363815FF10DB0034785A /* jianjie.png */,
-				9313363915FF10DB0034785A /* jiaotong.png */,
-				9313363A15FF10DB0034785A /* jingdian.png */,
-				930A41FE15FF7B8F0051A696 /* dili@2x.png */,
 				930A420015FF7B960051A696 /* dili.png */,
+				930A41FE15FF7B8F0051A696 /* dili@2x.png */,
+				9313363815FF10DB0034785A /* jianjie.png */,
+				9313362C15FF0FD70034785A /* jianjie@2x.png */,
+				9313363915FF10DB0034785A /* jiaotong.png */,
+				9313362D15FF0FD70034785A /* jiaotong@2x.png */,
+				9313363A15FF10DB0034785A /* jingdian.png */,
+				9313362E15FF0FD70034785A /* jingdian@2x.png */,
 				9313363B15FF10DB0034785A /* lishi.png */,
+				9313362F15FF0FD70034785A /* lishi@2x.png */,
 				9313363C15FF10DB0034785A /* meishi@.png */,
-				9313363D15FF10DB0034785A /* qihou@.png */,
 				9313363015FF0FD70034785A /* meishi@2x.png */,
+				9313363D15FF10DB0034785A /* qihou@.png */,
 				9313363115FF0FD70034785A /* qihou@2x.png */,
 			);
 			name = citygonglue;
@@ -1159,50 +1177,50 @@
 		93734CBB15DFD13F00113C91 /* Res */ = {
 			isa = PBXGroup;
 			children = (
-				A9BC9F51166A3DF5006EBA74 /* arrowdown.png */,
-				A9BC9F52166A3DF5006EBA74 /* arrowdown@2x.png */,
-				A9BC9F53166A3DF5006EBA74 /* arrowup.png */,
-				A9BC9F54166A3DF5006EBA74 /* arrowup2x.png */,
-				A9BC9F471669D5E0006EBA74 /* checkin.png */,
-				A9BC9F4B1669E2C2006EBA74 /* line.png */,
-				A9BC9F481669D5E0006EBA74 /* checkin@2x.png */,
-				A9BC9F3D1669CEBA006EBA74 /* opentime.png */,
-				A9BC9F3E1669CEBA006EBA74 /* opentime@2x.png */,
 				A9BC9F431669D525006EBA74 /* addressmap.png */,
 				A9BC9F441669D525006EBA74 /* addressmap@2x.png */,
-				A9BC9F3F1669CEBA006EBA74 /* telphone@2x.png */,
-				A9BC9F3B1669CE78006EBA74 /* opentime.png */,
-				A9F992A1161A817C00F7D330 /* custombutton */,
-				A9AE5AAE160825CE0057EE7A /* html */,
-				9313362B15FF0FAB0034785A /* citygonglue */,
-				930CBAC915FC50FF00659F63 /* home */,
-				9303DED715F98E2E003566ED /* down */,
-				93E2E66015F798F100CEB9E1 /* Map */,
-				934AFEC315F10E5100CEAFE1 /* RightMenu */,
-				93CAECC5160440F000A6AAC0 /* xuxian@2x.png */,
-				A9AB01D71647C3430071543F /* TempImage.png */,
-				A9AD2FEE16197E880067B7F6 /* user.db */,
-				A9B8AAA8162D9A0E006DD4FA /* mapicon.png */,
-				A9B8AAA9162D9A0E006DD4FA /* mapicon@2x.png */,
-				A9CC3A75162B0A8E005AC036 /* subwaytransfer.png */,
-				A9CC3A76162B0A8E005AC036 /* subwaytransfer@2x.png */,
-				A9B8AAAC162DA45F006DD4FA /* buymapdown.png */,
-				A9B8AAAD162DA45F006DD4FA /* buymapnor.png */,
-				A9B8AAAE162DA45F006DD4FA /* buymapdown@2x.png */,
-				A9B8AAAF162DA45F006DD4FA /* buymapnor@2x.png */,
-				A9A9491A1608C15100C239AA /* sline.png */,
-				93CAECC7160441D200A6AAC0 /* xuxian.png */,
+				A9BC9F51166A3DF5006EBA74 /* arrowdown.png */,
+				A9BC9F52166A3DF5006EBA74 /* arrowdown@2x.png */,
+				930A667C15E34C39009D23E3 /* arrows.png */,
+				A9B0716316181272001F3007 /* arrows@2x.png */,
+				A9BC9F53166A3DF5006EBA74 /* arrowup.png */,
+				A9BC9F54166A3DF5006EBA74 /* arrowup2x.png */,
 				A9ACA5EB162AE71C0028FC84 /* backsept.png */,
 				A9ACA5E9162AE6D70028FC84 /* backsept@2x.png */,
-				939CD2EB15E74F0900ADDC38 /* myIcon.png */,
-				93AC9FAB15E66DAA0009AD8B /* listtabelbg.png */,
-				93ED54B115E627A500BB171D /* listbg.png */,
-				93ED54A915E5F6A900BB171D /* tabelbag.png */,
-				93FFA5F915E5106F00EC6E62 /* indexnationbg.png */,
-				93FFA5F715E50F1A00EC6E62 /* navetionbag.png */,
-				A9B0716316181272001F3007 /* arrows@2x.png */,
-				930A667C15E34C39009D23E3 /* arrows.png */,
 				93734C6515DFC79D00113C91 /* barbg.png */,
+				A9B8AAAC162DA45F006DD4FA /* buymapdown.png */,
+				A9B8AAAE162DA45F006DD4FA /* buymapdown@2x.png */,
+				A9B8AAAD162DA45F006DD4FA /* buymapnor.png */,
+				A9B8AAAF162DA45F006DD4FA /* buymapnor@2x.png */,
+				A9BC9F471669D5E0006EBA74 /* checkin.png */,
+				A9BC9F481669D5E0006EBA74 /* checkin@2x.png */,
+				9313362B15FF0FAB0034785A /* citygonglue */,
+				A9F992A1161A817C00F7D330 /* custombutton */,
+				9303DED715F98E2E003566ED /* down */,
+				930CBAC915FC50FF00659F63 /* home */,
+				A9AE5AAE160825CE0057EE7A /* html */,
+				93FFA5F915E5106F00EC6E62 /* indexnationbg.png */,
+				A9BC9F4B1669E2C2006EBA74 /* line.png */,
+				93ED54B115E627A500BB171D /* listbg.png */,
+				93AC9FAB15E66DAA0009AD8B /* listtabelbg.png */,
+				93E2E66015F798F100CEB9E1 /* Map */,
+				A9B8AAA8162D9A0E006DD4FA /* mapicon.png */,
+				A9B8AAA9162D9A0E006DD4FA /* mapicon@2x.png */,
+				939CD2EB15E74F0900ADDC38 /* myIcon.png */,
+				93FFA5F715E50F1A00EC6E62 /* navetionbag.png */,
+				A9BC9F3D1669CEBA006EBA74 /* opentime.png */,
+				A9BC9F3E1669CEBA006EBA74 /* opentime@2x.png */,
+				934AFEC315F10E5100CEAFE1 /* RightMenu */,
+				A9A9491A1608C15100C239AA /* sline.png */,
+				A9CC3A75162B0A8E005AC036 /* subwaytransfer.png */,
+				A9CC3A76162B0A8E005AC036 /* subwaytransfer@2x.png */,
+				93ED54A915E5F6A900BB171D /* tabelbag.png */,
+				A9BC9F3F1669CEBA006EBA74 /* telphone@2x.png */,
+				A9AB01D71647C3430071543F /* TempImage.png */,
+				A9AD2FEE16197E880067B7F6 /* user.db */,
+				93CAECC7160441D200A6AAC0 /* xuxian.png */,
+				93CAECC5160440F000A6AAC0 /* xuxian@2x.png */,
+				A9BC9F3B1669CE78006EBA74 /* opentime.png */,
 			);
 			name = Res;
 			sourceTree = "<group>";
@@ -1401,20 +1419,21 @@
 		A9ADEE92165A64CA00DAC35B /* CityRes */ = {
 			isa = PBXGroup;
 			children = (
-				A9A949141608C10000C239AA /* hometitle.png */,
 				A9A949101608B3D900C239AA /* background.png */,
 				A9A949111608B3D900C239AA /* background@2x.png */,
-				A938135D161096AA00546C6B /* homesubway@2x.png */,
-				A938135F161096F400546C6B /* homesubway.png */,
 				A9B8AAB8162DAF84006DD4FA /* buymapimage1.png */,
 				A9B8AAB9162DAF85006DD4FA /* buymapimage1@2x.png */,
-				A941E705166F7A91000BE65D /* poi.db */,
-				A9B0EE80163BF63500FF3F72 /* icon.png */,
-				A9B0EE81163BF63500FF3F72 /* icon@2x.png */,
-				A9A9490B1608B2FE00C239AA /* Default@2x.png */,
-				A9A9490E1608B37500C239AA /* Default.png */,
 				A9B8AABA162DAF85006DD4FA /* buymapimage2.png */,
 				A9B8AABB162DAF85006DD4FA /* buymapimage2@2x.png */,
+				A9A9490E1608B37500C239AA /* Default.png */,
+				A9A9490B1608B2FE00C239AA /* Default@2x.png */,
+				A938135F161096F400546C6B /* homesubway.png */,
+				A938135D161096AA00546C6B /* homesubway@2x.png */,
+				A9A949141608C10000C239AA /* hometitle.png */,
+				B987EBA916703C15005DE717 /* hometitle@2x.png */,
+				A9B0EE80163BF63500FF3F72 /* icon.png */,
+				A9B0EE81163BF63500FF3F72 /* icon@2x.png */,
+				A941E705166F7A91000BE65D /* poi.db */,
 			);
 			name = CityRes;
 			sourceTree = "<group>";
@@ -1430,30 +1449,32 @@
 		A9F992A1161A817C00F7D330 /* custombutton */ = {
 			isa = PBXGroup;
 			children = (
-				9304031215EDEFA200754A0F /* sxbuttondown@2x.png */,
-				93A5E4B1160624BF0065F77A /* paizhaoButtonClick@2x.png */,
-				93A5E4B3160624BF0065F77A /* xiangceButtonClick@2x.png */,
-				93A5E4B2160624BF0065F77A /* paizhaoButtonnor@2x.png */,
-				93A5E4B4160624BF0065F77A /* xiangceButtonnor@2x.png */,
-				9304031315EDEFA200754A0F /* sxbuttondown.png */,
-				930822A415FE2268001C2FFE /* checkin.png */,
-				A9A949181608C12C00C239AA /* ditu@2x.png */,
-				A9B5B8171615A60C004BDA5E /* gohere.png */,
-				930822A515FE2268001C2FFE /* favourite.png */,
-				93F99B92160228BA002B61FC /* ditu.png */,
-				93A5E4BA160625450065F77A /* paizhaoButtonnor.png */,
 				93267FC515EDB408006DF2B3 /* back.png */,
 				93267FC615EDB408006DF2B3 /* back@2x.png */,
-				93A5E4BD1606257A0065F77A /* xiangceButtonClick.png */,
-				93A5E4BE1606257A0065F77A /* xiangceButtonnor.png */,
-				93A5E4B9160625450065F77A /* paizhaoButtonClick.png */,
-				93077AEA15E4AC1700F8D73A /* back.png */,
-				9304030E15EDEB5500754A0F /* sxbutton@2x.png */,
-				A9B6621E160B5F1E00310011 /* synweibo@2x.png */,
-				9304030F15EDEB5500754A0F /* sxbutton.png */,
 				9304031615EDF0D900754A0F /* backdown.png */,
-				A9B66220160B60CB00310011 /* synweibo.png */,
 				9304031A15EDF0ED00754A0F /* backdown@2x.png */,
+				930822A415FE2268001C2FFE /* checkin.png */,
+				93F99B92160228BA002B61FC /* ditu.png */,
+				A9A949181608C12C00C239AA /* ditu@2x.png */,
+				930822A515FE2268001C2FFE /* favourite.png */,
+				B987EBB516703DC5005DE717 /* favourite@2x.png */,
+				A9B5B8171615A60C004BDA5E /* gohere.png */,
+				B987EBB316703DA8005DE717 /* gohere@2x.png */,
+				93A5E4B9160625450065F77A /* paizhaoButtonClick.png */,
+				93A5E4B1160624BF0065F77A /* paizhaoButtonClick@2x.png */,
+				93A5E4BA160625450065F77A /* paizhaoButtonnor.png */,
+				93A5E4B2160624BF0065F77A /* paizhaoButtonnor@2x.png */,
+				9304030F15EDEB5500754A0F /* sxbutton.png */,
+				9304030E15EDEB5500754A0F /* sxbutton@2x.png */,
+				9304031315EDEFA200754A0F /* sxbuttondown.png */,
+				9304031215EDEFA200754A0F /* sxbuttondown@2x.png */,
+				A9B66220160B60CB00310011 /* synweibo.png */,
+				A9B6621E160B5F1E00310011 /* synweibo@2x.png */,
+				93A5E4BD1606257A0065F77A /* xiangceButtonClick.png */,
+				93A5E4B3160624BF0065F77A /* xiangceButtonClick@2x.png */,
+				93A5E4BE1606257A0065F77A /* xiangceButtonnor.png */,
+				93A5E4B4160624BF0065F77A /* xiangceButtonnor@2x.png */,
+				93077AEA15E4AC1700F8D73A /* back.png */,
 			);
 			name = custombutton;
 			sourceTree = "<group>";
@@ -1750,6 +1771,13 @@
 				A9BC9F57166A3DF5006EBA74 /* arrowup.png in Resources */,
 				A9BC9F58166A3DF5006EBA74 /* arrowup2x.png in Resources */,
 				A941E706166F7A91000BE65D /* poi.db in Resources */,
+				B987EBAA16703C15005DE717 /* hometitle@2x.png in Resources */,
+				B987EBAF16703C83005DE717 /* homeiconcity@2x.png in Resources */,
+				B987EBB016703C83005DE717 /* homeiconmy@2x.png in Resources */,
+				B987EBB116703C83005DE717 /* homeiconpoi@2x.png in Resources */,
+				B987EBB216703C83005DE717 /* homeiconsubway@2x.png in Resources */,
+				B987EBB416703DA8005DE717 /* gohere@2x.png in Resources */,
+				B987EBB616703DC5005DE717 /* favourite@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1930,7 +1958,7 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "zijiyoun/zijiyou-ioscityguide-Prefix.pch";
-				HEADER_SEARCH_PATHS = "/devsoft/mapbox-ios-sdk/**";
+				HEADER_SEARCH_PATHS = "/Users/cheewu/Dropbox/mapbox-ios-sdk/**";
 				INFOPLIST_FILE = "zijiyoun/zijiyou-ioscityguide-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
@@ -1938,8 +1966,8 @@
 					"\"$(SRCROOT)/../../Library/Developer/Xcode/DerivedData/zijiyoun-browwcxogpqvmvfsmsjojkhuranb/Build/Products/Debug-iphoneos\"",
 				);
 				PRODUCT_NAME = "香港";
-				PROVISIONING_PROFILE = "FFE16E76-9B41-472C-B710-B0EAFCAD0B6E";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FFE16E76-9B41-472C-B710-B0EAFCAD0B6E";
+				PROVISIONING_PROFILE = "831A9B38-34E0-4D24-89BD-8F392E798EEE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "831A9B38-34E0-4D24-89BD-8F392E798EEE";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
@@ -1949,12 +1977,12 @@
 		9373496115DFBF5D00113C91 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Qi Wu";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Qi Wu";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Qi Wu (589G6K3CS9)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Qi Wu (589G6K3CS9)";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "zijiyoun/zijiyou-ioscityguide-Prefix.pch";
-				HEADER_SEARCH_PATHS = "/devsoft/mapbox-ios-sdk/**";
+				HEADER_SEARCH_PATHS = "/Users/cheewu/Dropbox/mapbox-ios-sdk/**";
 				INFOPLIST_FILE = "zijiyoun/zijiyou-ioscityguide-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
@@ -1962,8 +1990,8 @@
 					"\"$(SRCROOT)/../../Library/Developer/Xcode/DerivedData/zijiyoun-browwcxogpqvmvfsmsjojkhuranb/Build/Products/Debug-iphoneos\"",
 				);
 				PRODUCT_NAME = "香港";
-				PROVISIONING_PROFILE = "CA159BD8-2907-402D-B4E8-D092866336E1";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CA159BD8-2907-402D-B4E8-D092866336E1";
+				PROVISIONING_PROFILE = "831A9B38-34E0-4D24-89BD-8F392E798EEE";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "831A9B38-34E0-4D24-89BD-8F392E798EEE";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
