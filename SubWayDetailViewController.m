@@ -97,11 +97,11 @@
    
     
         NSMutableString *poimongoids=[[NSMutableString alloc]initWithString:@""];
-        
+        NSMutableArray *stlist= [[NSMutableArray alloc] init];
         NSMutableDictionary *poimogoidsDic= [[NSMutableDictionary alloc]init];//经过的线路
         for (NSDictionary *dic in json) {
             NSString* poimongoid =[NSDataDES getContentByHexAndDes:[dic objectForKey:@"poimongoid"] key:deskey];
-            
+            [stlist addObject:poimongoid];
             NSLog(@"poimongoidpoimongoidpoimongoidpoimongoidpoimongoid===%@",poimongoid);
             
             [poimongoids appendString:@"\""];
@@ -134,12 +134,20 @@
         [db close];
         int offy=15;
         int i=0;
+        
+        NSMutableDictionary *poiDics= [[NSMutableDictionary alloc]init];//经过的线路
+        
         for (NSDictionary *poi in entries) {
+            [poiDics setObject:poi forKey:[poi objectForKey:@"poimongoid"]];
+        }
+        for (NSString *dic in stlist) {
+          //  NSString* poimongoid =[NSDataDES getContentByHexAndDes:[dic objectForKey:@"poimongoid"] key:deskey];
+            NSDictionary *poi=[poiDics objectForKey:dic];
             StationView *stationV = [[StationView alloc]initWithFrame:CGRectMake(15, offy, 290,45) transferStations: [poimogoidsDic objectForKey:[poi objectForKey:@"poimongoid"]] poiData:poi];
             //stations addObject:￼
            // [stationV.button setTag:i];
             //[stationV.button addTarget:self action:@selector(subStationClick:) forControlEvents:UIControlEventTouchUpInside];
-            
+            NSLog(@"poiname===%@",[poi objectForKey:@"name"]);
             UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(subStationClick:)];
             [stationV addGestureRecognizer:gestureRecognizer];
 
@@ -148,6 +156,7 @@
             i++;
             offy+=50;
         }
+        stlist=nil;
         offy+=10;
         [scrollView setContentSize:CGSizeMake(320, offy)];
     }else{
