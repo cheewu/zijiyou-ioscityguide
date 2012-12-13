@@ -96,7 +96,6 @@
 		9319F22415F3A48A0016D736 /* listsubway.png in Resources */ = {isa = PBXBuildFile; fileRef = 9319F22315F3A48A0016D736 /* listsubway.png */; };
 		931C22E815F5BE790059D0E0 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 931C22E715F5BE790059D0E0 /* Security.framework */; };
 		93267FC415EDAE8B006DF2B3 /* PCBackUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 93267FC315EDAE8B006DF2B3 /* PCBackUIButton.m */; };
-		93267FC715EDB408006DF2B3 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 93267FC515EDB408006DF2B3 /* back.png */; };
 		93267FC815EDB408006DF2B3 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 93267FC615EDB408006DF2B3 /* back@2x.png */; };
 		932FD70415F639BB007F5B3D /* homesearchnor.png in Resources */ = {isa = PBXBuildFile; fileRef = 932FD70315F639BB007F5B3D /* homesearchnor.png */; };
 		933FEF7A15EB4A4A00F556AD /* MyMapBoxView.m in Sources */ = {isa = PBXBuildFile; fileRef = 933FEF7915EB4A4A00F556AD /* MyMapBoxView.m */; };
@@ -215,7 +214,6 @@
 		93FFA5F815E50F1A00EC6E62 /* navetionbag.png in Resources */ = {isa = PBXBuildFile; fileRef = 93FFA5F715E50F1A00EC6E62 /* navetionbag.png */; };
 		93FFA5FA15E5106F00EC6E62 /* indexnationbg.png in Resources */ = {isa = PBXBuildFile; fileRef = 93FFA5F915E5106F00EC6E62 /* indexnationbg.png */; };
 		93FFA5FD15E51C9300EC6E62 /* homesearch.png in Resources */ = {isa = PBXBuildFile; fileRef = 93FFA5FB15E51C9300EC6E62 /* homesearch.png */; };
-		A91EFE13161AC041002B128C /* zijiyou-ioscityguide-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A91EFE12161AC041002B128C /* zijiyou-ioscityguide-Info.plist */; };
 		A91EFE14161AC0A8002B128C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A91EFE16161AC0A8002B128C /* InfoPlist.strings */; };
 		A91F94D4161D46F000B31282 /* NSDataDES.m in Sources */ = {isa = PBXBuildFile; fileRef = A91F94D3161D46F000B31282 /* NSDataDES.m */; };
 		A938135E161096AA00546C6B /* homesubway@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A938135D161096AA00546C6B /* homesubway@2x.png */; };
@@ -248,8 +246,6 @@
 		A9AC04FA1614675500A7DFEF /* downprocfill@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AC04F91614675500A7DFEF /* downprocfill@2x.png */; };
 		A9AC6E57166B168A00AB1A25 /* HeadView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AC6E56166B168A00AB1A25 /* HeadView.m */; };
 		A9AC770F161AE255002E06C6 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9AC770E161AE255002E06C6 /* MainStoryboard.storyboard */; };
-		A9ACA5E1162A85FE0028FC84 /* homebuttonclick.png in Resources */ = {isa = PBXBuildFile; fileRef = A9ACA5DF162A85FE0028FC84 /* homebuttonclick.png */; };
-		A9ACA5E2162A85FE0028FC84 /* homebuttonclick@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9ACA5E0162A85FE0028FC84 /* homebuttonclick@2x.png */; };
 		A9ACA5E5162A86350028FC84 /* homebuttonnor.png in Resources */ = {isa = PBXBuildFile; fileRef = A9ACA5E3162A86350028FC84 /* homebuttonnor.png */; };
 		A9ACA5E6162A86350028FC84 /* homebuttonnor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9ACA5E4162A86350028FC84 /* homebuttonnor@2x.png */; };
 		A9ACA5E8162ADF020028FC84 /* searchleft.png in Resources */ = {isa = PBXBuildFile; fileRef = A9ACA5E7162ADF020028FC84 /* searchleft.png */; };
@@ -290,12 +286,10 @@
 		A9B95C6F160960E000097E82 /* PListUITabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B95C6E160960E000097E82 /* PListUITabelView.m */; };
 		A9BC9F3A1669C0C5006EBA74 /* DescriptionJianJieViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9BC9F391669C0C5006EBA74 /* DescriptionJianJieViewController.m */; };
 		A9BC9F3C1669CE78006EBA74 /* opentime.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BC9F3B1669CE78006EBA74 /* opentime.png */; };
-		A9BC9F401669CEBA006EBA74 /* opentime.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BC9F3D1669CEBA006EBA74 /* opentime.png */; };
 		A9BC9F411669CEBA006EBA74 /* opentime@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BC9F3E1669CEBA006EBA74 /* opentime@2x.png */; };
 		A9BC9F421669CEBA006EBA74 /* telphone@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BC9F3F1669CEBA006EBA74 /* telphone@2x.png */; };
 		A9BC9F451669D525006EBA74 /* addressmap.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BC9F431669D525006EBA74 /* addressmap.png */; };
 		A9BC9F461669D525006EBA74 /* addressmap@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BC9F441669D525006EBA74 /* addressmap@2x.png */; };
-		A9BC9F491669D5E0006EBA74 /* checkin.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BC9F471669D5E0006EBA74 /* checkin.png */; };
 		A9BC9F4A1669D5E0006EBA74 /* checkin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BC9F481669D5E0006EBA74 /* checkin@2x.png */; };
 		A9BC9F4C1669E2C2006EBA74 /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BC9F4B1669E2C2006EBA74 /* line.png */; };
 		A9BC9F55166A3DF5006EBA74 /* arrowdown.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BC9F51166A3DF5006EBA74 /* arrowdown.png */; };
@@ -664,7 +658,6 @@
 		A9AC6E56166B168A00AB1A25 /* HeadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeadView.m; sourceTree = "<group>"; };
 		A9AC770E161AE255002E06C6 /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		A9ACA5DF162A85FE0028FC84 /* homebuttonclick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homebuttonclick.png; sourceTree = "<group>"; };
-		A9ACA5E0162A85FE0028FC84 /* homebuttonclick@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homebuttonclick@2x.png"; sourceTree = "<group>"; };
 		A9ACA5E3162A86350028FC84 /* homebuttonnor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homebuttonnor.png; sourceTree = "<group>"; };
 		A9ACA5E4162A86350028FC84 /* homebuttonnor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "homebuttonnor@2x.png"; sourceTree = "<group>"; };
 		A9ACA5E7162ADF020028FC84 /* searchleft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = searchleft.png; sourceTree = "<group>"; };
@@ -1506,7 +1499,7 @@
 		9373493815DFBF5D00113C91 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0440;
+				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "piao chunzhi";
 			};
 			buildConfigurationList = 9373493B15DFBF5D00113C91 /* Build configuration list for PBXProject "zijiyou-ioscityguide" */;
@@ -1600,7 +1593,6 @@
 				93A148C015EC8F19005B6E55 /* TrackingHeading@2x.png in Resources */,
 				93A148C115EC8F19005B6E55 /* TrackingLocation.png in Resources */,
 				93A148C215EC8F19005B6E55 /* TrackingLocation@2x.png in Resources */,
-				93267FC715EDB408006DF2B3 /* back.png in Resources */,
 				93267FC815EDB408006DF2B3 /* back@2x.png in Resources */,
 				9304031015EDEB5500754A0F /* sxbutton@2x.png in Resources */,
 				9304031115EDEB5500754A0F /* sxbutton.png in Resources */,
@@ -1730,12 +1722,9 @@
 				A9B0716416181272001F3007 /* arrows@2x.png in Resources */,
 				A9AD2FEF16197E880067B7F6 /* user.db in Resources */,
 				A91EFE14161AC0A8002B128C /* InfoPlist.strings in Resources */,
-				A91EFE13161AC041002B128C /* zijiyou-ioscityguide-Info.plist in Resources */,
 				A9AC770F161AE255002E06C6 /* MainStoryboard.storyboard in Resources */,
 				A9A7A81D161B368000302C76 /* ChangeLogUnzip in Resources */,
 				A9A9BF36161EB7D900576A22 /* homebuttonclick@2x.png in Resources */,
-				A9ACA5E1162A85FE0028FC84 /* homebuttonclick.png in Resources */,
-				A9ACA5E2162A85FE0028FC84 /* homebuttonclick@2x.png in Resources */,
 				A9ACA5E5162A86350028FC84 /* homebuttonnor.png in Resources */,
 				A9ACA5E6162A86350028FC84 /* homebuttonnor@2x.png in Resources */,
 				A9ACA5E8162ADF020028FC84 /* searchleft.png in Resources */,
@@ -1758,12 +1747,10 @@
 				A9B0EE83163BF63500FF3F72 /* icon@2x.png in Resources */,
 				A9AB01D81647C3430071543F /* TempImage.png in Resources */,
 				A9BC9F3C1669CE78006EBA74 /* opentime.png in Resources */,
-				A9BC9F401669CEBA006EBA74 /* opentime.png in Resources */,
 				A9BC9F411669CEBA006EBA74 /* opentime@2x.png in Resources */,
 				A9BC9F421669CEBA006EBA74 /* telphone@2x.png in Resources */,
 				A9BC9F451669D525006EBA74 /* addressmap.png in Resources */,
 				A9BC9F461669D525006EBA74 /* addressmap@2x.png in Resources */,
-				A9BC9F491669D5E0006EBA74 /* checkin.png in Resources */,
 				A9BC9F4A1669D5E0006EBA74 /* checkin@2x.png in Resources */,
 				A9BC9F4C1669E2C2006EBA74 /* line.png in Resources */,
 				A9BC9F55166A3DF5006EBA74 /* arrowdown.png in Resources */,
@@ -1916,7 +1903,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				PROVISIONING_PROFILE = "FFE16E76-9B41-472C-B710-B0EAFCAD0B6E";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "FFE16E76-9B41-472C-B710-B0EAFCAD0B6E";
-				SDKROOT = iphoneos6.0;
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1944,7 +1931,7 @@
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PROVISIONING_PROFILE = "CA159BD8-2907-402D-B4E8-D092866336E1";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CA159BD8-2907-402D-B4E8-D092866336E1";
-				SDKROOT = iphoneos6.0;
+				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1958,7 +1945,7 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "zijiyoun/zijiyou-ioscityguide-Prefix.pch";
-				HEADER_SEARCH_PATHS = "/Users/cheewu/Dropbox/mapbox-ios-sdk/**";
+				HEADER_SEARCH_PATHS = "/Users/chunzhi/Documents/mapbox-ios-sdk/**";
 				INFOPLIST_FILE = "zijiyoun/zijiyou-ioscityguide-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
@@ -1982,7 +1969,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "zijiyoun/zijiyou-ioscityguide-Prefix.pch";
-				HEADER_SEARCH_PATHS = "/Users/cheewu/Dropbox/mapbox-ios-sdk/**";
+				HEADER_SEARCH_PATHS = "/Users/chunzhi/Documents/mapbox-ios-sdk/**";
 				INFOPLIST_FILE = "zijiyoun/zijiyou-ioscityguide-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
