@@ -7,12 +7,12 @@ Copyright(c)2012年piaochunzhi.Allrightsreserved.
 */
 //test="测试"
 //1.首页
-CFBundleDisplayName="香港";//这里是APP显示的名称
-city_name="香港";
+CFBundleDisplayName="巴黎";//这里是APP显示的名称
+city_name="巴黎";
 hot_poi="热门地点";
-city_subway="香港地铁";
+city_subway="巴黎地铁";
 city_wiki="城市攻略";
-my_wiki="我的香港";
+my_wiki="我的巴黎";
 //2.热门地点
 button_return="返回";
 button_select="筛选";
@@ -44,13 +44,13 @@ route_station="站";
 route_nearyou="离你";
 route_nearobj="离目的地";
 //4.付费介绍页面
-buy_titile="香港离线数据购买";
+buy_titile="巴黎离线数据购买";
 buy_description="离线地图和地铁换乘查询功能需要付费购买。付费完成以后会自动下载离线数据包，大小15M，根据不同的网络状况下载需要3到5分钟。";
 //5.签到页面
 checkin_send="发送";
 //4.离线下载页面
 offline_download="离线数据下载";
-offline_download_name="香港离线数据";
+offline_download_name="巴黎离线数据";
 offline_url="http://iapfile.b0.upaiyun.com/iap_hk.zip";
 //5.城市攻略
 intro_base="简介";
@@ -64,7 +64,7 @@ my_checkin="我的签到";
 my_favourite="我的收藏";
 
 //7 地图页
-map_center="114.15,22.28";
+map_center="2.3487,48.8525";
 map_level="15";
 map_max_level="17";
 

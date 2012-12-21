@@ -1945,7 +1945,7 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "zijiyoun/zijiyou-ioscityguide-Prefix.pch";
-				HEADER_SEARCH_PATHS = "/Users/chunzhi/Documents/mapbox-ios-sdk/**";
+				HEADER_SEARCH_PATHS = "/Users/cheewu/Dropbox/mapbox-ios-sdk/**";
 				INFOPLIST_FILE = "zijiyoun/zijiyou-ioscityguide-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
@@ -1969,7 +1969,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "zijiyoun/zijiyou-ioscityguide-Prefix.pch";
-				HEADER_SEARCH_PATHS = "/Users/chunzhi/Documents/mapbox-ios-sdk/**";
+				HEADER_SEARCH_PATHS = "/Users/cheewu/Dropbox/mapbox-ios-sdk/**";
 				INFOPLIST_FILE = "zijiyoun/zijiyou-ioscityguide-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
