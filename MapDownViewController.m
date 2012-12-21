@@ -166,7 +166,7 @@
 }
 
 +(void)unzipDownDB:(Boolean)isReTry{
-    NSString *pathDocuments = [NSHomeDirectory() stringByAppendingPathComponent:@"User"];
+    NSString *pathDocuments = [NSHomeDirectory() stringByAppendingPathComponent:@"Library/User"];
     NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches"];
     NSString *downloadPath = [path stringByAppendingPathComponent:@"iap.zip"];
     NSFileManager *fileManager=[NSFileManager defaultManager];

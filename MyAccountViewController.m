@@ -277,7 +277,7 @@
             [self onLogOutOAuth];
             [self performSelector:@selector(onLogInOAuth) withObject:nil afterDelay:1.0];
         }else{
-            NSString *downloadPath = [NSHomeDirectory() stringByAppendingPathComponent:@"User/userimage.png"];
+            NSString *downloadPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Library/User/userimage.png"];
             if ([[NSFileManager defaultManager] fileExistsAtPath:downloadPath]) {
                 UIImage *image = [UIImage imageWithContentsOfFile:downloadPath];
                 [userImage setImage:image];
@@ -320,7 +320,7 @@
 {
     [weiBoEngine logOut];
     NSString *documentsDirectory= [NSHomeDirectory()
-                                   stringByAppendingPathComponent:@"User"];
+                                   stringByAppendingPathComponent:@"Library/User"];
     [self delUserInfoIfExit:[documentsDirectory stringByAppendingString:@"/userinfo.text"]];
     [self delUserInfoIfExit:[documentsDirectory stringByAppendingString:@"/userimage.png"]];
     UIImage *image = [UIImage imageNamed:@"myIcon"];
@@ -449,7 +449,7 @@
         
         //NSFileManager *fileManager=[NSFileManager defaultManager];
         NSString *documentsDirectory= [NSHomeDirectory()
-                                       stringByAppendingPathComponent:@"User/userinfo.text"];
+                                       stringByAppendingPathComponent:@"Library/User/userinfo.text"];
         [self delUserInfoIfExit:documentsDirectory];
         
         
@@ -518,7 +518,7 @@ static int retryCount=0;
     
     NSFileManager *fileManager=[NSFileManager defaultManager];
     NSString *documentsDirectory= [NSHomeDirectory()
-                                   stringByAppendingPathComponent:@"User/userimage.png"];
+                                   stringByAppendingPathComponent:@"Library/User/userimage.png"];
     
     [self delUserInfoIfExit:documentsDirectory];
     

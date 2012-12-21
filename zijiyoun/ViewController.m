@@ -35,7 +35,7 @@ NSArray *navitons;
     NSFileManager *fileManager=[NSFileManager defaultManager];
     
     NSString *userDirectory= [NSHomeDirectory()
-                              stringByAppendingPathComponent:@"User"];
+                              stringByAppendingPathComponent:@"Library/User"];
     if (!([fileManager fileExistsAtPath:userDirectory])){//如果不存在 强制拷user.db
         BOOL bo = [[NSFileManager defaultManager] createDirectoryAtPath:userDirectory withIntermediateDirectories:YES attributes:nil error:nil];
         
@@ -169,7 +169,7 @@ NSArray *navitons;
     NSFileManager *fileManager=[NSFileManager defaultManager];
     
     NSString *userDirectory= [NSHomeDirectory()
-                              stringByAppendingPathComponent:@"User/user.db"];
+                              stringByAppendingPathComponent:@"Library/User/user.db"];
     if (!([fileManager fileExistsAtPath:userDirectory])){//如果不存在 强制拷user.db
         NSURL * dburl = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"user" ofType:@"db"]];
         NSData *userdbData= [NSData dataWithContentsOfFile:[dburl path]];
@@ -195,7 +195,7 @@ NSArray *navitons;
     //NSFileManager *fileManager=[NSFileManager defaultManager];
   //  NSURL *documentsDictoryURL = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     NSString *userDirectory= [NSHomeDirectory()
-                              stringByAppendingPathComponent:@"User/transfer.db"];
+                              stringByAppendingPathComponent:@"Library/User/transfer.db"];
     NSURL *documentsDictoryURL =[NSURL fileURLWithPath:userDirectory];
    // NSURL *dburl =[NSURL fileURLWithPath:<#(NSString *)#>]// [documentsDictoryURL URLByAppendingPathComponent:@"transfer.db"];
     FMDatabase *db = [FMDatabase databaseWithPath:[documentsDictoryURL path]];
@@ -209,7 +209,7 @@ NSArray *navitons;
   //  NSURL *documentsDictoryURL = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     
     NSString *userDirectory= [NSHomeDirectory()
-                              stringByAppendingPathComponent:@"User/user.db"];
+                              stringByAppendingPathComponent:@"Library/User/user.db"];
     
    // NSURL *dburl = [documentsDictoryURL URLByAppendingPathComponent:@"user.db"];
     NSURL *dburl =[NSURL fileURLWithPath:userDirectory];
@@ -458,7 +458,7 @@ NSArray *navitons;
        // zstoreURL = [documentsDictoryURL URLByAppendingPathComponent:@"osm.mbtiles"];
         
         NSString *userDirectory= [NSHomeDirectory()
-                                  stringByAppendingPathComponent:@"User/osm.mbtiles"];
+                                  stringByAppendingPathComponent:@"Library/User/osm.mbtiles"];
         zstoreURL = [NSURL fileURLWithPath:userDirectory];
     }else{//离线地图
     }

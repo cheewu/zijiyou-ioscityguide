@@ -73,7 +73,7 @@
         
      //   NSURL *documentsDictoryURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
         NSString *userDirectory= [NSHomeDirectory()
-                                  stringByAppendingPathComponent:@"User/osm.mbtiles"];
+                                  stringByAppendingPathComponent:@"Library/User/osm.mbtiles"];
         
       //  storeURL = [documentsDictoryURL URLByAppendingPathComponent:@"osm.mbtiles"];
         storeURL=[NSURL fileURLWithPath:userDirectory];

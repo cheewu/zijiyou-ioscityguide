@@ -728,7 +728,7 @@
         NSFileManager *fileManager=[NSFileManager defaultManager];
         
         NSString *userDirectory= [NSHomeDirectory()
-                                  stringByAppendingPathComponent:@"User/transfer.db"];
+                                  stringByAppendingPathComponent:@"Library/User/transfer.db"];
         if (!([fileManager fileExistsAtPath:userDirectory])){//如果不存在 跳转到下载
             UIStoryboard *sb = [ViewController getStoryboard];
             MapDownViewController *rb = [sb instantiateViewControllerWithIdentifier:@"MapDown"];
