@@ -173,7 +173,7 @@
             [alertView show];
         }else{
             NSString *qiandao;
-            NSString *downloadPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/userimage.png"];
+            NSString *downloadPath = [NSHomeDirectory() stringByAppendingPathComponent:@"User/userimage.png"];
             if ([[NSFileManager defaultManager] fileExistsAtPath:downloadPath]) {
                 NSString *poi_faourite_success=NSLocalizedStringFromTable(@"poi_faourite_success", @"InfoPlist",nil);
                 

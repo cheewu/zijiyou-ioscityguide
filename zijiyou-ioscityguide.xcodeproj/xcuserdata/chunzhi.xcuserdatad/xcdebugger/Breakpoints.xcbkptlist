@@ -424,11 +424,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "zijiyoun/ViewController.m"
-         timestampString = "377786456.112404"
+         timestampString = "377792164.557405"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "168"
-         endingLineNumber = "168"
+         startingLineNumber = "178"
+         endingLineNumber = "178"
          landmarkName = "+initializeDB"
          landmarkType = "5">
       </FileBreakpoint>
@@ -437,11 +437,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "zijiyoun/ViewController.m"
-         timestampString = "377786456.112404"
+         timestampString = "377792164.557405"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "170"
-         endingLineNumber = "170"
+         startingLineNumber = "180"
+         endingLineNumber = "180"
          landmarkName = "+initializeDB"
          landmarkType = "5">
       </FileBreakpoint>
@@ -450,11 +450,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "zijiyoun/ViewController.m"
-         timestampString = "377786486.514405"
+         timestampString = "377792164.557405"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "171"
-         endingLineNumber = "171"
+         startingLineNumber = "181"
+         endingLineNumber = "181"
          landmarkName = "+initializeDB"
          landmarkType = "5">
       </FileBreakpoint>

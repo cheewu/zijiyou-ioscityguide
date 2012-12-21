@@ -71,8 +71,12 @@
     
     if ([[NSFileManager defaultManager] fileExistsAtPath:downloadPath]&&isPurchased) {//如果有离线文件
         
-        NSURL *documentsDictoryURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-        storeURL = [documentsDictoryURL URLByAppendingPathComponent:@"osm.mbtiles"];
+     //   NSURL *documentsDictoryURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+        NSString *userDirectory= [NSHomeDirectory()
+                                  stringByAppendingPathComponent:@"User/osm.mbtiles"];
+        
+      //  storeURL = [documentsDictoryURL URLByAppendingPathComponent:@"osm.mbtiles"];
+        storeURL=[NSURL fileURLWithPath:userDirectory];
         
         mapView = [[MyMapBoxView alloc] initWithFrame:CGRectMake(mainView.frame.origin.x, mainView.frame.origin.y+44, mainView.frame.size.width, mainView.frame.size.height) url:storeURL zoom:mapzoom];
         mapView.delegate =self;
@@ -171,7 +175,7 @@
 {
     //UIStoryboard *sb = [ViewController getStoryboard];
     BOOL isPurchased=[[NSUserDefaults standardUserDefaults] objectForKey:@"isProUpgradePurchased"];//是否已经购买
-    if(!isPurchased){//如果没有购买
+    if(!isPurchased&&false){//如果没有购买
         [self showPayMap];
     }else{//购买了
         UIStoryboard *sb = [ViewController getStoryboard];

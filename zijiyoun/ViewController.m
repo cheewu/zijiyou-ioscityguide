@@ -32,6 +32,16 @@ NSArray *navitons;
 }
 - (void)viewDidLoad
 {
+    NSFileManager *fileManager=[NSFileManager defaultManager];
+    
+    NSString *userDirectory= [NSHomeDirectory()
+                              stringByAppendingPathComponent:@"User"];
+    if (!([fileManager fileExistsAtPath:userDirectory])){//如果不存在 强制拷user.db
+        BOOL bo = [[NSFileManager defaultManager] createDirectoryAtPath:userDirectory withIntermediateDirectories:YES attributes:nil error:nil];
+        
+        bool ds=[ViewController addSkipBackupAttributeToItemAtURL:[NSURL fileURLWithPath:userDirectory]];
+    }
+    
     if(locationManager==nil){
         locationManager = [[CLLocationManager alloc] init];//创建位置管理器
         locationManager.desiredAccuracy=kCLLocationAccuracyBest;
@@ -159,7 +169,7 @@ NSArray *navitons;
     NSFileManager *fileManager=[NSFileManager defaultManager];
     
     NSString *userDirectory= [NSHomeDirectory()
-                              stringByAppendingPathComponent:@"Documents/user.db"];
+                              stringByAppendingPathComponent:@"User/user.db"];
     if (!([fileManager fileExistsAtPath:userDirectory])){//如果不存在 强制拷user.db
         NSURL * dburl = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"user" ofType:@"db"]];
         NSData *userdbData= [NSData dataWithContentsOfFile:[dburl path]];
@@ -182,20 +192,27 @@ NSArray *navitons;
     return db;
 }
 +(FMDatabase *)getTransferDataBase{
-    NSFileManager *fileManager=[NSFileManager defaultManager];
-    NSURL *documentsDictoryURL = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-    NSURL *dburl = [documentsDictoryURL URLByAppendingPathComponent:@"transfer.db"];
-    FMDatabase *db = [FMDatabase databaseWithPath:[dburl path]];
+    //NSFileManager *fileManager=[NSFileManager defaultManager];
+  //  NSURL *documentsDictoryURL = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+    NSString *userDirectory= [NSHomeDirectory()
+                              stringByAppendingPathComponent:@"User/transfer.db"];
+    NSURL *documentsDictoryURL =[NSURL fileURLWithPath:userDirectory];
+   // NSURL *dburl =[NSURL fileURLWithPath:<#(NSString *)#>]// [documentsDictoryURL URLByAppendingPathComponent:@"transfer.db"];
+    FMDatabase *db = [FMDatabase databaseWithPath:[documentsDictoryURL path]];
     return db;
 }
 +(FMDatabase *)getUserDataBase{
     //    NSURL * dburl = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"poi" ofType:@"db"]];
     [ViewController initializeDB];
-    NSFileManager *fileManager=[NSFileManager defaultManager];
+   // NSFileManager *fileManager=[NSFileManager defaultManager];
     
-    NSURL *documentsDictoryURL = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-    NSURL *dburl = [documentsDictoryURL URLByAppendingPathComponent:@"user.db"];
+  //  NSURL *documentsDictoryURL = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     
+    NSString *userDirectory= [NSHomeDirectory()
+                              stringByAppendingPathComponent:@"User/user.db"];
+    
+   // NSURL *dburl = [documentsDictoryURL URLByAppendingPathComponent:@"user.db"];
+    NSURL *dburl =[NSURL fileURLWithPath:userDirectory];
     // NSString *path = [[NSString alloc] initWithFormat:@"%@/poi.db",[[NSBundle mainBundle] bundlePath]];
     
     FMDatabase *db = [FMDatabase databaseWithPath:[dburl path]];
@@ -437,8 +454,12 @@ NSArray *navitons;
     NSURL *zstoreURL ;
     if ([[NSFileManager defaultManager] fileExistsAtPath:downloadPath]) {//在线地图
         
-        NSURL *documentsDictoryURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-        zstoreURL = [documentsDictoryURL URLByAppendingPathComponent:@"osm.mbtiles"];
+        //NSURL *documentsDictoryURL = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+       // zstoreURL = [documentsDictoryURL URLByAppendingPathComponent:@"osm.mbtiles"];
+        
+        NSString *userDirectory= [NSHomeDirectory()
+                                  stringByAppendingPathComponent:@"User/osm.mbtiles"];
+        zstoreURL = [NSURL fileURLWithPath:userDirectory];
     }else{//离线地图
     }
     RMMapView *mapView;
