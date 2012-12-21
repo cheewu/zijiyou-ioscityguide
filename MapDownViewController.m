@@ -139,8 +139,8 @@
     {
         NSLog(@"创建请求2");
         //初始化Documents路径
-        NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
-        NSString *downloadPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/iap.zip"];
+        NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches"];
+        NSString *downloadPath = [path stringByAppendingPathComponent:@"iap.zip"];
         NSString *tempPath = [path stringByAppendingPathComponent:@"osm_mbtiles.temp"];
         NSURL *url = [NSURL URLWithString:offline_url];
         
@@ -166,10 +166,16 @@
 }
 
 +(void)unzipDownDB:(Boolean)isReTry{
-    NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
-    NSString *downloadPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/iap.zip"];
+    NSString *pathDocuments = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents"];
+    NSString *path = [NSHomeDirectory() stringByAppendingPathComponent:@"Library/Caches"];
+    NSString *downloadPath = [path stringByAppendingPathComponent:@"iap.zip"];
     NSFileManager *fileManager=[NSFileManager defaultManager];
-
+    NSString *tempPath1 = [path stringByAppendingPathComponent:@"osm.mbtiles"];
+    NSString *tempPath2 = [path stringByAppendingPathComponent:@"transfer.db"];
+    
+    NSString *dPath1 = [pathDocuments stringByAppendingPathComponent:@"osm.mbtiles"];
+    NSString *dPath2 = [pathDocuments stringByAppendingPathComponent:@"transfer.db"];
+     NSString *tempPath = [path stringByAppendingPathComponent:@"osm_mbtiles.temp"];
     if (([fileManager fileExistsAtPath:downloadPath])){//如果不存在 强制拷
         ZipArchive* zip = [[ZipArchive alloc] init];
         
@@ -181,16 +187,28 @@
                 if(isReTry){
                     [MapDownViewController unzipDownDB:NO];
                 }else{
-                    NSString *tempPath = [path stringByAppendingPathComponent:@"osm_mbtiles.temp"];
-                    NSString *tempPath1 = [path stringByAppendingPathComponent:@"osm.mbtiles"];
-                    NSString *tempPath2 = [path stringByAppendingPathComponent:@"transfer.db"];
+                   
+                   
                     [fileManager removeItemAtPath:tempPath1 error:nil];
                     [fileManager removeItemAtPath:tempPath2 error:nil];
                     [fileManager removeItemAtPath:downloadPath error:nil];
                     [fileManager removeItemAtPath:tempPath error:nil];
                 }
                 NSLog(@"zip errrrrr====");
+            }else{//成功
+                
+                [fileManager copyItemAtPath:tempPath1 toPath:dPath1 error:nil];
+                [fileManager copyItemAtPath:tempPath2 toPath:dPath2 error:nil];
+                
+               bool b= [ViewController addSkipBackupAttributeToItemAtURL:[NSURL fileURLWithPath:dPath1]];
+               bool c= [ViewController addSkipBackupAttributeToItemAtURL:[NSURL fileURLWithPath:dPath2]];
+                
+                [fileManager removeItemAtPath:tempPath1 error:nil];
+                [fileManager removeItemAtPath:tempPath2 error:nil];
+                [fileManager removeItemAtPath:downloadPath error:nil];
+                [fileManager removeItemAtPath:tempPath error:nil];
             }
+            
              [fileManager removeItemAtPath:downloadPath error:nil];
             [zip UnzipCloseFile];
         }

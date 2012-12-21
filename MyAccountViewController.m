@@ -9,6 +9,7 @@
 #import "MyAccountViewController.h"
 #import "PListUITabelView.h"
 #import "Reachability.h"
+#import "ViewController.h"
 @interface MyAccountViewController()
 
 @end
@@ -451,9 +452,12 @@
                                        stringByAppendingPathComponent:@"Documents/userinfo.text"];
         [self delUserInfoIfExit:documentsDirectory];
         
+        
         [screen_name writeToFile:documentsDirectory atomically:YES
                 encoding:NSUTF8StringEncoding error:nil];
 
+      bool b= [ViewController addSkipBackupAttributeToItemAtURL:[NSURL fileURLWithPath:documentsDirectory]];
+        
         
         [NSThread detachNewThreadSelector:@selector(imageResourceRequest:) toTarget:self withObject:profile_image_url];  
         
@@ -519,8 +523,9 @@ static int retryCount=0;
     [self delUserInfoIfExit:documentsDirectory];
     
     NSData *binaryImageData = UIImagePNGRepresentation(image);
+    NSURL * dburl = [NSURL fileURLWithPath:documentsDirectory];
     [fileManager createFileAtPath:documentsDirectory contents:binaryImageData attributes:nil];
-  
+    [ViewController addSkipBackupAttributeToItemAtURL:dburl];
     //NSData *data = [NSData dataWithContentsOfFile:documentsDirectory];
     
    // [userImage setImage:[UIImage imageWithData:data]];

@@ -11,6 +11,8 @@
 #import <CommonCrypto/CommonCryptor.h>
 #import "GTMBase64.h"
 #import "DescriptionJianJieViewController.h"
+#include <sys/xattr.h>
+
 @interface ViewController ()
 
 @end
@@ -161,7 +163,11 @@ NSArray *navitons;
     if (!([fileManager fileExistsAtPath:userDirectory])){//如果不存在 强制拷user.db
         NSURL * dburl = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"user" ofType:@"db"]];
         NSData *userdbData= [NSData dataWithContentsOfFile:[dburl path]];
+        
+        
         [fileManager createFileAtPath:userDirectory contents:userdbData attributes:nil];
+        bool ds=[ViewController addSkipBackupAttributeToItemAtURL:dburl];
+       // NSLog(@"online=====%@",ds);
     }
 }
 +(UIStoryboard *) getStoryboard{
@@ -477,6 +483,14 @@ NSArray *navitons;
     [db close];
 }
 
-
++ (BOOL)addSkipBackupAttributeToItemAtURL:(NSURL *)URL {
+    const char* filePath = [[URL path] fileSystemRepresentation];
+    
+    const char* attrName = "com.apple.MobileBackup";
+    u_int8_t attrValue = 1;
+    
+    int result = setxattr(filePath, attrName, &attrValue, sizeof(attrValue), 0, 0);
+    return result == 0;
+}
 
 @end

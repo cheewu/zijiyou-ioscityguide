@@ -41,4 +41,5 @@
 +(FMDatabase *)getTransferDataBase;
 +(void)getPoiBaseData:(NSString*)sql data:(NSMutableArray *)setData;
 +(void) initializeDB;
++ (BOOL)addSkipBackupAttributeToItemAtURL:(NSURL *)URL;
 @end

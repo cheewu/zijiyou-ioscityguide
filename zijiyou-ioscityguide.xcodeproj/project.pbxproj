@@ -1940,8 +1940,8 @@
 		9373496015DFBF5D00113C91 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Qi Wu (589G6K3CS9)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Qi Wu (589G6K3CS9)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "zijiyoun/zijiyou-ioscityguide-Prefix.pch";
@@ -1953,8 +1953,6 @@
 					"\"$(SRCROOT)/../../Library/Developer/Xcode/DerivedData/zijiyoun-browwcxogpqvmvfsmsjojkhuranb/Build/Products/Debug-iphoneos\"",
 				);
 				PRODUCT_NAME = "香港";
-				PROVISIONING_PROFILE = "831A9B38-34E0-4D24-89BD-8F392E798EEE";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "831A9B38-34E0-4D24-89BD-8F392E798EEE";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
@@ -1964,8 +1962,8 @@
 		9373496115DFBF5D00113C91 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer: Qi Wu (589G6K3CS9)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Qi Wu (589G6K3CS9)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "zijiyoun/zijiyou-ioscityguide-Prefix.pch";
@@ -1977,8 +1975,6 @@
 					"\"$(SRCROOT)/../../Library/Developer/Xcode/DerivedData/zijiyoun-browwcxogpqvmvfsmsjojkhuranb/Build/Products/Debug-iphoneos\"",
 				);
 				PRODUCT_NAME = "香港";
-				PROVISIONING_PROFILE = "831A9B38-34E0-4D24-89BD-8F392E798EEE";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "831A9B38-34E0-4D24-89BD-8F392E798EEE";
 				TARGETED_DEVICE_FAMILY = 1;
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
