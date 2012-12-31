@@ -143,9 +143,10 @@
     [scrollView addSubview:ditumap];
     sx+=offw;
     
-    DetailButtonUIView *dbtra = [[DetailButtonUIView alloc]initWithFrame:CGRectMake(sx, offy, imgw, imgh) imageName:@"gohere" text:poi_route];
-    [scrollView addSubview:dbtra];
-    sx+=offw;
+    
+//    DetailButtonUIView *dbtra = [[DetailButtonUIView alloc]initWithFrame:CGRectMake(sx, offy, imgw, imgh) imageName:@"gohere" text:poi_route];
+//    [scrollView addSubview:dbtra];
+//    sx+=offw;
     
     DetailButtonUIView *dbt = [[DetailButtonUIView alloc]initWithFrame:CGRectMake(sx, offy, imgw, imgh) imageName:@"checkin" text:poi_checkin];
     [scrollView addSubview:dbt];
@@ -162,7 +163,7 @@
     
     //offy+=30;
     [[ditumap button]addTarget:self action:@selector(clickMap) forControlEvents:UIControlEventTouchUpInside];
-    [[dbtra button]addTarget:self action:@selector(showTransfer) forControlEvents:UIControlEventTouchUpInside];
+//    [[dbtra button]addTarget:self action:@selector(showTransfer) forControlEvents:UIControlEventTouchUpInside];
     [[dbt button]addTarget:self action:@selector(clickCheck) forControlEvents:UIControlEventTouchUpInside];
     [[dbsc button]addTarget:self action:@selector(clickFave) forControlEvents:UIControlEventTouchUpInside];
     

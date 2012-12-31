@@ -28,7 +28,7 @@
 - (void)viewDidLoad
 {
     NSString *poi_article=NSLocalizedStringFromTable(@"poi_article", @"InfoPlist",nil);
-    objValue = [NSArray arrayWithObjects:[[NSString alloc]initWithFormat:@"%@攻略",poi_article],@"意见反馈",@"推荐给朋友",@"关于",@"",@"", nil];
+    objValue = [NSArray arrayWithObjects:@"意见反馈",@"推荐给朋友",@"关于",@"",@"", nil];
    // pctop = [[PCTOPUIview alloc]initWithFrame:CGRectMake(0, 0, 320, 48) title:@"更多" isShowBack:YES isShowRight:NO ];
     
     pctop = [[PCTOPUIview alloc]initWithFrame:CGRectMake(0, 0, 320, 48) title:@"更多" backTitle:nil righTitle:nil];
@@ -92,19 +92,19 @@
 //        [temp setShowsTouchWhenHighlighted:YES];
 //        [cell addSubview:temp];
     }
-    if(indexPath.row!=0){
+  //  if(indexPath.row!=0){
         UIImageView *tempIV=[[UIImageView alloc]init];
         [tempIV setBackgroundColor:[UIColor colorWithPatternImage:[UIImage imageNamed:@"tabelbag"]]];
         cell.backgroundView = tempIV;
-    }else{
-        //cell separatorColor为clear，然后把图片做的分割线添加到自定义的custom cell上。
-        UIImageView *tempseparator=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"separator"]];
-       
-        [tempseparator setFrame:CGRectMake(cell.frame.origin.x, cell.frame.origin.y+cell.frame.size.height-2, tempseparator.frame.size.width, tempseparator.frame.size.height-5)];
-        
-        [cell addSubview:tempseparator];
-    }
-    
+//    }else{
+//        //cell separatorColor为clear，然后把图片做的分割线添加到自定义的custom cell上。
+//        UIImageView *tempseparator=[[UIImageView alloc]initWithImage:[UIImage imageNamed:@"separator"]];
+//       
+//        [tempseparator setFrame:CGRectMake(cell.frame.origin.x, cell.frame.origin.y+cell.frame.size.height-2, tempseparator.frame.size.width, tempseparator.frame.size.height-5)];
+//        
+//        [cell addSubview:tempseparator];
+//    }
+//    
     
     cell.textLabel.text =[objValue objectAtIndex:indexPath.row];
     [cell.textLabel setFont:[UIFont fontWithName:@"Heiti Tc-BOLD" size:22]];
@@ -123,18 +123,19 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(indexPath.row==0){
-        //YouJi
-//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.zijiyou.com/article/4e8c091fd0c2ff482300031d"]];
-        UIStoryboard *sb = [ViewController getStoryboard];
-        PWebViewController *rb = [sb instantiateViewControllerWithIdentifier:@"YouJi"];
-        rb.modalTransitionStyle =UIModalTransitionStyleCoverVertical;
-        [self.navigationController pushViewController:rb animated:YES];
-        [self presentModalViewController:rb animated:YES];
-        
-    }else if(indexPath.row==1){
+//    if(indexPath.row==0){
+//        //YouJi
+////        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://www.zijiyou.com/article/4e8c091fd0c2ff482300031d"]];
+//        UIStoryboard *sb = [ViewController getStoryboard];
+//        PWebViewController *rb = [sb instantiateViewControllerWithIdentifier:@"YouJi"];
+//        rb.modalTransitionStyle =UIModalTransitionStyleCoverVertical;
+//        [self.navigationController pushViewController:rb animated:YES];
+//        [self presentModalViewController:rb animated:YES];
+//        
+    //}else
+if(indexPath.row==0){
         [self sendMailInApp:@"我的意见" toMail:@"feedback@zijiyou.com" ];
-    }else if(indexPath.row==2){
+    }else if(indexPath.row==1){
         [self sendMailInApp:@"推荐自己游" toMail:@""];
     }
 }

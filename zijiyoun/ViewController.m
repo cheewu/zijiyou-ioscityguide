@@ -11,6 +11,7 @@
 #import <CommonCrypto/CommonCryptor.h>
 #import "GTMBase64.h"
 #import "DescriptionJianJieViewController.h"
+#import "PWebViewController.h"
 #include <sys/xattr.h>
 
 @interface ViewController ()
@@ -71,14 +72,14 @@ NSArray *navitons;
     pcb3= [PCustButtonController alloc];
     pcb4= [PCustButtonController alloc];
     
-    NSString *city_subway=NSLocalizedStringFromTable(@"city_subway", @"InfoPlist",nil);
+    NSString *city_article=NSLocalizedStringFromTable(@"city_article", @"InfoPlist",nil);
     NSString *city_wiki=NSLocalizedStringFromTable(@"city_wiki", @"InfoPlist",nil);
     NSString *my_wiki=NSLocalizedStringFromTable(@"my_wiki", @"InfoPlist",nil);
     NSString *hot_poi=NSLocalizedStringFromTable(@"hot_poi", @"InfoPlist",nil);
    // [[NSString alloc] initWithFormat:@"",]
     
-    NSArray *objValue = [NSArray arrayWithObjects:hot_poi,city_subway,city_wiki,my_wiki , nil];
-    NSArray *objKey =[NSArray arrayWithObjects:@"homeiconpoi",@"homeiconsubway",@"homeiconcity",@"homeiconmy", nil];
+    NSArray *objValue = [NSArray arrayWithObjects:hot_poi,city_wiki,city_article,my_wiki , nil];
+    NSArray *objKey =[NSArray arrayWithObjects:@"homeiconpoi",@"homeiconcity",@"homeiconguide",@"homeiconmy", nil];
     NSArray *widthValue = [NSArray arrayWithObjects:[NSNumber numberWithInt:180],[NSNumber numberWithInt:160],[NSNumber numberWithInt:200],[NSNumber numberWithInt:190] , nil];
     pcbs=[NSArray arrayWithObjects:pcb1,pcb2,pcb3,pcb4,nil];
   //  navitons=[NSArray arrayWithObjects:@"HotPoiHome",@"SubWay",@"CityInt",@"MyHome", nil];
@@ -97,8 +98,8 @@ NSArray *navitons;
     }
     
     [pcb1.button addTarget:self action:@selector(pcb1buttonClicked) forControlEvents:UIControlEventTouchUpInside];
-    [pcb2.button addTarget:self action:@selector(pcb2buttonClicked) forControlEvents:UIControlEventTouchUpInside];
-    [pcb3.button addTarget:self action:@selector(pcb3buttonClicked) forControlEvents:UIControlEventTouchUpInside];
+    [pcb2.button addTarget:self action:@selector(pcb3buttonClicked) forControlEvents:UIControlEventTouchUpInside];
+    [pcb3.button addTarget:self action:@selector(pcb2buttonClicked) forControlEvents:UIControlEventTouchUpInside];
     [pcb4.button addTarget:self action:@selector(pcb4buttonClicked) forControlEvents:UIControlEventTouchUpInside];
     [super viewDidLoad];
 
@@ -111,11 +112,20 @@ NSArray *navitons;
     [self presentModalViewController:rb animated:YES];
 }
 - (void)pcb2buttonClicked{
+    
+  //  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:region_url]];
     UIStoryboard *sb = [ViewController getStoryboard];
-    ViewController *rb = [sb instantiateViewControllerWithIdentifier:@"SubWay"];
-    rb.modalTransitionStyle =UIModalTransitionStyleFlipHorizontal;
+    PWebViewController *rb = [sb instantiateViewControllerWithIdentifier:@"YouJi"];
+    rb.modalTransitionStyle =UIModalTransitionStyleCoverVertical;
     [self.navigationController pushViewController:rb animated:YES];
     [self presentModalViewController:rb animated:YES];
+
+    
+//    UIStoryboard *sb = [ViewController getStoryboard];
+//    ViewController *rb = [sb instantiateViewControllerWithIdentifier:@"SubWay"];
+//    rb.modalTransitionStyle =UIModalTransitionStyleFlipHorizontal;
+//    [self.navigationController pushViewController:rb animated:YES];
+//    [self presentModalViewController:rb animated:YES];
 
 }
 - (void)pcb3buttonClicked{

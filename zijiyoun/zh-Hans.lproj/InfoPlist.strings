@@ -11,6 +11,7 @@ CFBundleDisplayName="香港";//这里是APP显示的名称
 city_name="香港";
 hot_poi="热门地点";
 city_subway="香港地铁";
+city_article="香港游记";
 city_wiki="城市攻略";
 my_wiki="我的香港";
 //2.热门地点
@@ -67,4 +68,7 @@ my_favourite="我的收藏";
 map_center="114.15,22.28";
 map_level="15";
 map_max_level="17";
+
+poi_url="http://www.zijiyou.com/mobile/article/poi/";
+region_url="http://www.zijiyou.com/mobile/article/region/4e8c091fd0c2ff482300031d";
 
