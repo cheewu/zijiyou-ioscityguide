@@ -6,7 +6,7 @@
 //  Copyright (c) 2012年 piao chunzhi. All rights reserved.
 //
 #define isRetina ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 960), [[UIScreen mainScreen] currentMode].size) : NO)
-#define downMapFileName @"Documents/osm.mbtiles"
+#define downMapFileName @"Library/User/osm.mbtiles"
 
 #import <UIKit/UIKit.h>
 #import "PCustButtonController.h"
@@ -41,4 +41,5 @@
 +(FMDatabase *)getTransferDataBase;
 +(void)getPoiBaseData:(NSString*)sql data:(NSMutableArray *)setData;
 +(void) initializeDB;
++ (BOOL)addSkipBackupAttributeToItemAtURL:(NSURL *)URL;
 @end

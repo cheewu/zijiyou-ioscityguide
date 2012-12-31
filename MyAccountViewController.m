@@ -9,6 +9,7 @@
 #import "MyAccountViewController.h"
 #import "PListUITabelView.h"
 #import "Reachability.h"
+#import "ViewController.h"
 @interface MyAccountViewController()
 
 @end
@@ -276,7 +277,7 @@
             [self onLogOutOAuth];
             [self performSelector:@selector(onLogInOAuth) withObject:nil afterDelay:1.0];
         }else{
-            NSString *downloadPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/userimage.png"];
+            NSString *downloadPath = [NSHomeDirectory() stringByAppendingPathComponent:@"Library/User/userimage.png"];
             if ([[NSFileManager defaultManager] fileExistsAtPath:downloadPath]) {
                 UIImage *image = [UIImage imageWithContentsOfFile:downloadPath];
                 [userImage setImage:image];
@@ -319,7 +320,7 @@
 {
     [weiBoEngine logOut];
     NSString *documentsDirectory= [NSHomeDirectory()
-                                   stringByAppendingPathComponent:@"Documents"];
+                                   stringByAppendingPathComponent:@"Library/User"];
     [self delUserInfoIfExit:[documentsDirectory stringByAppendingString:@"/userinfo.text"]];
     [self delUserInfoIfExit:[documentsDirectory stringByAppendingString:@"/userimage.png"]];
     UIImage *image = [UIImage imageNamed:@"myIcon"];
@@ -448,12 +449,15 @@
         
         //NSFileManager *fileManager=[NSFileManager defaultManager];
         NSString *documentsDirectory= [NSHomeDirectory()
-                                       stringByAppendingPathComponent:@"Documents/userinfo.text"];
+                                       stringByAppendingPathComponent:@"Library/User/userinfo.text"];
         [self delUserInfoIfExit:documentsDirectory];
+        
         
         [screen_name writeToFile:documentsDirectory atomically:YES
                 encoding:NSUTF8StringEncoding error:nil];
 
+      bool b= [ViewController addSkipBackupAttributeToItemAtURL:[NSURL fileURLWithPath:documentsDirectory]];
+        
         
         [NSThread detachNewThreadSelector:@selector(imageResourceRequest:) toTarget:self withObject:profile_image_url];  
         
@@ -514,13 +518,14 @@ static int retryCount=0;
     
     NSFileManager *fileManager=[NSFileManager defaultManager];
     NSString *documentsDirectory= [NSHomeDirectory()
-                                   stringByAppendingPathComponent:@"Documents/userimage.png"];
+                                   stringByAppendingPathComponent:@"Library/User/userimage.png"];
     
     [self delUserInfoIfExit:documentsDirectory];
     
     NSData *binaryImageData = UIImagePNGRepresentation(image);
+    NSURL * dburl = [NSURL fileURLWithPath:documentsDirectory];
     [fileManager createFileAtPath:documentsDirectory contents:binaryImageData attributes:nil];
-  
+    [ViewController addSkipBackupAttributeToItemAtURL:dburl];
     //NSData *data = [NSData dataWithContentsOfFile:documentsDirectory];
     
    // [userImage setImage:[UIImage imageWithData:data]];

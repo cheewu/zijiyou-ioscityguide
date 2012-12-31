@@ -721,14 +721,14 @@
 //    }
     
     BOOL isPurchased=[[NSUserDefaults standardUserDefaults] objectForKey:@"isProUpgradePurchased"];//是否已经购买
-    if(!isPurchased){//如果没有购买
+    if(!isPurchased){//如果没有购买&&false
         [self showPayMap];
     }else{//购买了
         UIStoryboard *sb = [ViewController getStoryboard];
         NSFileManager *fileManager=[NSFileManager defaultManager];
         
         NSString *userDirectory= [NSHomeDirectory()
-                                  stringByAppendingPathComponent:@"Documents/transfer.db"];
+                                  stringByAppendingPathComponent:@"Library/User/transfer.db"];
         if (!([fileManager fileExistsAtPath:userDirectory])){//如果不存在 跳转到下载
             UIStoryboard *sb = [ViewController getStoryboard];
             MapDownViewController *rb = [sb instantiateViewControllerWithIdentifier:@"MapDown"];
