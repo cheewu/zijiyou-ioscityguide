@@ -8,11 +8,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DescriptionViewController.m"
-         timestampString = "376119771.275303"
+         timestampString = "378657586.02857"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "669"
-         endingLineNumber = "669"
+         startingLineNumber = "670"
+         endingLineNumber = "670"
          landmarkName = "-clickBack"
          landmarkType = "5">
       </FileBreakpoint>
@@ -60,24 +60,24 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DescriptionViewController.m"
-         timestampString = "376112943.943598"
+         timestampString = "378657586.02857"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "543"
-         endingLineNumber = "543"
-         landmarkName = "-moreClick"
-         landmarkType = "5">
+         startingLineNumber = "544"
+         endingLineNumber = "544"
+         landmarkName = "@implementation DescriptionViewController"
+         landmarkType = "3">
       </FileBreakpoint>
       <FileBreakpoint
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "DescriptionViewController.m"
-         timestampString = "376037667.078998"
+         timestampString = "378657586.02857"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "210"
-         endingLineNumber = "210"
+         startingLineNumber = "211"
+         endingLineNumber = "211"
          landmarkName = "-viewDidLoad"
          landmarkType = "5">
       </FileBreakpoint>
@@ -424,12 +424,12 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "zijiyoun/ViewController.m"
-         timestampString = "377792164.557405"
+         timestampString = "378659621.875427"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "178"
-         endingLineNumber = "178"
-         landmarkName = "+initializeDB"
+         startingLineNumber = "188"
+         endingLineNumber = "188"
+         landmarkName = "+getDataBase"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -437,25 +437,25 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "zijiyoun/ViewController.m"
-         timestampString = "377792164.557405"
+         timestampString = "378659621.875427"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "180"
-         endingLineNumber = "180"
-         landmarkName = "+initializeDB"
+         startingLineNumber = "190"
+         endingLineNumber = "190"
+         landmarkName = "+getDataBase"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "zijiyoun/ViewController.m"
-         timestampString = "377792164.557405"
+         timestampString = "378659621.875427"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "181"
-         endingLineNumber = "181"
-         landmarkName = "+initializeDB"
+         startingLineNumber = "191"
+         endingLineNumber = "191"
+         landmarkName = "+getDataBase"
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
@@ -495,6 +495,19 @@
          startingLineNumber = "206"
          endingLineNumber = "206"
          landmarkName = "+unzipDownDB:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "DescriptionViewController.m"
+         timestampString = "378635208.813791"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "554"
+         endingLineNumber = "554"
+         landmarkName = "-youjiShow"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

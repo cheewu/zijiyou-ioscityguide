@@ -68,3 +68,6 @@ map_center="114.15,22.28";
 map_level="15";
 map_max_level="17";
 
+poi_url="http://www.zijiyou.com/mobile/article/poi/";
+
+region_url="http://www.zijiyou.com/mobile/article/region/4e8c091fd0c2ff482300031d";

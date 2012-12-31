@@ -547,7 +547,10 @@
     NSString *poi_article=NSLocalizedStringFromTable(@"poi_article", @"InfoPlist",nil);
     YouJiViewController *rb = [sb instantiateViewControllerWithIdentifier:@"YoujiWeb"];
     rb.title=[[NSString alloc]initWithFormat:@"%@%@" ,[poiData objectForKey:@"name"],poi_article];
-    rb.url=[[NSString alloc]initWithFormat:@"http://www.zijiyou.com/poi/%@" ,[poiData objectForKey:@"poimongoid"]];
+    
+     NSString *poi_url=NSLocalizedStringFromTable(@"poi_url", @"InfoPlist",nil);
+    NSString *poi_urls=[[NSString alloc]initWithFormat:@"%@%@" ,poi_url,[poiData objectForKey:@"poimongoid"]];
+    rb.url=poi_urls;
     rb.modalTransitionStyle =UIModalTransitionStyleCrossDissolve;
     [self.navigationController pushViewController:rb animated:YES];
     [self presentModalViewController:rb animated:YES];
