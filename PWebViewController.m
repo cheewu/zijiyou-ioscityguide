@@ -50,7 +50,7 @@
     rb.modalTransitionStyle =UIModalTransitionStyleCrossDissolve;
     [self.navigationController pushViewController:rb animated:YES];
     [self presentModalViewController:rb animated:YES];
-    [rb setSelectedIndex:4];
+    [rb setSelectedIndex:0];
     [rb.btn1 setSelected:NO];
     [rb.btn5 setSelected:YES];
 }
