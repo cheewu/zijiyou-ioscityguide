@@ -485,6 +485,9 @@ NSArray *navitons;
             NSLog(@"解密失败 poimongoid=%@",poimongoid);
             continue;
         }
+//        NSString *namess =[NSDataDES getContentByHexAndDes:@"585BD1B1BD89291EF5D399BDBE1EAFC32DA140FC0CB41ACC" key:deskey] ;
+//        NSLog(@"解密失败 name=%@",namess);
+        
         // NSString *name =[resultSet stringForColumn:@"name"] ;
         // NSString *poimongoid = [resultSet stringForColumn:@"poimongoid"];
         NSString *category = [resultSet stringForColumn:@"category"];

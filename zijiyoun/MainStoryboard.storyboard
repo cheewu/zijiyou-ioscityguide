@@ -52,6 +52,20 @@
             </objects>
             <point key="canvasLocation" x="-4535" y="3517"/>
         </scene>
+        <!--Sub Way Draw View Controller-->
+        <scene sceneID="Y9v-zm-nDl">
+            <objects>
+                <viewController storyboardIdentifier="SubWayDraw" id="kTQ-8S-6V4" customClass="SubWayDrawViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Xpi-y2-27J">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mN4-1u-Dgw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-4292" y="2807"/>
+        </scene>
         <!--Sub Way Home View Controller - 地铁-->
         <scene sceneID="5rA-bJ-bBV">
             <objects>
@@ -828,149 +842,6 @@
         <image name="paizhaoButtonnor.png" width="149" height="40"/>
         <image name="xiangceButtonnor.png" width="149" height="40"/>
     </resources>
-    <classes>
-        <class className="CheckInViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CheckInViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="contentTextFeil" candidateClass="UITextView"/>
-                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="labelText" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="paizhaoButton" candidateClass="UIButton"/>
-                <relationship kind="outlet" name="xiangceButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="CityIntViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CityIntViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="DescriptionJianJieViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DescriptionJianJieViewController.h"/>
-        </class>
-        <class className="DescriptionViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DescriptionViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="poiView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="DetailGonglueViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailGonglueViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="dwebView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="HomeNearViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HomeNearViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="firstView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="subView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="HotPoiHomeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/HotPoiHomeViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="firstView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="subView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="MapBoxViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapBoxViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mainView" candidateClass="UIView"/>
-                <relationship kind="outlet" name="subMenuView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="MapDownViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MapDownViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="downButton:"/>
-                <relationship kind="outlet" name="allSize" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="currentSize" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="downImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="downTitle" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="downfillImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="downpre" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="speedText" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="startButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="MoreViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MoreViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="mtabelView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="MyAccountViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MyAccountViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="userImage" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="userName" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="PWebViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PWebViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="PayMapViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/PayMapViewController.h"/>
-        </class>
-        <class className="RXCustomTabBar" superclassName="UITabBarController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/RXCustomTabBar.h"/>
-        </class>
-        <class className="SearchViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SearchViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="hiddenKey:"/>
-                <relationship kind="outlet" name="searchbar" candidateClass="UISearchBar"/>
-                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
-            </relationships>
-        </class>
-        <class className="SubWayDetailViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SubWayDetailViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="SubWayHomeViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SubWayHomeViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-                <relationship kind="outlet" name="subWayImg" candidateClass="UIImageView"/>
-            </relationships>
-        </class>
-        <class className="SubWayStationViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SubWayStationViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="TransferSubWayViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TransferSubWayViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="scrollView" candidateClass="UIScrollView"/>
-            </relationships>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="btnPressHide:"/>
-                <relationship kind="action" name="btnPressShow:"/>
-                <relationship kind="outlet" name="homeView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="YouJiViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/YouJiViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="youjiWebView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

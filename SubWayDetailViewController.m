@@ -135,7 +135,7 @@
         int offy=15;
         int i=0;
         
-        NSMutableDictionary *poiDics= [[NSMutableDictionary alloc]init];//经过的线路
+        NSMutableDictionary *poiDics= [[NSMutableDictionary alloc]init];//所有经过的线路poi
         
         for (NSDictionary *poi in entries) {
             [poiDics setObject:poi forKey:[poi objectForKey:@"poimongoid"]];

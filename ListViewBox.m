@@ -25,6 +25,9 @@
 - (id)initWithFrame:(CGRect)frame imgURL:(NSString *)imgurl textColor:(NSString *)textColor text:(NSString *)text stationText:(NSString *)stationText leftImage:(NSString *)image sandetName:(NSString *)sandetName
 {
     
+    if(![textColor hasPrefix:@"#"]){
+        textColor = [[NSString alloc] initWithFormat:@"%@%@",@"#",textColor];
+    }
     self = [super initWithFrame:frame];
     if (self) {
         //   [self setBackgroundColor:[UIColor whiteColor]];
@@ -51,6 +54,9 @@
         
         if(image==nil){
             UIView *textUIView=[[UIView alloc]init];
+            
+            
+            
             [textUIView setBackgroundColor:[ViewController hexStringToColor:textColor]];
           //  textUIView.layer.cornerRadius = 5;
                     

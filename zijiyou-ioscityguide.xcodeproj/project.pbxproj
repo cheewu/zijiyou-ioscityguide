@@ -265,6 +265,7 @@
 		A9AE72BB161581D70095EAFD /* poiwikipedia.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AE72B1161581D70095EAFD /* poiwikipedia.png */; };
 		A9AE72BC161581D70095EAFD /* poiwikipedia@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AE72B2161581D70095EAFD /* poiwikipedia@2x.png */; };
 		A9AE72BD161581D70095EAFD /* shoppingcenter.png in Resources */ = {isa = PBXBuildFile; fileRef = A9AE72B3161581D70095EAFD /* shoppingcenter.png */; };
+		A9AFFA481692BABC00E166E4 /* SubWayUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = A9AFFA471692BABC00E166E4 /* SubWayUIView.m */; };
 		A9B0716416181272001F3007 /* arrows@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9B0716316181272001F3007 /* arrows@2x.png */; };
 		A9B0716716181792001F3007 /* SubWayStationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B0716616181792001F3007 /* SubWayStationViewController.m */; };
 		A9B0EE82163BF63500FF3F72 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A9B0EE80163BF63500FF3F72 /* icon.png */; };
@@ -296,6 +297,7 @@
 		A9BC9F56166A3DF5006EBA74 /* arrowdown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BC9F52166A3DF5006EBA74 /* arrowdown@2x.png */; };
 		A9BC9F57166A3DF5006EBA74 /* arrowup.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BC9F53166A3DF5006EBA74 /* arrowup.png */; };
 		A9BC9F58166A3DF5006EBA74 /* arrowup2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9BC9F54166A3DF5006EBA74 /* arrowup2x.png */; };
+		A9C1AD181691C01C00465F57 /* SubWayDrawViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A9C1AD171691C01C00465F57 /* SubWayDrawViewController.m */; };
 		A9CC3A74162B02BD005AC036 /* locationiconnor@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9CC3A73162B02BD005AC036 /* locationiconnor@2x.png */; };
 		A9CC3A77162B0A8E005AC036 /* subwaytransfer.png in Resources */ = {isa = PBXBuildFile; fileRef = A9CC3A75162B0A8E005AC036 /* subwaytransfer.png */; };
 		A9CC3A78162B0A8E005AC036 /* subwaytransfer@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A9CC3A76162B0A8E005AC036 /* subwaytransfer@2x.png */; };
@@ -706,6 +708,8 @@
 		A9AE72B1161581D70095EAFD /* poiwikipedia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = poiwikipedia.png; sourceTree = "<group>"; };
 		A9AE72B2161581D70095EAFD /* poiwikipedia@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "poiwikipedia@2x.png"; sourceTree = "<group>"; };
 		A9AE72B3161581D70095EAFD /* shoppingcenter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shoppingcenter.png; sourceTree = "<group>"; };
+		A9AFFA461692BABC00E166E4 /* SubWayUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubWayUIView.h; sourceTree = "<group>"; };
+		A9AFFA471692BABC00E166E4 /* SubWayUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubWayUIView.m; sourceTree = "<group>"; };
 		A9B0716316181272001F3007 /* arrows@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrows@2x.png"; sourceTree = "<group>"; };
 		A9B0716516181792001F3007 /* SubWayStationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubWayStationViewController.h; sourceTree = "<group>"; };
 		A9B0716616181792001F3007 /* SubWayStationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubWayStationViewController.m; sourceTree = "<group>"; };
@@ -743,6 +747,8 @@
 		A9BC9F52166A3DF5006EBA74 /* arrowdown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arrowdown@2x.png"; sourceTree = "<group>"; };
 		A9BC9F53166A3DF5006EBA74 /* arrowup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowup.png; sourceTree = "<group>"; };
 		A9BC9F54166A3DF5006EBA74 /* arrowup2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowup2x.png; sourceTree = "<group>"; };
+		A9C1AD161691C01C00465F57 /* SubWayDrawViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubWayDrawViewController.h; sourceTree = "<group>"; };
+		A9C1AD171691C01C00465F57 /* SubWayDrawViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubWayDrawViewController.m; sourceTree = "<group>"; };
 		A9CC3A73162B02BD005AC036 /* locationiconnor@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "locationiconnor@2x.png"; sourceTree = "<group>"; };
 		A9CC3A75162B0A8E005AC036 /* subwaytransfer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = subwaytransfer.png; sourceTree = "<group>"; };
 		A9CC3A76162B0A8E005AC036 /* subwaytransfer@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "subwaytransfer@2x.png"; sourceTree = "<group>"; };
@@ -1432,6 +1438,10 @@
 				A9B0716616181792001F3007 /* SubWayStationViewController.m */,
 				A9AD2FF41619CB010067B7F6 /* TransferSubWayViewController.h */,
 				A9AD2FF51619CB010067B7F6 /* TransferSubWayViewController.m */,
+				A9C1AD161691C01C00465F57 /* SubWayDrawViewController.h */,
+				A9C1AD171691C01C00465F57 /* SubWayDrawViewController.m */,
+				A9AFFA461692BABC00E166E4 /* SubWayUIView.h */,
+				A9AFFA471692BABC00E166E4 /* SubWayUIView.m */,
 			);
 			name = SubWay;
 			sourceTree = "<group>";
@@ -1967,6 +1977,8 @@
 				A9B8AAA7162D97A2006DD4FA /* PayMapViewController.m in Sources */,
 				A9BC9F3A1669C0C5006EBA74 /* DescriptionJianJieViewController.m in Sources */,
 				A9AC6E57166B168A00AB1A25 /* HeadView.m in Sources */,
+				A9C1AD181691C01C00465F57 /* SubWayDrawViewController.m in Sources */,
+				A9AFFA481692BABC00E166E4 /* SubWayUIView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2061,7 +2073,7 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "zijiyoun/zijiyou-ioscityguide-Prefix.pch";
-				HEADER_SEARCH_PATHS = "/Users/cheewu/Dropbox/mapbox-ios-sdk/**";
+				HEADER_SEARCH_PATHS = "/Users/chunzhi/Documents/mapbox-ios-sdk/**";
 				INFOPLIST_FILE = "zijiyoun/zijiyou-ioscityguide-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (
@@ -2083,7 +2095,7 @@
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "zijiyoun/zijiyou-ioscityguide-Prefix.pch";
-				HEADER_SEARCH_PATHS = "/Users/cheewu/Dropbox/mapbox-ios-sdk/**";
+				HEADER_SEARCH_PATHS = "/Users/chunzhi/Documents/mapbox-ios-sdk/**";
 				INFOPLIST_FILE = "zijiyoun/zijiyou-ioscityguide-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
 				LIBRARY_SEARCH_PATHS = (

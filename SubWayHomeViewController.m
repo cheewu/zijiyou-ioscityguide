@@ -103,33 +103,33 @@
         NSData* jsonData = [stationlist dataUsingEncoding:NSUTF8StringEncoding];
         NSArray* json =[NSJSONSerialization JSONObjectWithData:jsonData options:kNilOptions error:nil];
         
-        NSString *stetName; //起点终点
-        if ([json count]>=2) {
-            NSString *stname;
-            NSString *etname;
-
-            NSString* spoimongoid =[[json objectAtIndex:0] objectForKey:@"poimongoid"];
-            NSString* epoimongoid = [[json objectAtIndex:[json count]-1] objectForKey:@"poimongoid"];
-            
-            //[NSDataDES getContentByHexAndDes:spoimongoid key:deskey];
-            
-            NSString* ssql =[[NSString alloc]initWithFormat:@"SELECT name FROM poi where poimongoid ='%@'",[NSDataDES getContentByHexAndDes:spoimongoid key:deskey]];
-            NSString* esql =[[NSString alloc]initWithFormat:@"SELECT name FROM poi where poimongoid ='%@'",[NSDataDES getContentByHexAndDes:epoimongoid key:deskey]];
-            
-           // NSLog(@"ssql====%@",ssql);
-            
-            FMResultSet *sresultSet  =[ViewController getDataBase:ssql db:db];//
-            while ([sresultSet next]) {
-                stname =[NSDataDES getContentByHexAndDes:[sresultSet stringForColumn:@"name"] key:deskey];
-            }
-            [sresultSet close];
-            FMResultSet *eresultSet  =[ViewController getDataBase:esql db:db];//
-            while ([eresultSet next]) {
-                etname =[NSDataDES getContentByHexAndDes:[eresultSet stringForColumn:@"name"] key:deskey];
-            }
-            [eresultSet close];
-            stetName=[[NSString alloc]initWithFormat:@"%@ - %@",stname,etname];
-        }
+//        NSString *stetName; //起点终点
+//        if ([json count]>=2) {
+//            NSString *stname;
+//            NSString *etname;
+//
+//            NSString* spoimongoid =[[json objectAtIndex:0] objectForKey:@"poimongoid"];
+//            NSString* epoimongoid = [[json objectAtIndex:[json count]-1] objectForKey:@"poimongoid"];
+//            
+//            //[NSDataDES getContentByHexAndDes:spoimongoid key:deskey];
+//            
+//            NSString* ssql =[[NSString alloc]initWithFormat:@"SELECT name FROM poi where poimongoid ='%@'",[NSDataDES getContentByHexAndDes:spoimongoid key:deskey]];
+//            NSString* esql =[[NSString alloc]initWithFormat:@"SELECT name FROM poi where poimongoid ='%@'",[NSDataDES getContentByHexAndDes:epoimongoid key:deskey]];
+//            
+//           // NSLog(@"ssql====%@",ssql);
+//            
+//            FMResultSet *sresultSet  =[ViewController getDataBase:ssql db:db];//
+//            while ([sresultSet next]) {
+//                stname =[NSDataDES getContentByHexAndDes:[sresultSet stringForColumn:@"name"] key:deskey];
+//            }
+//            [sresultSet close];
+//            FMResultSet *eresultSet  =[ViewController getDataBase:esql db:db];//
+//            while ([eresultSet next]) {
+//                etname =[NSDataDES getContentByHexAndDes:[eresultSet stringForColumn:@"name"] key:deskey];
+//            }
+//            [eresultSet close];
+//            stetName=[[NSString alloc]initWithFormat:@"%@ - %@",stname,etname];
+//        }
         
 //        [resultDirs setObject:linename forKey:@"linename"];
 //        [resultDirs setObject:color forKey:@"color"];
@@ -137,7 +137,7 @@
 //         [resultDirs setObject:lineid forKey:@"lineid"];
 //        [entries addObject:resultDirs];
         
-        ListViewBox * list = [[ListViewBox alloc] initWithFrame:CGRectMake(15, offy, 285, 45) imgURL:@"arrows" textColor:color text:linename stationText:nil leftImage:nil sandetName:stetName];
+        ListViewBox * list = [[ListViewBox alloc] initWithFrame:CGRectMake(15, offy, 285, 45) imgURL:@"arrows" textColor:color text:linename stationText:nil leftImage:nil sandetName:nil];
         UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapSubWay:)];
         [list addGestureRecognizer:gestureRecognizer];
         [list setLineId:lineid];
@@ -157,7 +157,7 @@
     NSString *lineid= [((ListViewBox *)[sender view]) lineId];
    // NSMutableDictionary *line= [idSubDirs objectForKey:lineid];
     UIStoryboard *sb = [ViewController getStoryboard];
-    SubWayDetailViewController *rb = [sb instantiateViewControllerWithIdentifier:@"SubWayDetail"];
+    SubWayDetailViewController *rb = [sb instantiateViewControllerWithIdentifier:@"SubWayDraw"];
     [rb setLineid:lineid];
     //[rb setLine:line];
     //[rb setIdSubDirs:idSubDirs];
@@ -195,21 +195,31 @@
 +(void)getSubWayForJson:(NSArray *)json jsonkey:(NSString*)key outDir:(NSMutableDictionary *)idSubDirs{
     NSMutableString *linesqlApp=[[NSMutableString alloc]init];
     NSMutableDictionary *lineDic= [[NSMutableDictionary alloc]init];//所有的key为要查找的地铁线路
+    
+    
     for (NSDictionary *dic in json) {
         if(dic==nil || [dic count]==0){
             NSLog(@"NSDictionary == dic--dic---=======%@",[dic debugDescription]);
             continue;
         }
         
-        NSArray *trline= [dic objectForKey:key];
-        if(trline==nil || [trline count]==0){
-            NSLog(@"NSDictionary == trline-----=======%@",[trline debugDescription]);
-            continue;
-        }
-      //  NSLog(@"trline-----=======%d",[trline count]);
-        for (id tr in trline) {
-           // NSLog(@"tr-----=======%@",tr);
-            [lineDic setObject:tr forKey:tr];
+        if([dic isKindOfClass:[NSDictionary class]]){
+            for (NSString *dicsub in dic) {//所有线路
+                
+                NSArray *listSubWays =[dic objectForKey:dicsub];
+                for(NSDictionary *dicSubWays in listSubWays){//一段的所有站
+                    NSArray *trline= [dicSubWays objectForKey:key];
+                    if(trline==nil || [trline count]==0){
+                        NSLog(@"NSDictionary == trline-----=======%@",[trline debugDescription]);
+                        continue;
+                    }
+                    //  NSLog(@"trline-----=======%d",[trline count]);
+                    for (id tr in trline) {
+                        // NSLog(@"tr-----=======%@",tr);
+                        [lineDic setObject:tr forKey:tr];
+                    }
+                }
+            }
         }
     }
     for (NSString *lineid in [lineDic allKeys]) {
@@ -220,23 +230,6 @@
         sqlLine=[[NSString alloc]initWithFormat:@"SELECT * FROM subway where lineid in (%@)", [linesqlApp substringToIndex:linesqlApp.length-1]];
         
         [SubWayHomeViewController getSubWayForSql:sqlLine outDir:idSubDirs];
-//        FMDatabase *db= [ViewController getDataBase];
-//        FMResultSet *resultSet  =[ViewController getDataBase:sqlLine db:db];//
-//        while ([resultSet next]) {
-//            NSMutableDictionary *resultDirs = [[NSMutableDictionary alloc] init];
-//            NSString *lineid = [resultSet stringForColumn:@"lineid"];
-//            NSString *linename = [resultSet stringForColumn:@"linename"];
-//            NSString *color = [resultSet stringForColumn:@"color"];
-//            NSString *stationlist = [resultSet stringForColumn:@"stationlist"];
-//            
-//            [resultDirs setObject:linename forKey:@"linename"];
-//            [resultDirs setObject:color forKey:@"color"];
-//            [resultDirs setObject:stationlist forKey:@"stationlist"];
-//            [resultDirs setObject:lineid forKey:@"lineid"];
-//            [idSubDirs setObject:resultDirs forKey:lineid];
-//        }
-//        [resultSet close];
-//        [db close];
     }
 }
 
@@ -250,7 +243,9 @@
         NSString *linename = [resultSet stringForColumn:@"linename"];
         NSString *color = [resultSet stringForColumn:@"color"];
         NSString *stationlist = [resultSet stringForColumn:@"stationlist"];
+        NSString *subwaysystem = [resultSet stringForColumn:@"subwaysystem"];
         
+        [resultDirs setObject:subwaysystem forKey:@"subwaysystem"];
         [resultDirs setObject:linename forKey:@"linename"];
         [resultDirs setObject:color forKey:@"color"];
         [resultDirs setObject:stationlist forKey:@"stationlist"];
