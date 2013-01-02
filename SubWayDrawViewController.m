@@ -74,30 +74,26 @@
     [self.view addSubview: pctop];
 
     
-    double offy=5000;
+    double offy=8000;
     if(scrollView==nil){
-        scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 44, 320, 436)];
+        scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 48, 320, 432)];
     }
 //    SubWayUIView *subwayView =[[SubWayUIView alloc]initWithFrame:CGRectMake(0, 0, 320, 480)];
      SubWayUIView *subwayView =[[SubWayUIView alloc]initWithFrame:CGRectMake(0, 0, 320, offy)];
-    
+    [subwayView setSubWayDrawViewController:self];
     [scrollView addSubview:subwayView];
     [self.view addSubview: scrollView];
-    
+    [subwayView setScrollView:scrollView];
     [subwayView setBackgroundColor:[UIColor whiteColor]];
-
-    
+    [subwayView setColor:[lineDictionary objectForKey:@"color"]];
     NSString *stationlistjson =[lineDictionary objectForKey:@"stationlist"];
     [subwayView setStationlistjson:stationlistjson];
     [subwayView setNeedsDisplay];
-    // NSLog(@"stationlistjson==------------=====%@",stationlistjson);
-    // }
+    
+    
+   // NSLog(@"subwayView.offy==------------=====%d",subwayView.offy);
    
-    
-    
-    
-    [scrollView setContentSize:CGSizeMake(320, offy)];
-}
+   }
 -(void)clickBack:(id)sender{
     [self dismissModalViewControllerAnimated:YES];
 }
@@ -107,5 +103,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end

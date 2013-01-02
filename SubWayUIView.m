@@ -6,12 +6,14 @@
 //  Copyright (c) 2013年 piao chunzhi. All rights reserved.
 //
 #import "SubWayUIView.h"
-#import "SubWayHomeViewController.h"
+
 
 @implementation SubWayUIView
 @synthesize stationlistjson;
-
-
+@synthesize offy;
+@synthesize scrollView;
+@synthesize subWayDrawViewController;
+@synthesize color;
 - (id)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
@@ -24,9 +26,26 @@
 
 - (void)drawRect:(CGRect)rect
 {
-    
     CGContextRef context = UIGraphicsGetCurrentContext();
-    int offy=40;
+    NSLog(@"color ======%@",[self color]);
+    NSString *hexColor=[self color];
+    unsigned int red, green, blue;
+    NSRange range;
+    range.length =2;
+   // if([hexColor hasPrefix:@"#"]){
+        hexColor = [hexColor stringByReplacingOccurrencesOfString:@"#" withString:@""];
+    //}
+    range.location =0;
+    [[NSScanner scannerWithString:[hexColor substringWithRange:range]]scanHexInt:&red];
+    range.location =2;
+    [[NSScanner scannerWithString:[hexColor substringWithRange:range]]scanHexInt:&green];
+    range.location =4;
+    [[NSScanner scannerWithString:[hexColor substringWithRange:range]]scanHexInt:&blue];
+    
+    //设置颜色
+    CGContextSetRGBStrokeColor(context, red/255.0, green/255.0, blue/255.0, 1);
+    CGContextSetRGBFillColor(context, red/255.0, green/255.0, blue/255.0, 1);
+    offy=40;
     
     if([self stationlistjson]!=nil){
         NSData* jsonData = [stationlistjson dataUsingEncoding:NSUTF8StringEncoding];
@@ -120,12 +139,7 @@
                     for(NSDictionary *dicSubWays in listSubWays){//一段的所有站
                         NSString *poimongoides=[dicSubWays objectForKey:@"poimongoid"];
                         NSArray *transferLines=[dicSubWays objectForKey:@"transferLine"];
-                        NSLog(@"--------------===");
-
-                        for (NSString *line in transferLines) {
-                            NSLog(@"line===%@",line);
-                        }
-                         NSLog(@"--------------===");
+                        
                         //  NSLog(@"@@@@@@@poimongoides===%@",poimongoides);
                         //  NSLog(@"@@@@@@@poimongoides===%@",[poimogoidesdsDic objectForKey:poimongoides]);
                         NSString *poiid=[poimogoidesdsDic objectForKey:poimongoides];
@@ -139,12 +153,34 @@
                         int lineoffx=offx+stationWidth/2;
                         int contentWidth=50;//连线的宽度高度
                         
+                        int trsoffx=lineoffx-22;
+                        int trsoffy=offy;
+                        int max=4;
+                        int indexcont=1;
+                        for (id line in transferLines) {
+                         //   NSLog(@"line===%@",line);
+                            if(indexcont>max){
+                                trsoffy-=16;
+                                trsoffx=lineoffx-30;
+                                indexcont=0;
+                            }
+                            NSDictionary *lineDic= [idSubDirs objectForKey: [NSString stringWithFormat:@"%@",line]];
+                           // NSLog(@"linename===%@",[lineDic objectForKey:@"linename"]);
+                            
+                            UIImageView *view=[[UIImageView alloc]initWithImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@",[lineDic objectForKey:@"linename"]]]];
+                            [view setFrame:CGRectMake(trsoffx, trsoffy+stationHeight-view.image.size.height/2, view.image.size.width, view.image.size.height)];
+                            [self addSubview:view];
+                            trsoffx-=view.image.size.width+3;
+                            indexcont++;
+                        }
+
+                        
 
                         if(lastStationLineId!=nil && [lastStationLineId isEqualToString: poiid]){//判读是否与终点站相连
                          //   NSLog(@"!!!!lastStationLineIdlastStationLineId===%@",poiName);//站点名称
                             
                             [self drawLine:context point1:CGPointMake(lastStationPoint.x, lastStationPoint.y+16) point2:CGPointMake(lastStationPoint.x-60, lastStationPoint.y+contentWidth)];//线段
-                            [self drawLine:context point1:CGPointMake(lastStationPoint.x-60, lastStationPoint.y+48) point2:CGPointMake(lastStationPoint.x-60, (offy+stationHeight-contentWidth))];//线段
+                            [self drawLine:context point1:CGPointMake(lastStationPoint.x-60, lastStationPoint.y+47) point2:CGPointMake(lastStationPoint.x-58, (offy+stationHeight-contentWidth))];//线段
                             [self drawLine:context point1:CGPointMake(lastStationPoint.x-60,offy+stationHeight-contentWidth-2) point2:CGPointMake(lastStationPoint.x, offy+stationHeight)];//线段
                             isLastStationToNest=true;
                         }
@@ -159,7 +195,7 @@
                         [dirCopy setValue:[NSNumber numberWithInt:lineoffx] forKey:@"x"];
                          [dirCopy setValue:[NSNumber numberWithInt:offy] forKey:@"y"];
                         [listSubWaysCopy addObject:dirCopy];
-                        NSLog(@"=============%@",poiName);//站点名称   
+                      //  NSLog(@"=============%@",poiName);//站点名称
                              if(i==0){//画起始站
                                  firstStationLineId = poiid;
                                  isDrawFirst=true;
@@ -181,7 +217,7 @@
                                                  y+=stationHeight;
                                                  
                                                  [self drawLine:context point1:CGPointMake(x, y) point2:CGPointMake(x-60, y+contentWidth)];//线段
-                                                 [self drawLine:context point1:CGPointMake(x-60, y+48) point2:CGPointMake(x-60, (offy+stationHeight-contentWidth))];//线段
+                                                 [self drawLine:context point1:CGPointMake(x-60, y+47) point2:CGPointMake(x-58, (offy+stationHeight-contentWidth))];//线段
                                                  [self drawLine:context point1:CGPointMake(x-60,offy+stationHeight-contentWidth-2) point2:CGPointMake(x, offy+stationHeight)];//线段
                                                  isDrawFirst =false;
                                                  break;
@@ -191,7 +227,7 @@
                                  }
                                  if(isDrawFirst){
                                      [self drawRectangle:context point1:CGPointMake(offx, offy) point2:CGPointMake(offx+stationWidth,offy+8)];
-                                     [self addSubview:[self getUILabel:poiName offx:offx+40 offy:offy-10 font:[UIFont fontWithName:@"Helvetica" size:15]]];
+                                     [self addSubview:[self getUILabel:poiName offx:offx+40 offy:offy-10 font:[UIFont fontWithName:@"Helvetica" size:15] poiid:poiid]];
                                     // NSLog(@"********%@",poiName);//站点名称
                                      //isDrawFirst=false;
                                  }else{
@@ -208,7 +244,7 @@
                                   [self drawLine:context point1:CGPointMake(lineoffx, offy) point2:CGPointMake(lineoffx, offy=(offy+stationHeight))];//线段
                                  }
                                  [self drawTrigon:context point1:CGPointMake(x, offy) point2:CGPointMake(x+offw,offy+offh/2) point3:CGPointMake(x,offy+offh)];//三角形
-                                 [self addSubview:[self getUILabel:poiName offx:offx+40 offy:offy-10 font:[UIFont fontWithName:@"Helvetica" size:15]]];
+                                 [self addSubview:[self getUILabel:poiName offx:offx+40 offy:offy-10 font:[UIFont fontWithName:@"Helvetica" size:15] poiid:poiid]];
                                  
                              }else{//最后一站
 //                                NSLog(@"=============%@",poiName);//站点名称
@@ -221,7 +257,7 @@
                                      [self drawLine:context point1:CGPointMake(lineoffx, lasty) point2:CGPointMake(lineoffx, lasty=(lasty+stationHeight))];//线段
                                      
                                      [self drawRectangle:context point1:CGPointMake(offx, lasty) point2:CGPointMake(offx+stationWidth,lasty+8)];
-                                     [self addSubview:[self getUILabel:[poi objectForKey:@"name"] offx:offx+40 offy:lasty-10 font:[UIFont fontWithName:@"Helvetica" size:15]]];
+                                     [self addSubview:[self getUILabel:[poi objectForKey:@"name"] offx:offx+40 offy:lasty-10 font:[UIFont fontWithName:@"Helvetica" size:15]poiid:poiid]];
                                  }
                                  
                                  if(!isLastStationToNest&&linei!=0){
@@ -229,7 +265,7 @@
                                      [self drawLine:context point1:CGPointMake(lineoffx, lasty) point2:CGPointMake(lineoffx, lasty=(lasty+stationHeight))];//线段
                                      
                                      [self drawRectangle:context point1:CGPointMake(offx, lasty) point2:CGPointMake(offx+stationWidth,lasty+8)];
-                                     [self addSubview:[self getUILabel:lastStationName offx:offx+40 offy:lasty-10 font:[UIFont fontWithName:@"Helvetica" size:15]]];
+                                     [self addSubview:[self getUILabel:lastStationName offx:offx+40 offy:lasty-10 font:[UIFont fontWithName:@"Helvetica" size:15]poiid:poiid]];
                                  }
                                  
                                  lastStationPoint = CGPointMake(lineoffx, offy);
@@ -248,13 +284,16 @@
             }
         }
     }
+
+    [scrollView setContentSize:CGSizeMake(320, offy)];
+
 }
 
 - (void)drawRectangle:(CGContextRef)_context point1:(CGPoint) _beginPoint point2:(CGPoint)_endPoint
 {
     CGRect rect = CGRectMake(_beginPoint.x, _beginPoint.y, _endPoint.x - _beginPoint.x, _endPoint.y - _beginPoint.y);
     //设置矩形填充颜色：红色
-    CGContextSetRGBFillColor(_context, 1.0, 0.0, 0.0, 1.0);
+   // CGContextSetRGBFillColor(_context, 1.0, 0.0, 0.0, 1.0);
     //填充矩形
     CGContextFillRect(_context, rect);
     //执行绘画
@@ -293,7 +332,7 @@
 {
     //设置矩形填充颜色：红色
     //CGContextSetRGBFillColor(_context, 1.0, 0.0, 0.0, 1.0);
-    CGContextSetRGBStrokeColor(_context, 1, 0, 0, 1);
+//    CGContextSetRGBStrokeColor(_context, 1, 0, 0, 1);
     
     CGContextMoveToPoint(_context, _beginPoint.x, _beginPoint.y);
     CGContextAddLineToPoint(_context, _endPoint.x, _endPoint.y);
@@ -306,7 +345,7 @@
 {
     //设置矩形填充颜色：红色
     //CGContextSetRGBFillColor(_context, 1.0, 0.0, 0.0, 1.0);
-    CGContextSetRGBStrokeColor(_context, 1, 0, 0, 1);
+//    CGContextSetRGBStrokeColor(_context, 1, 0, 0, 1);
     
     CGContextMoveToPoint(_context, _beginPoint.x, _beginPoint.y);
     CGContextAddLineToPoint(_context, _midPoint.x, _midPoint.y);
@@ -316,9 +355,9 @@
     CGContextStrokePath(_context);
 }
 
--(UILabel *)getUILabel:(NSString *)text offx:(CGFloat) offx offy:(CGFloat) offy font:(UIFont *)font{
+-(StationUILabel *)getUILabel:(NSString *)text offx:(CGFloat) offx offy:(CGFloat) offyi font:(UIFont *)font poiid:(NSString *)poiid{
     //初始化label
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0,0,0,0)];
+    StationUILabel *label = [[StationUILabel alloc] initWithFrame:CGRectMake(0,0,0,0)];
     //设置自动行数与字符换行
     [label setNumberOfLines:0];
     label.lineBreakMode = UILineBreakModeWordWrap;
@@ -328,14 +367,32 @@
     CGSize size = CGSizeMake(300,2000);
     //计算实际frame大小，并将label的frame变成实际大小
     CGSize labelsize = [text sizeWithFont:font constrainedToSize:size lineBreakMode:UILineBreakModeWordWrap];
-    [label setFrame:CGRectMake(offx, offy, labelsize.width, labelsize.height)];
+    [label setFrame:CGRectMake(offx, offyi, labelsize.width, labelsize.height)];
     label.text=text;
     label.font = font;
     [label setTextColor:textColor];
     label.backgroundColor=[UIColor clearColor];
-    return label;
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(subStationClick:)];
+  //  gestureRecognizer.delegate = self;
     
+    [label setUserInteractionEnabled:YES];     //设置label可进行触发  
+    [label addGestureRecognizer:gestureRecognizer];
+    [label setPoimongoid:poiid];
+    return label;
 }
-
-
+-(void)subStationClick:(UITapGestureRecognizer *)sender{
+    StationUILabel *label =[sender view];
+    UIStoryboard *sb = [ViewController getStoryboard];
+    SubWayStationViewController *rb = [sb instantiateViewControllerWithIdentifier:@"SubWayStation"];
+    rb.modalTransitionStyle =UIModalTransitionStyleCrossDissolve;;
+    [rb setPoimongoid:[label poimongoid]];
+    
+ //   NSLog(@"[label poimongoid]==%@",[label poimongoid]);
+    
+    [[self subWayDrawViewController].navigationController pushViewController:rb animated:YES];
+    [[self subWayDrawViewController] presentModalViewController:rb animated:YES];
+}
+//- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
+//     return YES;
+//}
 @end
